@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/panda.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/panda.svg">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="A Global Analysis of the Impact of COVID-19 Stay-At-Home Restrictions on Crime  From Natural Human Behaviour Amy E. Nivette  1,2 ✉, Renee Zahnow  3, Raul Aguilar  4, Andri Ahven5, Shai Amram6, Barak A">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Global Analysis of the Impact of COVID-19">
+<meta property="og:url" content="http://example.com/2021/10/31/A-global-analysis-of-the-impact-of-COVID-19/index.html">
+<meta property="og:site_name" content="X.Zhang&#39;s Blog.">
+<meta property="og:description" content="A Global Analysis of the Impact of COVID-19 Stay-At-Home Restrictions on Crime  From Natural Human Behaviour Amy E. Nivette  1,2 ✉, Renee Zahnow  3, Raul Aguilar  4, Andri Ahven5, Shai Amram6, Barak A">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2021/10/31/A-global-analysis-of-the-impact-of-COVID-19/Scatterplot.jpg">
+<meta property="article:published_time" content="2021-10-31T05:30:21.000Z">
+<meta property="article:modified_time" content="2022-01-23T08:34:48.330Z">
+<meta property="article:author" content="Xuewei Zhang">
+<meta property="article:tag" content="COVID-19">
+<meta property="article:tag" content="Stay-at-home restrictions">
+<meta property="article:tag" content="Crime">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/10/31/A-global-analysis-of-the-impact-of-COVID-19/Scatterplot.jpg">
+
+<link rel="canonical" href="http://example.com/2021/10/31/A-global-analysis-of-the-impact-of-COVID-19/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>A Global Analysis of the Impact of COVID-19 | X.Zhang's Blog.</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">X.Zhang's Blog.</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">I CAN DO ALL THING</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/aboutme/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/31/A-global-analysis-of-the-impact-of-COVID-19/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="Xuewei Zhang">
+      <meta itemprop="description" content="Please read carefully the books you can understand">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="X.Zhang's Blog.">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          A Global Analysis of the Impact of COVID-19
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-10-31 13:30:21" itemprop="dateCreated datePublished" datetime="2021-10-31T13:30:21+08:00">2021-10-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-01-23 16:34:48" itemprop="dateModified" datetime="2022-01-23T16:34:48+08:00">2022-01-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Paper/" itemprop="url" rel="index"><span itemprop="name">Paper</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Paper/Law-of-time-and-space/" itemprop="url" rel="index"><span itemprop="name">Law of time and space</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>A Global Analysis of the Impact of COVID-19 Stay-At-Home Restrictions on Crime</strong> </p>
+<p><strong><em>From Natural Human Behaviour</em></strong></p>
+<p><em>Amy E. Nivette  1,2 ✉, Renee Zahnow  3, Raul Aguilar  4, Andri Ahven5, Shai Amram6, Barak Ariel  6,7,</em><br><em>María José Arosemena Burbano7, Roberta Astolfi8, Dirk Baier9, Hyung-Min Bark  10, Joris E. H. Beijers2,</em><br><em>Marcelo Bergman11, Gregory Breetzke  12, I. Alberto Concha-Eastman  13, Sophie Curtis-Ham  14,</em><br><em>Ryan Davenport15,16, Carlos Díaz17, Diego Fleitas  11, Manne Gerell  18, Kwang-Ho Jang19,</em><br><em>Juha Kääriäinen20, T apio Lappi-Seppälä  20, Woon-Sik Lim19, Rosa Loureiro Revilla7,</em><br><em>Lorraine Mazerolle  3, Gorazd Meško21, Noemí Pereda  22, Maria F. T. Peres  8,<br>Rubén Poblete-Cazenave  23, Simon Rose7,16, Robert Svensson  18, Nico T rajtenberg24,</em><br><em>T anja van der Lippe1, Joran Veldkamp1, Carlos J. Vilalta Perdomo  25 and Manuel P. Eisner  7, 26</em></p>
+<p><strong>Objective</strong> The stay-at-home restrictions to control the spread COVID-19 led to unparalleled(前所未有的) sudden change in daily life but it is unclear how they affected <u><em>urban crime globally</em></u>.</p>
+<p><strong>Methods</strong> We collected data on daily counts of crime in 27 cities across 23 counties in the Americas, Europe, the Middle East and Asia. We conducted <u>interrupted time series analyses</u>(间断时间序列分析) to assess the impact of stay-at-home restrictions on different types of crime <strong>(Assault, Burglary, Robbery, Theft, Vehicle theft, Homicide)</strong>  in each city.</p>
+<p><strong>Results</strong> Our findings show that the stay-at-home policies were associated with a considerable drop in urban crime, but with substantial variation across cities and types of crime. Meta-regression results shower that more stringent restrictions over movement in public space were predictive of larger declines in crime.</p>
+<span id="more"></span>
+<h1 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h1><p>On 11 March 2020, the World Health Organization declared COVID-19 to be a public health emergency of global concern. National and local authorities moved to impose a range of measures to slow the spread of virus (“flatten the curve”). Collectively referred to as <em>‘lockdown’</em> measures in most countries, regulations have included some combination of stay-at-home orders, travel bans, closures of schools and places of entertainment and restrictions on public and private gatherings. Spatial mobility data suggest that, at the peak of the so-called <em>lockdown</em>—in late March and April 2020—daily movements related to retail and rec-<br>reation had declined by over 80% in many countries in Europe and  Latin America.</p>
+<h1 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h1><p>In  this  study,  we  examine(调查)  the  extent(程度)  to  which  stay-at-home restrictions in 27 cities in the Americas, Europe, the Middle East and Asia were associated with a change in levels of six types of police-recorded  crime.  The  cities  represent  a  large  variation  of measures relating to stay-at-home restrictions. They range from mostly voluntary recommendations to avoid public space to a complete halt (停止)of all but the most essential activities, based on emergency legislation and enforced by substantial penalties(实质性的处罚) for breaching the rules(违反规则).</p>
+<h1 id="Theory"><a href="#Theory" class="headerlink" title="Theory"></a>Theory</h1><p>Various theories of crime examine how sudden and persisting restraints on population movements caused by, for example, natural disasters, blackouts(停电) or epidemics affect crime levels. </p>
+<p>​    <strong><em>Theories of individual and structural strain</em></strong>(个体应变与结构应变理论) suggest that such restraints(限制) increase levels of stress and negative emotions such as anxiety, frustration and anger, thereby leading to an increase in criminal motivations. In this vein(在这方面), social isolation and reduced freedom of movement associated with COVID-19 containment policies are anticipated to heighten levels of strain and reduce access to support with implications for <em>child maltreatment, domestic violence and substance use</em>(虐待儿童、家庭暴力和滥用药物). </p>
+<p>​    <strong><em>Opportunity theory and routine activity theory</em></strong>, in contrast, suggest that stay-at-home policies interrupted the daily movements in time and space of suitable targets, capable guardians and motivated offenders on which most crime, especially crime in public space, feeds. They hence predict that crime levels fall as the mobility of entire urban populations is restricted. They hence predict that crime levels fall as the mobility of entire urban populations is restricted.</p>
+<p>​    opportunity structures are specific to different types of crimes, and a change in opportunities for theft may not correlate with a change in opportunities for assault. <strong>For example,</strong> opportunities for certain property crimes, such as theft and robbery, depend on the daily flow of people into commercial areas and nearby transportation nodes that offer a high volume of suitable targets and access/exit paths for motivated offenders, and may hence have declined particularly strongly as a result of the <em>lockdown</em> measures. <strong>Similarly</strong>, as most people stayed at home throughout the day, fewer houses were left unsupervised(无监管) and residential burglary may have become much more difficult, while commercial buildings(商业建筑) likely became less supervised and hence an easier target.</p>
+<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><h2 id="Crime-data"><a href="#Crime-data" class="headerlink" title="Crime data"></a><em>Crime data</em></h2><p>​    Daily crime data were collected from 27 cities representing 23 countries around the world. We sought daily crime data on assault, burglary, robbery, theft, vehicle theft and homicide for the current analyses.</p>
+<p>​    The ‘date’ of the time series refers to the date the offence presumably occurred, as recorded by the police. In cases where this information was not available (that is, Amsterdam and São Paulo), the date of reporting was used.</p>
+<h2 id="The-‘treatment’-variable"><a href="#The-‘treatment’-variable" class="headerlink" title="The ‘treatment’ variable"></a><em>The ‘treatment’ variable</em></h2><p>​    The treatment effect of a city’s stay-at-home restrictions on crime incidents is measured using a dummy<br>variable(虚拟变量), whereby 1 represents the period in which restrictions were in place and 0 represents the period prior to (or following) the implementation of restrictions.</p>
+<h2 id="Covariates-in-ITS-models"><a href="#Covariates-in-ITS-models" class="headerlink" title="Covariates in ITS models"></a><em>Covariates in ITS models</em></h2><p>​    <strong>Climate data</strong> for cities were drawn from the National Centers for Environmental Information。</p>
+<p>​    In addition, we include <strong>yearly population</strong> as an offset in all models. Population data for each city were drawn from the United Nations’ World Population Prospects(联合国-世界预期人口).</p>
+<h2 id="Interrupted-time-series-analyses"><a href="#Interrupted-time-series-analyses" class="headerlink" title="Interrupted time series analyses"></a><em>Interrupted time series analyses</em></h2><p>​    The ITS analyses were estimated using Poisson generalized linear models with a logit-link function.</p>
+<h2 id="Meta-analyses"><a href="#Meta-analyses" class="headerlink" title="Meta-analyses"></a><em>Meta-analyses</em></h2><p>​    Due to the heterogeneous nature of lockdowns and crime definitions across countries, we used random-effects models to estimate summary effects.</p>
+<h1 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h1><p>​    In this study, we examined trends in police-recorded crime in the period after the introduction of stay-at-home policies in 27 cities worldwide. Our findings show that the stay-at-home policies were associated with a substantial drop in urban crime. On average, the overall reduction in crime levels across all included cities was −37%. They suggest that the sudden decline in urban mobility triggered by the stay-at-home policies reduced opportunities and increased guardianship relating to many high-volume crimes. In other words, as  expected  by  economic  and  criminological  opportunity  theories, we found strong evidence that crime levels respond quickly to changing opportunity structures and constraints, and that change in crime levels does not necessarily require large-scale changes in offender motivation. At least in the short run, the change in routine activities rather than the increase in psychological and social strains was the dominating mechanism that affected change in overall crime levels. We did not find evidence for or against displacement effects in the sense of a shift from one type of crime to another within the categories of crime covered in this paper. However, the lack  of  high-quality  comparable  data  means  that  we  could  not examine the possibility that a substantial amount of coercive and property crime moved online, parallel to the sudden shift in daily routine activities.</p>
+<p>​    Finally, we examined whether variation in the stringency of the lockdown was predictive of the amount of change in crime. Results show  that  more  stringent  limitations  regarding  requirements/recommendations to stay at home were associated with stronger declines in crime levels.The additional analyses suggest that it is mostly the stay-at-home requirements that were associated with larger declines, in that other containment policies were generally not significantly associated with declines, and the use of the overall stringency index generally did not substantially improve the models (Supplementary Table 21). We found few systematic differences in the ‘elasticity’ of different crime categories, that is, in the extent to which variation in the stringency of COVID-19-related restrictions was associated with change in crime levels. This suggests, surprisingly perhaps, that all crime categories included in this analysis responded  similarly  to  variation  in  the  extent  of  constraints  on  daily movement.</p>
+<p><img src="Scatterplot.jpg" alt="Lena"></p>
+<p>​    Our analyses suggest that stay-at-home policies played a crucial role. However, more fine-tuned analyses would be needed to understand the extent to which other measures <strong>(for example, closing bars, limiting public transport and closing schools</strong>) and variation in their enforcement were associated with variation in crime trends across places within a city.</p>
+<p>​    <strong>An important area for future comparative research is to investigate  the  potential  displacement  of  public-space  crimes  to non-contact offences such as fraud and cybercrime, which we were unable to measure here. There is some initial evidence of a significant increase of cybercrime during the strictest period of lockdown in the United Kingdom, which is interpreted as a displacement of crime opportunities from the offline to the online environment. Restrictions on public space may have also led to displacement  of  crime  to  private  space.</strong></p>
+<h3 id="Paper-List-That-I-Want-To-Read-After-Reading-This-Study"><a href="#Paper-List-That-I-Want-To-Read-After-Reading-This-Study" class="headerlink" title="Paper List That I Want To Read After Reading This Study"></a>Paper List That I Want To Read After Reading This Study</h3><p>1、<em>Bernasco, W ., Ruiter, S. &amp; Block, R. <strong>Do street robbery location choices vary over time of day or day of week? A test in Chicago.</strong></em> </p>
+<p><em>J. Res Crime. Delinq. 54, 244–275 (2017).</em></p>
+<p>2、<em>Mohler, G. et al. <strong>Impact of social distancing during COVID-19 pandemic on crime in Los Angeles and Indianapolis.</strong></em></p>
+<p> <em>J. Crim. Justice 68, 101692 (2020).</em></p>
+
+    </div>
+
+    
+    
+    
+
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------Ending of the article<i class="fa fa-paw"></i>Thanks For Your Reading-------------</div>
+    
+</div>
+  
+</div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/COVID-19/" rel="tag"># COVID-19</a>
+              <a href="/tags/Stay-at-home-restrictions/" rel="tag"># Stay-at-home restrictions</a>
+              <a href="/tags/Crime/" rel="tag"># Crime</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/10/28/Crime-Feeds-on-Legal-Activities-Daily-Mobility-Flows-Help-to-Explain-Thieves-Target-Location-Choices/" rel="prev" title="Crime Feeds on Legal Activities: Daily Mobility Flows Help to Explain Thieves' Target Location Choices">
+      <i class="fa fa-chevron-left"></i> Crime Feeds on Legal Activities: Daily Mobility Flows Help to Explain Thieves' Target Location Choices
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/11/02/Statistical-Learning-with-R/" rel="next" title="Statistical Learning with R">
+      Statistical Learning with R <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Background"><span class="nav-number">1.</span> <span class="nav-text">Background</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Objective"><span class="nav-number">2.</span> <span class="nav-text">Objective</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Theory"><span class="nav-number">3.</span> <span class="nav-text">Theory</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methods"><span class="nav-number">4.</span> <span class="nav-text">Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Crime-data"><span class="nav-number">4.1.</span> <span class="nav-text">Crime data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-%E2%80%98treatment%E2%80%99-variable"><span class="nav-number">4.2.</span> <span class="nav-text">The ‘treatment’ variable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Covariates-in-ITS-models"><span class="nav-number">4.3.</span> <span class="nav-text">Covariates in ITS models</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interrupted-time-series-analyses"><span class="nav-number">4.4.</span> <span class="nav-text">Interrupted time series analyses</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Meta-analyses"><span class="nav-number">4.5.</span> <span class="nav-text">Meta-analyses</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Results"><span class="nav-number">5.</span> <span class="nav-text">Results</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Paper-List-That-I-Want-To-Read-After-Reading-This-Study"><span class="nav-number">5.0.1.</span> <span class="nav-text">Paper List That I Want To Read After Reading This Study</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xuewei Zhang"
+      src="/images/touxiang.png">
+  <p class="site-author-name" itemprop="name">Xuewei Zhang</p>
+  <div class="site-description" itemprop="description">Please read carefully the books you can understand</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Nickzxw" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Nickzxw" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/13690112205@163.com" title="E-Mail → 13690112205@163.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+	
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xuewei Zhang</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/nipsilon.model.json"},"display":{"position":"right","width":300,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>

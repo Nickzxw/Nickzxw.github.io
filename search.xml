@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>A Global Analysis of the Impact of COVID-19</title>
+    <url>/2021/10/31/A-global-analysis-of-the-impact-of-COVID-19/</url>
+    <content><![CDATA[<p><strong>A Global Analysis of the Impact of COVID-19 Stay-At-Home Restrictions on Crime</strong> </p>
+<p><strong><em>From Natural Human Behaviour</em></strong></p>
+<p><em>Amy E. Nivette  1,2 ✉, Renee Zahnow  3, Raul Aguilar  4, Andri Ahven5, Shai Amram6, Barak Ariel  6,7,</em><br><em>María José Arosemena Burbano7, Roberta Astolfi8, Dirk Baier9, Hyung-Min Bark  10, Joris E. H. Beijers2,</em><br><em>Marcelo Bergman11, Gregory Breetzke  12, I. Alberto Concha-Eastman  13, Sophie Curtis-Ham  14,</em><br><em>Ryan Davenport15,16, Carlos Díaz17, Diego Fleitas  11, Manne Gerell  18, Kwang-Ho Jang19,</em><br><em>Juha Kääriäinen20, T apio Lappi-Seppälä  20, Woon-Sik Lim19, Rosa Loureiro Revilla7,</em><br><em>Lorraine Mazerolle  3, Gorazd Meško21, Noemí Pereda  22, Maria F. T. Peres  8,<br>Rubén Poblete-Cazenave  23, Simon Rose7,16, Robert Svensson  18, Nico T rajtenberg24,</em><br><em>T anja van der Lippe1, Joran Veldkamp1, Carlos J. Vilalta Perdomo  25 and Manuel P. Eisner  7, 26</em></p>
+<p><strong>Objective</strong> The stay-at-home restrictions to control the spread COVID-19 led to unparalleled(前所未有的) sudden change in daily life but it is unclear how they affected <u><em>urban crime globally</em></u>.</p>
+<p><strong>Methods</strong> We collected data on daily counts of crime in 27 cities across 23 counties in the Americas, Europe, the Middle East and Asia. We conducted <u>interrupted time series analyses</u>(间断时间序列分析) to assess the impact of stay-at-home restrictions on different types of crime <strong>(Assault, Burglary, Robbery, Theft, Vehicle theft, Homicide)</strong>  in each city.</p>
+<p><strong>Results</strong> Our findings show that the stay-at-home policies were associated with a considerable drop in urban crime, but with substantial variation across cities and types of crime. Meta-regression results shower that more stringent restrictions over movement in public space were predictive of larger declines in crime.</p>
+<span id="more"></span>
+<h1 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h1><p>On 11 March 2020, the World Health Organization declared COVID-19 to be a public health emergency of global concern. National and local authorities moved to impose a range of measures to slow the spread of virus (“flatten the curve”). Collectively referred to as <em>‘lockdown’</em> measures in most countries, regulations have included some combination of stay-at-home orders, travel bans, closures of schools and places of entertainment and restrictions on public and private gatherings. Spatial mobility data suggest that, at the peak of the so-called <em>lockdown</em>—in late March and April 2020—daily movements related to retail and rec-<br>reation had declined by over 80% in many countries in Europe and  Latin America.</p>
+<h1 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h1><p>In  this  study,  we  examine(调查)  the  extent(程度)  to  which  stay-at-home restrictions in 27 cities in the Americas, Europe, the Middle East and Asia were associated with a change in levels of six types of police-recorded  crime.  The  cities  represent  a  large  variation  of measures relating to stay-at-home restrictions. They range from mostly voluntary recommendations to avoid public space to a complete halt (停止)of all but the most essential activities, based on emergency legislation and enforced by substantial penalties(实质性的处罚) for breaching the rules(违反规则).</p>
+<h1 id="Theory"><a href="#Theory" class="headerlink" title="Theory"></a>Theory</h1><p>Various theories of crime examine how sudden and persisting restraints on population movements caused by, for example, natural disasters, blackouts(停电) or epidemics affect crime levels. </p>
+<p>​    <strong><em>Theories of individual and structural strain</em></strong>(个体应变与结构应变理论) suggest that such restraints(限制) increase levels of stress and negative emotions such as anxiety, frustration and anger, thereby leading to an increase in criminal motivations. In this vein(在这方面), social isolation and reduced freedom of movement associated with COVID-19 containment policies are anticipated to heighten levels of strain and reduce access to support with implications for <em>child maltreatment, domestic violence and substance use</em>(虐待儿童、家庭暴力和滥用药物). </p>
+<p>​    <strong><em>Opportunity theory and routine activity theory</em></strong>, in contrast, suggest that stay-at-home policies interrupted the daily movements in time and space of suitable targets, capable guardians and motivated offenders on which most crime, especially crime in public space, feeds. They hence predict that crime levels fall as the mobility of entire urban populations is restricted. They hence predict that crime levels fall as the mobility of entire urban populations is restricted.</p>
+<p>​    opportunity structures are specific to different types of crimes, and a change in opportunities for theft may not correlate with a change in opportunities for assault. <strong>For example,</strong> opportunities for certain property crimes, such as theft and robbery, depend on the daily flow of people into commercial areas and nearby transportation nodes that offer a high volume of suitable targets and access/exit paths for motivated offenders, and may hence have declined particularly strongly as a result of the <em>lockdown</em> measures. <strong>Similarly</strong>, as most people stayed at home throughout the day, fewer houses were left unsupervised(无监管) and residential burglary may have become much more difficult, while commercial buildings(商业建筑) likely became less supervised and hence an easier target.</p>
+<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><h2 id="Crime-data"><a href="#Crime-data" class="headerlink" title="Crime data"></a><em>Crime data</em></h2><p>​    Daily crime data were collected from 27 cities representing 23 countries around the world. We sought daily crime data on assault, burglary, robbery, theft, vehicle theft and homicide for the current analyses.</p>
+<p>​    The ‘date’ of the time series refers to the date the offence presumably occurred, as recorded by the police. In cases where this information was not available (that is, Amsterdam and São Paulo), the date of reporting was used.</p>
+<h2 id="The-‘treatment’-variable"><a href="#The-‘treatment’-variable" class="headerlink" title="The ‘treatment’ variable"></a><em>The ‘treatment’ variable</em></h2><p>​    The treatment effect of a city’s stay-at-home restrictions on crime incidents is measured using a dummy<br>variable(虚拟变量), whereby 1 represents the period in which restrictions were in place and 0 represents the period prior to (or following) the implementation of restrictions.</p>
+<h2 id="Covariates-in-ITS-models"><a href="#Covariates-in-ITS-models" class="headerlink" title="Covariates in ITS models"></a><em>Covariates in ITS models</em></h2><p>​    <strong>Climate data</strong> for cities were drawn from the National Centers for Environmental Information。</p>
+<p>​    In addition, we include <strong>yearly population</strong> as an offset in all models. Population data for each city were drawn from the United Nations’ World Population Prospects(联合国-世界预期人口).</p>
+<h2 id="Interrupted-time-series-analyses"><a href="#Interrupted-time-series-analyses" class="headerlink" title="Interrupted time series analyses"></a><em>Interrupted time series analyses</em></h2><p>​    The ITS analyses were estimated using Poisson generalized linear models with a logit-link function.</p>
+<h2 id="Meta-analyses"><a href="#Meta-analyses" class="headerlink" title="Meta-analyses"></a><em>Meta-analyses</em></h2><p>​    Due to the heterogeneous nature of lockdowns and crime definitions across countries, we used random-effects models to estimate summary effects.</p>
+<h1 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h1><p>​    In this study, we examined trends in police-recorded crime in the period after the introduction of stay-at-home policies in 27 cities worldwide. Our findings show that the stay-at-home policies were associated with a substantial drop in urban crime. On average, the overall reduction in crime levels across all included cities was −37%. They suggest that the sudden decline in urban mobility triggered by the stay-at-home policies reduced opportunities and increased guardianship relating to many high-volume crimes. In other words, as  expected  by  economic  and  criminological  opportunity  theories, we found strong evidence that crime levels respond quickly to changing opportunity structures and constraints, and that change in crime levels does not necessarily require large-scale changes in offender motivation. At least in the short run, the change in routine activities rather than the increase in psychological and social strains was the dominating mechanism that affected change in overall crime levels. We did not find evidence for or against displacement effects in the sense of a shift from one type of crime to another within the categories of crime covered in this paper. However, the lack  of  high-quality  comparable  data  means  that  we  could  not examine the possibility that a substantial amount of coercive and property crime moved online, parallel to the sudden shift in daily routine activities.</p>
+<p>​    Finally, we examined whether variation in the stringency of the lockdown was predictive of the amount of change in crime. Results show  that  more  stringent  limitations  regarding  requirements/recommendations to stay at home were associated with stronger declines in crime levels.The additional analyses suggest that it is mostly the stay-at-home requirements that were associated with larger declines, in that other containment policies were generally not significantly associated with declines, and the use of the overall stringency index generally did not substantially improve the models (Supplementary Table 21). We found few systematic differences in the ‘elasticity’ of different crime categories, that is, in the extent to which variation in the stringency of COVID-19-related restrictions was associated with change in crime levels. This suggests, surprisingly perhaps, that all crime categories included in this analysis responded  similarly  to  variation  in  the  extent  of  constraints  on  daily movement.</p>
+<p><img src="Scatterplot.jpg" alt="Lena"></p>
+<p>​    Our analyses suggest that stay-at-home policies played a crucial role. However, more fine-tuned analyses would be needed to understand the extent to which other measures <strong>(for example, closing bars, limiting public transport and closing schools</strong>) and variation in their enforcement were associated with variation in crime trends across places within a city.</p>
+<p>​    <strong>An important area for future comparative research is to investigate  the  potential  displacement  of  public-space  crimes  to non-contact offences such as fraud and cybercrime, which we were unable to measure here. There is some initial evidence of a significant increase of cybercrime during the strictest period of lockdown in the United Kingdom, which is interpreted as a displacement of crime opportunities from the offline to the online environment. Restrictions on public space may have also led to displacement  of  crime  to  private  space.</strong></p>
+<h3 id="Paper-List-That-I-Want-To-Read-After-Reading-This-Study"><a href="#Paper-List-That-I-Want-To-Read-After-Reading-This-Study" class="headerlink" title="Paper List That I Want To Read After Reading This Study"></a>Paper List That I Want To Read After Reading This Study</h3><p>1、<em>Bernasco, W ., Ruiter, S. &amp; Block, R. <strong>Do street robbery location choices vary over time of day or day of week? A test in Chicago.</strong></em> </p>
+<p><em>J. Res Crime. Delinq. 54, 244–275 (2017).</em></p>
+<p>2、<em>Mohler, G. et al. <strong>Impact of social distancing during COVID-19 pandemic on crime in Los Angeles and Indianapolis.</strong></em></p>
+<p> <em>J. Crim. Justice 68, 101692 (2020).</em></p>
+]]></content>
+      <categories>
+        <category>Paper</category>
+        <category>Law of time and space</category>
+      </categories>
+      <tags>
+        <tag>COVID-19</tag>
+        <tag>Stay-at-home restrictions</tag>
+        <tag>Crime</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>After Watching Video About Polar Codes</title>
+    <url>/2021/11/03/After-watching-video-about-Polar-Codes/</url>
+    <content><![CDATA[<p>今天把昨天在b站上标题为”5G，华为，土耳其——我花了两个月，搞懂了5G背后的秘密”这个视频重新完整的看了一遍。看完之后，结合自己刚开始两个月的研究生生活，有一些感触，在此进行记录。</p>
+<p>附上视频链接：</p>
+<p>(<a href="https://www.bilibili.com/video/BV1fq4y1g7hq?spm_id_from=333.1007.top_right_bar_window_history.content.click">https://www.bilibili.com/video/BV1fq4y1g7hq?spm_id_from=333.1007.top_right_bar_window_history.content.click</a>)</p>
+<span id="more"></span>
+<h3 id="颁奖典礼"><a href="#颁奖典礼" class="headerlink" title="颁奖典礼"></a>颁奖典礼</h3><hr>
+<p>视频开端讲述了华为总裁任正非为Arikan——the father of Polor Code颁发代表最高荣誉的特别奖奖牌。</p>
+<p>极化码——一种新的5G技术，是令华为成为5G时代的领跑者极其重要的部分。</p>
+<h3 id="如何度量信息"><a href="#如何度量信息" class="headerlink" title="如何度量信息"></a>如何度量信息</h3><hr>
+<p>香农在通信的数学理论中第一次量化了信息，他认为信息的本质是消除信息的不确定性，利用概率的不确定性度量信息，这个不确定度称为：信息熵。</p>
+<h3 id="什么是信道容量"><a href="#什么是信道容量" class="headerlink" title="什么是信道容量"></a>什么是信道容量</h3><hr>
+<p>信道容量（最大互信息）是Arikan想要达到的目标，信道容量是指单位时间内能传输的信息量，是通信在理论上存在的上限。</p>
+<h3 id="什么是编码"><a href="#什么是编码" class="headerlink" title="什么是编码"></a>什么是编码</h3><hr>
+<p>为了减弱噪声，对信道进行编码，让信息以更好的方式进行传输。</p>
+<h3 id="香农极限"><a href="#香农极限" class="headerlink" title="香农极限"></a>香农极限</h3><hr>
+<p>通过正确编码有可能让该信道以速率C传达信息，而错误频率或者疑义度可以小到让人满意，而这一表述对于任何大于C的速率都是不成立的。速率达于C将会是信息有更多的不确定性，因此引出了信息论的中心问题——有噪信道编码定理。</p>
+<h3 id="个人的思考"><a href="#个人的思考" class="headerlink" title="个人的思考"></a>个人的思考</h3><hr>
+<p>作为一个普通人，如何对展开对陌生知识的学习？</p>
+<ul>
+<li>寻找有价值的科普资料</li>
+<li>如果没有，从头开始——直接寻找该知识/理论的提出者，从他的相关文献内容中找到你所要学习知识的根源。</li>
+<li>当你开始读其文献，发现依然无法理解时，尝试从文献的引文入手，深挖其理论根基和来源。</li>
+</ul>
+<p><img src="Arikanreply.png" alt=""></p>
+<p>我们所称赞的，往往只是别人的平淡生活，但伟大往往诞生于平淡之中。</p>
+]]></content>
+      <categories>
+        <category>Thoughts</category>
+      </categories>
+      <tags>
+        <tag>Thoughts</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Crime Feeds on Legal Activities: Daily Mobility Flows Help to Explain Thieves&#39; Target Location Choices</title>
+    <url>/2021/10/28/Crime-Feeds-on-Legal-Activities-Daily-Mobility-Flows-Help-to-Explain-Thieves-Target-Location-Choices/</url>
+    <content><![CDATA[<p><strong>Crime Feeds on Legal Activities: Daily Mobility Flows Help to Explain Thieves’ Target Location Choices</strong></p>
+<p><em>Guangwen Song1 · Wim Bernasco2,3 · Lin Liu1,4 · Luzi Xiao1 · Suhong Zhou5 ·  Weiwei Liao5</em></p>
+<p>The Author(s) 2019</p>
+<span id="more"></span>
+<p>[toc]</p>
+<h1 id="Study-Area"><a href="#Study-Area" class="headerlink" title="Study Area"></a><strong>Study Area</strong></h1><p>​        The data for the present research originates from <u>ZG City</u>, a city located in southeast China. ZG City has a total population in excess of 5 million, and is one of the largest and most developed cities of China.The study area is located in the central part of ZG City, and covers more than 3000 kilometers . </p>
+<h1 id="Theory"><a href="#Theory" class="headerlink" title="Theory"></a><strong>Theory</strong></h1><h3 id="Crime-Location-Choice"><a href="#Crime-Location-Choice" class="headerlink" title="Crime Location Choice"></a><em>Crime Location Choice</em></h3><p>​        Crime location choice refers to an offender’s choice of where to perpetrate a crime (two  recent reviews are Bernasco and Ruiter 2014; Ruiter 2017).</p>
+<h3 id="Distance-and-Awareness-Space"><a href="#Distance-and-Awareness-Space" class="headerlink" title="Distance and Awareness Space"></a><em>Distance and Awareness Space</em></h3><p>​        Of all factors that affect crime location choices, distance is by far the most influential. Distance might also be considered a proxy measure of the offenders’ awareness space.</p>
+<h3 id="Crime-Generators"><a href="#Crime-Generators" class="headerlink" title="Crime Generators"></a><em>Crime Generators</em></h3><p>​        Crime generators and crime attractors are concepts in crime pattern theory that potentially play an important role in crime location choices. </p>
+<h3 id="Social-Disorganization"><a href="#Social-Disorganization" class="headerlink" title="Social Disorganization"></a><em>Social Disorganization</em></h3><p>​        Social disorganization has been identified as a community attribute that can apply to geographic areas of various sizes (e.g. street blocks, neighborhoods or districts). </p>
+<h3 id="Mobility-Flows"><a href="#Mobility-Flows" class="headerlink" title="Mobility Flows"></a><em>Mobility Flows</em></h3><p>​        According to opportunity theories of crime, the mobility of offenders is conditioned by the  mobility of the general population (Cohen and Felson 1979).</p>
+<h1 id="Data-and-Methods"><a href="#Data-and-Methods" class="headerlink" title="Data and Methods"></a><strong>Data and Methods</strong></h1><h3 id="Crime-Data-Theft-from-the-Person"><a href="#Crime-Data-Theft-from-the-Person" class="headerlink" title="Crime Data: Theft from the Person"></a><em>Crime Data: Theft from the Person</em></h3><p>​        Registered crime data were obtained from the police authorities of ZG City. All crime data  are recorded incidents of theft from the person (TFP) in which at least one offender was  arrested and prosecuted. It includes the date of the incident and the home addresses of the  offenders and the location where the offence was committed.</p>
+<h3 id="Crime-Generators-1"><a href="#Crime-Generators-1" class="headerlink" title="Crime Generators"></a><em>Crime Generators</em></h3><p>​        The list of potential crime generators is sheer endless, but included are those facilities  that seem most relevant based on the extant literature and taking into account the Chinese  context: the numbers of primary schools, middle schools, hospitals, basic stores, markets,  supermarkets, restaurants, cinemas, bars, banks, subway stations and bus stops per census unit. </p>
+<h3 id="Mobile-Phone-Data"><a href="#Mobile-Phone-Data" class="headerlink" title="Mobile Phone Data"></a><em>Mobile Phone Data</em></h3><p>​        To measure population mobility across the study area, we use the tracked data of mobile  phone users.</p>
+<h3 id="Calculation-of-Mobility-Streams"><a href="#Calculation-of-Mobility-Streams" class="headerlink" title="Calculation of Mobility Streams"></a><em>Calculation of Mobility Streams</em></h3><p>​        The resulting information was subsequently used to construct a measure of the volume of  mobility flows between all pairs of census units. The measure is defined as the number of  unique mobile phone users that visited both census units on the same day. Mobility flows  were calculated by summing phone users over all pairs of census units.</p>
+<h1 id="Models"><a href="#Models" class="headerlink" title="Models"></a><strong>Models</strong></h1><p>​        Following the large majority of previous location choice studies, we used the conditional  logit model to analyze the role of distance, crime generators and daily population mobility  in the offenders’ choice of locations for committing TFP. </p>
+<p>​        To  judge relative fit between multiple models, we use MdFadden’s Pseudo R2 , the Akaike’s  information criterion (AIC) and the Bayesian information criterion (BIC) as benchmarks.</p>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a><strong>Conclusion</strong></h1><p>​        The mobility flow measure is a useful addition to the estimated effects of distance and crime generators. It predicts the locations of thefts much better than the presence  of crime generators does. However, it does not replace the role of distance, suggesting that  offenders are more spatially restricted than others, or that even within their activity spaces  they prefer to offend near their homes.</p>
+]]></content>
+      <categories>
+        <category>Paper</category>
+        <category>Mechanism research</category>
+      </categories>
+      <tags>
+        <tag>Crime location choice</tag>
+        <tag>Theft from the person</tag>
+        <tag>Mobility</tag>
+        <tag>Routine activities</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Golang Web</title>
+    <url>/2021/11/22/Golang-Web/</url>
+    <content><![CDATA[<p>七天用Go实现Web框架—复现</p>
+<span id="more"></span>
+<h3 id="设计一个Web框架"><a href="#设计一个Web框架" class="headerlink" title="设计一个Web框架"></a>设计一个Web框架</h3><p>​    在实现Web应用的时候为什么要使用框架（Beego、Gin、Iris），为何不直接用标准库实现。</p>
+<p>​    先看看标准库<strong>net/http</strong>如何处理一个请求。</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    http.HandleFunc(<span class="string">&quot;/&quot;</span>, handler)</span><br><span class="line">    http.HandleFunc(<span class="string">&quot;/count&quot;</span>, counter)</span><br><span class="line">    log.Fatal(http.ListenAndServe(<span class="string">&quot;localhost:8000&quot;</span>, <span class="literal">nil</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">handler</span><span class="params">(w http.ResponseWriter, r *http.Request)</span></span> &#123;</span><br><span class="line">    fmt.Fprintf(w, <span class="string">&quot;URL.Path = %q\n&quot;</span>, r.URL.Path)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>net/http</strong>提供了基础的Web功能，即监听端口、映射静态路由、解析HTTP报文等。</p>
+<p>然而Web开发中简单的需求并不支持，需要手工实现。</p>
+<ul>
+<li>动态路由：例如webPages/:name，webPages/*这类规则。</li>
+<li>鉴权：指验证用户是否拥有访问系统的权力。</li>
+<li>模板：统一简化的HTML机制</li>
+<li>…</li>
+</ul>
+<p>基于Python著名的Web框架bottle，通过这个框架提供的特性，有助于理解框架的核心能力。</p>
+<ul>
+<li>路由（Routing）：将请求映射到函数，支持动态路由。</li>
+<li>模板（Templates）：使用内置模板引擎提供模板渲染机制。</li>
+<li>工具集（Utilites）：提供对cookies，headers等的处理机制。</li>
+<li>插件（Plusgin）：</li>
+<li>…</li>
+</ul>
+<h3 id="Gee框架"><a href="#Gee框架" class="headerlink" title="Gee框架"></a>Gee框架</h3><p><strong>Gee</strong>框架来源于geektutu.com的前三个字母，作者第一次接触Go语言的Web框架是<strong>Gin</strong>，Gin的代码总共是14K，期中测试代码9K，实际代码量5K。Gin框架与Python中的<strong>Flask</strong>框架很相似。</p>
+<h3 id="Web框架Gee—第一天：HTTP基础"><a href="#Web框架Gee—第一天：HTTP基础" class="headerlink" title="Web框架Gee—第一天：HTTP基础"></a>Web框架Gee—第一天：HTTP基础</h3><ul>
+<li>简单学习<strong>net/http</strong>库以及http.Handler接口。</li>
+<li>搭建<strong>Gee</strong>框架的雏形，代码约50行。</li>
+</ul>
+<h4 id="标准库启动Web服务"><a href="#标准库启动Web服务" class="headerlink" title="标准库启动Web服务"></a>标准库启动Web服务</h4><p>通过Go语言内置的net/http库，封装了HTTP网络编程的基础接口，Gee-Web框架便是基于net/http。</p>
+<p><strong>day1-http-base/base1/main.go</strong></p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;log&quot;</span></span><br><span class="line">	<span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// header echoes r.URL.Path</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">indexHandler</span><span class="params">(w http.ResponseWriter, req *http.Request)</span></span>&#123;</span><br><span class="line">	fmt.Fprintf(w, <span class="string">&quot;URL.Path = %q\n&quot;</span>, req.URL.Path)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// headler echoes r.URL.Header</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">helloHandler</span><span class="params">(w http.ResponseWriter, req *http.Request)</span></span>  &#123;</span><br><span class="line">	<span class="keyword">for</span> key, value := <span class="keyword">range</span> req.Header&#123;</span><br><span class="line">		fmt.Fprintf(w, <span class="string">&quot;Header[%q] = %q\n&quot;</span>, key, value)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	http.HandleFunc(<span class="string">&quot;/&quot;</span>, indexHandler)</span><br><span class="line">	http.HandleFunc(<span class="string">&quot;/hello&quot;</span>, helloHandler)</span><br><span class="line">	log.Fatal(http.ListenAndServe(<span class="string">&quot;:9999&quot;</span>, <span class="literal">nil</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码设置了两个路由，/和/hello， 分别绑定<em>indexHandler</em>和<em>helloHandler</em>，根据不同的HTTP请求会调用不同的处理函数。访问/，响应式URL.Path = /，而/hello的响应则是请求头(header)中的键值对信息。</p>
+<p><strong>PS: 先编译运行main.go文件，再在控制台使用curl工具进行测试</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ curl http://localhost:9999/</span><br><span class="line">URL.Path = &quot;/&quot;</span><br><span class="line">$ curl http://localhost:9999/hello</span><br><span class="line">Header[&quot;Accept&quot;] = [&quot;*/*&quot;]</span><br><span class="line">Header[&quot;User-Agent&quot;] = [&quot;curl/7.54.0&quot;]</span><br></pre></td></tr></table></figure>
+<p><em>main</em>函数的最后一行，用来启动Web服务，第一个参数是地址，:9999表示在9999端口监听。第二个参数代表处理所有的HTTP请求的实例，nil代表使用标准库中的实例处理。</p>
+<h4 id="实现http-Handler接口"><a href="#实现http-Handler接口" class="headerlink" title="实现http.Handler接口"></a>实现http.Handler接口</h4><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> http</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Handler <span class="keyword">interface</span> &#123;</span><br><span class="line">    ServeHTTP(w ResponseWriter, r *Request)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">ListenAndServe</span><span class="params">(address <span class="keyword">string</span>, h Handler)</span> <span class="title">error</span></span></span><br></pre></td></tr></table></figure>
+<p>通过net/http源码可以发现，Handler是一个接口，需要实现方法<em>ServeHTTP</em>,只要传入任何实现了ServeHTTP接口的实例，所有的HTTP请求都将交给该实例处理</p>
+<p><strong>day1-http-base/base2/main.go</strong></p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;fmt&quot;</span></span><br><span class="line">   <span class="string">&quot;log&quot;</span></span><br><span class="line">   <span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Engine <span class="keyword">struct</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(engine *Engine)</span> <span class="title">ServeHTTP</span><span class="params">(w http.ResponseWriter, req *http.Request)</span></span>&#123;</span><br><span class="line">   <span class="keyword">switch</span>  req.URL.Path &#123;</span><br><span class="line">   <span class="keyword">case</span> <span class="string">&quot;/&quot;</span>:</span><br><span class="line">      fmt.Fprintf(w, <span class="string">&quot;URL.Path = %q\n&quot;</span>, req.URL.Path)</span><br><span class="line">   <span class="keyword">case</span> <span class="string">&quot;/hello&quot;</span>:</span><br><span class="line">      <span class="keyword">for</span> key, value := <span class="keyword">range</span> req.Header&#123;</span><br><span class="line">         fmt.Fprintf(w, <span class="string">&quot;Header[%q] = %q\n&quot;</span>, key, value)</span><br><span class="line">      &#125;</span><br><span class="line">   <span class="keyword">default</span>:</span><br><span class="line">      fmt.Fprintf(w, <span class="string">&quot;404 NOT FOUND: %s\n&quot;</span>, req.URL)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">   engine := <span class="built_in">new</span>(Engine)</span><br><span class="line">   log.Fatal(http.ListenAndServe(<span class="string">&quot;:9999&quot;</span>, engine))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>这里定义了一个空的结构体Engine，实现了方法ServeHTTP。这个方法有两个参数，第二个参数是<strong><em>Request</em></strong>，该对象包含了该HTTP请求的所有信息，例如请求地址、Header和Body等信息；第一个参数是 <strong><em>ResponseWriter</em></strong> ，利用 <strong><em>ResponseWriter</em></strong> 可以构造针对该请求的响应。</li>
+<li>在<em>main</em>函数中，给<em>ListenAndServe</em>方法的第二个参数传入了刚才创建的engine实例。<strong>至此，实现了Web框架的第一步，将所有的HTTP请求转向了我们自己的处理逻辑。</strong>实现Engine之前，通过调用<strong><em>http.HandleFunc</em></strong>实现了路由和Handler的映射，也就是只能针对具体的路由来写处理逻辑。例如/hello。但是实现Engine之后，我们拦截了所有的HTTP请求，有了统一的控制入口。在这里可以自由定义路由映射的规则，也可以统一添加一些处理逻辑，例如日志、异常处理等等。</li>
+</ul>
+<h4 id="Gee框架的雏形"><a href="#Gee框架的雏形" class="headerlink" title="Gee框架的雏形"></a>Gee框架的雏形</h4><p>通过重新组织上面的代码，搭建出整个框架的雏形。</p>
+<p>代码目录结构为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gee/</span><br><span class="line">  |--gee.go</span><br><span class="line">  |--go.mod</span><br><span class="line">main.go</span><br><span class="line">go.mod</span><br></pre></td></tr></table></figure>
+<p><strong>go.mod</strong></p>
+<p><strong>day1-http-base/base3/go.mod</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">module base3</span><br><span class="line"></span><br><span class="line">go 1.17</span><br><span class="line"></span><br><span class="line">require gee v0.0.0</span><br><span class="line"></span><br><span class="line">replace gee =&gt; ./gee</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在go,mod中使用replace将gee指向./gee</li>
+</ul>
+<p><strong>main.go</strong></p>
+<p><strong>day1-http-base/base3/main.go</strong></p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;fmt&quot;</span></span><br><span class="line">   <span class="string">&quot;gee&quot;</span></span><br><span class="line">   <span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">   r := gee.New()</span><br><span class="line">   r.GET(<span class="string">&quot;/&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(w http.ResponseWriter, req *http.Request)</span></span> &#123;</span><br><span class="line">      fmt.Fprintf(w, <span class="string">&quot;URL.Path = %q\n&quot;</span>, req.URL.Path)</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">   r.GET(<span class="string">&quot;/hello&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(w http.ResponseWriter, req *http.Request)</span></span> &#123;</span><br><span class="line">      <span class="keyword">for</span> key, value := <span class="keyword">range</span> req.Header&#123;</span><br><span class="line">         fmt.Fprintf(w, <span class="string">&quot;Header[%q] = %q\n&quot;</span>, key, value)</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">   r.Run(<span class="string">&quot;:9999&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>Gee</code>框架的设计以及API均参考了<code>Gin</code>。使用<code>New()</code>创建 gee 的实例，使用 <code>GET()</code>方法添加路由，最后使用<code>Run()</code>启动Web服务。这里的路由，只是静态路由，不支持<code>/hello/:name</code>这样的动态路由。</p>
+<p><strong>gee.go</strong></p>
+<p><strong>day1-http-base/base3/gee/gee.go</strong></p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> gee</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;fmt&quot;</span></span><br><span class="line">   <span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// HandlerFunc defines the request handler used by gee</span></span><br><span class="line"><span class="keyword">type</span> HandlerFunc <span class="function"><span class="keyword">func</span><span class="params">(http.ResponseWriter, *http.Request)</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Engine implement the interface of ServerHTTP</span></span><br><span class="line"><span class="keyword">type</span> Engine <span class="keyword">struct</span> &#123;</span><br><span class="line">   <span class="comment">// 建立路由映射表</span></span><br><span class="line">   router <span class="keyword">map</span>[<span class="keyword">string</span>]HandlerFunc</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// New is the constructor of gee.Engine</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">New</span><span class="params">()</span> *<span class="title">Engine</span></span> &#123;</span><br><span class="line">   <span class="keyword">return</span> &amp;Engine&#123;router: <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">string</span>]HandlerFunc)&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(engine *Engine)</span> <span class="title">addRoute</span><span class="params">(method <span class="keyword">string</span>, pattern <span class="keyword">string</span>, handler HandlerFunc)</span></span> &#123;</span><br><span class="line">   key := method + <span class="string">&quot;-&quot;</span> + pattern</span><br><span class="line">   engine.router[key] = handler</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// GET defines the method to add GET request</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(engine *Engine)</span> <span class="title">GET</span><span class="params">(pattern <span class="keyword">string</span>, handler HandlerFunc)</span></span> &#123;</span><br><span class="line">   engine.addRoute(<span class="string">&quot;Get&quot;</span>, pattern, handler)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// POST defines the method to add POST request</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(engine *Engine)</span> <span class="title">POST</span><span class="params">(pattern <span class="keyword">string</span>, handler HandlerFunc)</span></span> &#123;</span><br><span class="line">   engine.addRoute(<span class="string">&quot;POST&quot;</span>, pattern, handler)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Run defines the method to start a http server</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(engine *Engine)</span> <span class="title">Run</span><span class="params">(addr <span class="keyword">string</span>)</span> <span class="params">(err error)</span></span> &#123;</span><br><span class="line">   <span class="keyword">return</span> http.ListenAndServe(addr, engine)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(engine *Engine)</span> <span class="title">ServeHTTP</span><span class="params">(w http.ResponseWriter, req *http.Request)</span></span>  &#123;</span><br><span class="line">   key := req.Method + <span class="string">&quot;-&quot;</span> + req.URL.Path</span><br><span class="line">   <span class="keyword">if</span> handler, ok := engine.router[key]; ok&#123;</span><br><span class="line">      handler(w, req)</span><br><span class="line">   &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      w.WriteHeader(http.StatusNotFound)</span><br><span class="line">      fmt.Fprintf(w, <span class="string">&quot;404 NOT FOUND: %s \n&quot;</span>, req.URL)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>gee.go的实现：</p>
+<ul>
+<li>首先定义了类型<code>HandlerFunc</code>，这是提供给框架用户的，用来定义路由映射的处理方法。我们在<code>Engine</code>中，添加了一张路由映射表<code>router</code>，key 由请求方法和静态路由地址构成，例如<code>GET-/</code>、<code>GET-/hello</code>、<code>POST-/hello</code>，这样针对相同的路由，如果请求方法不同,可以映射不同的处理方法(Handler)，value 是用户映射的处理方法。</li>
+<li>当用户调用<code>(*Engine).GET()</code>方法时，会将路由和处理方法注册到映射表 <em>router</em> 中，<code>(*Engine).Run()</code>方法，是 <em>ListenAndServe</em> 的包装。</li>
+<li><code>Engine</code>实现的 <em>ServeHTTP</em> 方法的作用就是，解析请求的路径，查找路由映射表，如果查到就执行注册的处理方法；如果查不到，就返回 <em>404 NOT FOUND</em> 。</li>
+</ul>
+<p>至此，整个<code>Gee</code>框架的原型已经出来了。实现了路由映射表，提供了用户注册静态路由的方法，包装了启动服务的函数。当然，到目前为止，我们还没有实现比<code>net/http</code>标准库更强大的能力，后面可以将动态路由、中间件等功能添加上去了。</p>
+<h3 id="Web框架Gee—第二天：上下文"><a href="#Web框架Gee—第二天：上下文" class="headerlink" title="Web框架Gee—第二天：上下文"></a>Web框架Gee—第二天：上下文</h3><p>任务实现：</p>
+<ul>
+<li>将<code>路由(router)</code>独立出来，方便之后进行功能扩充。</li>
+<li>设计<code>上下文（Context）</code>，封装Request和Response，提供对JSON、HTML等返回类型的支持。</li>
+<li>框架代码新增约90行</li>
+</ul>
+<h4 id="设计Context"><a href="#设计Context" class="headerlink" title="设计Context"></a>设计Context</h4><p><strong>必要性</strong></p>
+<ol>
+<li>Web服务，主要是根据请求<code>*http.Request</code>，构造响应<code>http.ResponseWriter</code>。但由于这两个对象提供的接口粒度太小，要想构造完整的响应，需要考虑信息头（Header）和消息体（Body），而Header又包含了状态码（StatusCode）和消息类型（ContentType）等几乎每次请求都需要设置的信息。</li>
+<li>针对使用场景，封装<code>*http.Request</code>和<code>http.ResponseWriter</code>的方法，简化相关接口的调用，只是设计Context的原因之一，框架需要支撑额外的功能。例如，将来解析动态路由<code>/webPage:name</code>，参数<code>:name</code>需要放在哪里，再比如框架需要支持中间件，中间件产生的信息存储在何处？Context随着每一个请求的出现而产生，请求的结束而销毁，当前请求强相关的信息都有Context承载。</li>
+</ol>
+<p><strong>具体实现</strong></p>
+<p><strong>day2-context/gee/context.go</strong></p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> gee</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;encoding/json&quot;</span></span><br><span class="line">   <span class="string">&quot;fmt&quot;</span></span><br><span class="line">   <span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> H <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">interface</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Context <span class="keyword">struct</span> &#123;</span><br><span class="line">   <span class="comment">// origin objects</span></span><br><span class="line">   Writer http.ResponseWriter</span><br><span class="line">   Req    *http.Request</span><br><span class="line">   <span class="comment">// request info</span></span><br><span class="line">   Path   <span class="keyword">string</span></span><br><span class="line">   Method <span class="keyword">string</span></span><br><span class="line">   <span class="comment">// response info</span></span><br><span class="line">   StatusCode <span class="keyword">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">newContext</span><span class="params">(w http.ResponseWriter, req *http.Request)</span> *<span class="title">Context</span></span> &#123;</span><br><span class="line">   <span class="keyword">return</span> &amp;Context&#123;</span><br><span class="line">      Writer: w,</span><br><span class="line">      Req:    req,</span><br><span class="line">      Path:   req.URL.Path,</span><br><span class="line">      Method: req.Method,</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *Context)</span> <span class="title">PostForm</span><span class="params">(key <span class="keyword">string</span>)</span> <span class="title">string</span></span> &#123;</span><br><span class="line">   <span class="keyword">return</span> c.Req.FormValue(key)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *Context)</span> <span class="title">Query</span><span class="params">(key <span class="keyword">string</span>)</span> <span class="title">string</span></span> &#123;</span><br><span class="line">   <span class="keyword">return</span> c.Req.URL.Query().Get(key)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *Context)</span> <span class="title">Status</span><span class="params">(code <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">   c.StatusCode = code</span><br><span class="line">   c.Writer.WriteHeader(code)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *Context)</span> <span class="title">SetHeader</span><span class="params">(key <span class="keyword">string</span>, value <span class="keyword">string</span>)</span></span> &#123;</span><br><span class="line">   c.Writer.Header().Set(key, value)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *Context)</span> <span class="title">String</span><span class="params">(code <span class="keyword">int</span>, format <span class="keyword">string</span>, values ...<span class="keyword">interface</span>&#123;&#125;)</span></span> &#123;</span><br><span class="line">   c.SetHeader(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;text/plain&quot;</span>)</span><br><span class="line">   c.Status(code)</span><br><span class="line">   c.Writer.Write([]<span class="keyword">byte</span>(fmt.Sprintf(format, values...)))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *Context)</span> <span class="title">JSON</span><span class="params">(code <span class="keyword">int</span>, obj <span class="keyword">interface</span>&#123;&#125;)</span></span> &#123;</span><br><span class="line">   c.SetHeader(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;application/json&quot;</span>)</span><br><span class="line">   c.Status(code)</span><br><span class="line">   encoder := json.NewEncoder(c.Writer)</span><br><span class="line">   <span class="keyword">if</span> err := encoder.Encode(obj); err != <span class="literal">nil</span> &#123;</span><br><span class="line">      http.Error(c.Writer, err.Error(), <span class="number">500</span>)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *Context)</span> <span class="title">Data</span><span class="params">(code <span class="keyword">int</span>, data []<span class="keyword">byte</span>)</span></span> &#123;</span><br><span class="line">   c.Status(code)</span><br><span class="line">   c.Writer.Write(data)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *Context)</span> <span class="title">HTML</span><span class="params">(code <span class="keyword">int</span>, html <span class="keyword">string</span>)</span></span> &#123;</span><br><span class="line">   c.SetHeader(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;text/html&quot;</span>)</span><br><span class="line">   c.Status(code)</span><br><span class="line">   c.Writer.Write([]<span class="keyword">byte</span>(html))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>代码开头给<code>map[string]interface&#123;&#125;</code>起了别名<code>gee.h</code>，构建JSON数据时，会更简洁。</li>
+</ul>
+<p><strong>JSON数据封装前：</strong></p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">obj = <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">interface</span>&#123;&#125;&#123;</span><br><span class="line">    <span class="string">&quot;name&quot;</span>: <span class="string">&quot;geektutu&quot;</span>,</span><br><span class="line">    <span class="string">&quot;password&quot;</span>: <span class="string">&quot;1234&quot;</span>,</span><br><span class="line">&#125;</span><br><span class="line">w.Header().Set(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;application/json&quot;</span>)</span><br><span class="line">w.WriteHeader(http.StatusOK)</span><br><span class="line">encoder := json.NewEncoder(w)</span><br><span class="line"><span class="keyword">if</span> err := encoder.Encode(obj); err != <span class="literal">nil</span> &#123;</span><br><span class="line">    http.Error(w, err.Error(), <span class="number">500</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>封装后：</strong></p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">c.JSON(http.StatusOK, gee.H&#123;</span><br><span class="line">   <span class="string">&quot;username&quot;</span>: c.PostForm(<span class="string">&quot;username&quot;</span>),</span><br><span class="line">   <span class="string">&quot;password&quot;</span>: c.PostForm(<span class="string">&quot;password&quot;</span>),</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Context</code>目前只包含了<code>http.ResponseWriter</code>和<code>*http.Request</code>，另外提供对Method和Path这两个常用属性的直接访问。</li>
+<li>提供了访问Query和PostForm参数的方法。</li>
+<li>提供了快速构造String/Data/JSON/HTML响应的方法。</li>
+</ul>
+<h4 id="路由-Router"><a href="#路由-Router" class="headerlink" title="路由(Router)"></a>路由(Router)</h4><p>将路由相关方法和结构提取出来，存储在新文件<code>router.go</code>，方便后续进行功能扩充，例如提供动态路由的支持。router的handle方法做了细微的调整，handle的参数变成了Context。</p>
+<p><strong>day2-context/gee/router.go</strong></p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> gee</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;log&quot;</span></span><br><span class="line">   <span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> router <span class="keyword">struct</span> &#123;</span><br><span class="line">   handlers <span class="keyword">map</span>[<span class="keyword">string</span>]HandlerFunc</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">newRouter</span><span class="params">()</span> *<span class="title">router</span></span> &#123;</span><br><span class="line">   <span class="keyword">return</span> &amp;router&#123;handlers: <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">string</span>]HandlerFunc)&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(r *router)</span> <span class="title">addRoute</span><span class="params">(method <span class="keyword">string</span>, pattern <span class="keyword">string</span>, handler HandlerFunc)</span></span> &#123;</span><br><span class="line">   log.Printf(<span class="string">&quot;Route %4s - %s&quot;</span>, method, pattern)</span><br><span class="line">   key := method + <span class="string">&quot;-&quot;</span> + pattern</span><br><span class="line">   r.handlers[key] = handler</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(r *router)</span> <span class="title">handle</span><span class="params">(c *Context)</span></span> &#123;</span><br><span class="line">   key := c.Method + <span class="string">&quot;-&quot;</span> + c.Path</span><br><span class="line">   <span class="keyword">if</span> handler, ok := r.handlers[key]; ok &#123;</span><br><span class="line">      handler(c)</span><br><span class="line">   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      c.String(http.StatusNotFound, <span class="string">&quot;404 NOT FOUND: %s\n&quot;</span>, c.Path)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="框架入口"><a href="#框架入口" class="headerlink" title="框架入口"></a>框架入口</h4><p><strong>day2-context/gee/gee.go</strong></p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> gee</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// HandlerFunc defines the request handler used by gee</span></span><br><span class="line"><span class="keyword">type</span> HandlerFunc <span class="function"><span class="keyword">func</span><span class="params">(*Context)</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Engine implement the interface of ServeHTTP</span></span><br><span class="line"><span class="keyword">type</span> Engine <span class="keyword">struct</span> &#123;</span><br><span class="line">   router *router</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// New is the constructor of gee.Engine</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">New</span><span class="params">()</span> *<span class="title">Engine</span></span> &#123;</span><br><span class="line">   <span class="keyword">return</span> &amp;Engine&#123;router: newRouter()&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(engine *Engine)</span> <span class="title">addRoute</span><span class="params">(method <span class="keyword">string</span>, pattern <span class="keyword">string</span>, handler HandlerFunc)</span></span> &#123;</span><br><span class="line">   engine.router.addRoute(method, pattern, handler)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// GET defines the method to add GET request</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(engine *Engine)</span> <span class="title">GET</span><span class="params">(pattern <span class="keyword">string</span>, handler HandlerFunc)</span></span> &#123;</span><br><span class="line">   engine.addRoute(<span class="string">&quot;GET&quot;</span>, pattern, handler)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// POST defines the method to add POST request</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(engine *Engine)</span> <span class="title">POST</span><span class="params">(pattern <span class="keyword">string</span>, handler HandlerFunc)</span></span> &#123;</span><br><span class="line">   engine.addRoute(<span class="string">&quot;POST&quot;</span>, pattern, handler)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Run defines the method to start a http server</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(engine *Engine)</span> <span class="title">Run</span><span class="params">(addr <span class="keyword">string</span>)</span> <span class="params">(err error)</span></span> &#123;</span><br><span class="line">   <span class="keyword">return</span> http.ListenAndServe(addr, engine)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(engine *Engine)</span> <span class="title">ServeHTTP</span><span class="params">(w http.ResponseWriter, req *http.Request)</span></span> &#123;</span><br><span class="line">   c := newContext(w, req)</span><br><span class="line">   engine.router.handle(c)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>将<code>router</code>相关代码独立后，<code>gee.go</code>简单了，并且通过实现ServerHTTP接口，接管了所有HTTP请求。调用router.handle之前构造了Context对象。</p>
+<p><strong>day2-context/main.go</strong></p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;gee&quot;</span></span><br><span class="line">   <span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   r := gee.New()</span><br><span class="line">   r.GET(<span class="string">&quot;/&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(c *gee.Context)</span></span> &#123;</span><br><span class="line">      c.HTML(http.StatusOK, <span class="string">&quot;&lt;h1&gt;Hello Gee&lt;/h1&gt;&quot;</span>)</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">   r.GET(<span class="string">&quot;/hello&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(c *gee.Context)</span></span> &#123;</span><br><span class="line">      c.String(http.StatusOK, <span class="string">&quot;hello %s, you&#x27;re at %s\n&quot;</span>, c.Query(<span class="string">&quot;name&quot;</span>), c.Path)</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">   r.POST(<span class="string">&quot;/login&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(c *gee.Context)</span></span> &#123;</span><br><span class="line">      c.JSON(http.StatusOK, gee.H&#123;</span><br><span class="line">         <span class="string">&quot;username&quot;</span>: c.PostForm(<span class="string">&quot;username&quot;</span>),</span><br><span class="line">         <span class="string">&quot;password&quot;</span>: c.PostForm(<span class="string">&quot;password&quot;</span>),</span><br><span class="line">      &#125;)</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">   r.Run(<span class="string">&quot;:9999&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>借助curl，展示下今天的成果！</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> curl -i http://localhost:9999/</span></span><br><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Date: Date: Wed, 24 Nov 2021 09:33:46 GMT</span><br><span class="line">Content-Length: 18</span><br><span class="line">Content-Type: text/html; charset=utf-8</span><br><span class="line">&lt;h1&gt;Hello Nick&lt;/h1&gt;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> curl <span class="string">&quot;http://localhost:9999/hello?name=X.Zhang&quot;</span></span></span><br><span class="line">hello X.Zhang, you&#x27;re at /hello</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> curl -X POST <span class="string">&quot;http://localhost:9999/login&quot;</span> -d <span class="string">&quot;username=geektutu&amp;password=1234&quot;</span></span></span><br><span class="line">&#123;&quot;password&quot;:&quot;6666&quot;,&quot;username&quot;:&quot;zhangxuewei&quot;&#125;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> curl <span class="string">&quot;http://localhost:9999/xxx&quot;</span></span></span><br><span class="line">404 NOT FOUND: /xxx</span><br></pre></td></tr></table></figure>
+<p>PS: 在Goland内使用控制台运行会出错显示找不到X匹配的参数</p>
+<p>解决方案: 使用Windows自带cmd运行即可</p>
+]]></content>
+      <categories>
+        <category>Go</category>
+      </categories>
+      <tags>
+        <tag>Go</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Go language</title>
+    <url>/2021/11/13/Go-language/</url>
+    <content><![CDATA[<p>Go语言的特性：</p>
+<ul>
+<li>简化问题，利于学习</li>
+<li>内存管理，简介语法，易于使用</li>
+<li>快速编译，高效并发</li>
+<li>高效执行</li>
+<li>并发支持，轻松驾驭</li>
+<li>标准类库，规范统一</li>
+<li>易于部署</li>
+<li>文档全面</li>
+<li>免费开源</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Go</category>
+      </categories>
+      <tags>
+        <tag>Go</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo - How to hexo blog and submit it to github.</title>
+    <url>/2021/10/25/How-to-hexo-blog/</url>
+    <content><![CDATA[<p>An article about how to use hexo to write a blog !</p>
+<span id="more"></span>
+<h1 id="Make-a-new-document"><a href="#Make-a-new-document" class="headerlink" title="Make a new document"></a>Make a new document</h1><p>If our file’s name is “hello hexo”, you can type the following command in <strong>Git GUI</strong> to create  a new file.</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$ hexo new &quot;hello hexo&quot;</span><br></pre></td></tr></table></figure>
+<p>The result of the command is to create a new “hello-hexo.md” file under the <strong>PATH:</strong> ./hexo/sourse/_post.</p>
+<p>Then we can start our writing!</p>
+<h1 id="Document-format"><a href="#Document-format" class="headerlink" title="Document format"></a>Document format</h1><p>We use the Text Editor to open the new file “hello-hexo.md”.</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: hello hexo</span><br><span class="line">date: 2021-10-25 20:51:15</span><br><span class="line">tags: </span><br><span class="line"><span class="section">categories: </span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+<p>The text of <strong>title</strong> is the file name and the title of the article.</p>
+<p>And the value of the <strong>date</strong> is the local time when we created the file.</p>
+<p>Besides, the value of <strong>tags</strong> is the label of the file, you can assign the value to the file at will. Like:</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: hello hexo</span><br><span class="line">date: 2021-10-25 20:51:15</span><br><span class="line">tags: </span><br><span class="line"><span class="bullet">-</span> hello</span><br><span class="line"><span class="bullet">-</span> hexo</span><br><span class="line"><span class="bullet">-</span> markdown</span><br><span class="line"><span class="section">categories: </span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+<p>In the end, <strong>categories</strong> are used to categorize articles.</p>
+<h1 id="Resource-reference"><a href="#Resource-reference" class="headerlink" title="Resource reference"></a>Resource reference</h1><p>Sometimes we will want to insert a picture to our blog.</p>
+<p>You will have two options:</p>
+<ol>
+<li>Use absolute paths to reference resources.</li>
+<li>Use relative paths to reference resources</li>
+</ol>
+<h2 id="Article-resource-folder"><a href="#Article-resource-folder" class="headerlink" title="Article resource folder"></a>Article resource folder</h2><p>If you use the relative paths to reference resources, you can use the article resource folder provided from Hexo.</p>
+<p>Use the text editor to open the <strong>“_config.yml”</strong> file in the root directory, and set the <strong>“post_asset_folder”</strong>  values to true</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">post<span class="emphasis">_asset_</span>folder: true</span><br></pre></td></tr></table></figure>
+<p>Then when you type <code>hexo new filename</code>, Hexo will create a new directory to allow us to save our resources.</p>
+<h2 id="Tag-plugin"><a href="#Tag-plugin" class="headerlink" title="Tag plugin"></a>Tag plugin</h2><p>We can reference pictures and other resources by using the tag plugin provided by Hexo.</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">&#123;% asset<span class="emphasis">_path slug %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% asset_</span>img slug [ title ] %&#125;</span><br><span class="line"><span class="section">&#123;% asset<span class="emphasis">_link slug [ title ] %&#125;</span></span></span><br><span class="line"><span class="emphasis"><span class="section">---</span></span></span><br></pre></td></tr></table></figure>
+<p>The correct way to cite pictures:</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line"><span class="section">&#123;% asset<span class="emphasis">_img example.jpg This is an example image %&#125;</span></span></span><br><span class="line"><span class="emphasis"><span class="section">---</span></span></span><br></pre></td></tr></table></figure>
+<h1 id="Article-Summary"><a href="#Article-Summary" class="headerlink" title="Article Summary"></a>Article Summary</h1><p>In order to set the article summary, we only need to add <code>&lt;!-- more --&gt;</code> after the content that we want to display as a summary. Like:</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: hello hexo</span><br><span class="line">date: 2021-10-25 20:51:15</span><br><span class="line">tags: </span><br><span class="line"><span class="bullet">-</span> hello</span><br><span class="line"><span class="bullet">-</span> hexo</span><br><span class="line"><span class="bullet">-</span> markdown</span><br><span class="line"><span class="section">categories: </span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line">Article summary</span><br><span class="line"></span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"></span><br><span class="line">Text content</span><br></pre></td></tr></table></figure>
+<h1 id="Submit-It-To-Gihub"><a href="#Submit-It-To-Gihub" class="headerlink" title="Submit It To Gihub"></a>Submit It To Gihub</h1><p>Master branch:</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure>
+<p>Hexo branch:</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">git add.</span><br><span class="line">git commit -m &quot;your description&quot;</span><br><span class="line">git push origin hexo</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Inspired From Professor Song</title>
+    <url>/2021/11/12/Inspires-From-Professer-Song/</url>
+    <content><![CDATA[<p>This blog aim to record some inspiration from Professor Song after we having lunch or dinner together.</p>
+<span id="more"></span>
+<h3 id="2011-11-12"><a href="#2011-11-12" class="headerlink" title="2011.11.12"></a>2011.11.12</h3><ol>
+<li>People who are not be jealous are mediocre.</li>
+<li>When you encounter setbacks, set a threshold for yourself.</li>
+<li>Before you understand everything, learn to be patient.</li>
+<li>You need to have a sense of rhythm when you do anything.</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Thoughts</category>
+      </categories>
+      <tags>
+        <tag>Thoughts</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>My first bolg</title>
+    <url>/2021/10/25/My-first-bolg/</url>
+    <content><![CDATA[<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Hello! I am Xuewei Zhang.Well, you can also call me Nick. I create this website to record my study life.</p>
+<span id="more"></span>
+<h1 id="About-me"><a href="#About-me" class="headerlink" title="About me"></a>About me</h1><p> A postgraduate from Guangzhou University.</p>
+]]></content>
+      <categories>
+        <category>Life</category>
+      </categories>
+      <tags>
+        <tag>Life</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Location-Choice-of-Snatching-Offenders-in-Chennai-City</title>
+    <url>/2021/11/10/Location-Choice-of-Snatching-Offenders-in-Chennai-City/</url>
+    <content><![CDATA[<p><strong>Location Choice of Snatching Offenders in Chennai City</strong></p>
+<p><em>K. Kuralarasan1  · Wim Bernasco2,3</em></p>
+<p>Accepted: 21 April 2021<br>© The Author(s) 2021</p>
+<span id="more"></span>
+<h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a><strong>Abstract</strong></h3><h4 id="Objectives"><a href="#Objectives" class="headerlink" title="Objectives"></a>Objectives</h4><p>​    This study aim to test the applicability of crime pattern theory in an Indian urbancontext by assessing the effects of offender residence, prior offending locations and presence of crime generators and crime attractors on where offenders commit offences.</p>
+<h4 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h4><p>​    The data comprise 1573 police-recorded snatching offenses committed by 1152 identified offenders across the 201 wards of Chennai City. We used discrete crime location choice models to establish the choice criteria that snatching offenders use when they decide where to offend. Data on the locations retail businesses, religious and transportation facilities were collected using Google location services.</p>
+<h4 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h4><p>​    The results confirm that snatching offenders prefer to target locations closerto their residence and that they prefer to re-offend at or near their prior offendinglocations. The findings also demonstrate that some but not all crime attractors andgenerators influence the location choice of snatching offenders.</p>
+<h4 id="Conclusions"><a href="#Conclusions" class="headerlink" title="Conclusions"></a>Conclusions</h4><p>​    By replicating in an Indian context previously published crime locationchoice findings, our findings support the generality of crime pattern theory. We discuss limitations and make suggestions for future investigations</p>
+<h3 id="Data-and-Methods"><a href="#Data-and-Methods" class="headerlink" title="Data and Methods"></a>Data and Methods</h3><h4 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h4><h4 id="Study-Area"><a href="#Study-Area" class="headerlink" title="Study Area"></a>Study Area</h4><p>​    The study area for the present research is the Greater Chennai City Corporation, a metropolitan area with a population of over 6.6 million during the latest census in 2011. It consists of 201 wards with an average surface area of 2.18  km2 (quartiles 0.97, 1.61 and 2.53) and an average population of 33,195 (quartiles 21,451, 36,560 and 43,622). </p>
+<h4 id="Crime-Data"><a href="#Crime-Data" class="headerlink" title="Crime Data"></a>Crime Data</h4><p>​    We investigate all detected snatching offenses from August 2010 to July 2017 committed in the study area committed by offenders who lived in the study area.The offense data were obtained from the State Crime Records Bureau, Tamil Nadu, India. They include the time, date, and location of all recorded and detected snatching offenses, and they also contain the age, gender and address of the offender. The data consist of 1573 snatching offenses committed by 1152 offenders.</p>
+<p>​    Based on the recorded dates of the crimes, for each snatching offense the number of prior snatching offenses committed by the same offender was determined per ward. Thus, for each snatching offense it was recorded in which wards each of the offender’s previous snatching offenses (if any) had been committed. <strong>(Using the same dates of the crimes to determine repeat offending?)</strong></p>
+<p>​    Table 1 presents descriptive information about the 1573 analyzed snatching offenses, including the age and gender of the offender, and whether it was committed in the offender’s own ward of residence.</p>
+<p><img src="OffenderAttribute.jpg" alt=""></p>
+<p>​    For every detected snatching incident, the distance was calculated between the home of the offender and the centroids of each of the 201 wards. Based on these distances, Fig. 1 shows the distribution of the home-crime distance, which reveals the typical positively skewed distance decay pattern.</p>
+<p><img src="Distance.jpg" alt=""></p>
+<h4 id="Crime-Generators-and-Attractors"><a href="#Crime-Generators-and-Attractors" class="headerlink" title="Crime Generators and Attractors"></a>Crime Generators and Attractors</h4><p>​    <em>textile stores</em> (including clothing and fabric shops)(纺织品商店)、<em>jewelry shops</em> (珠宝商店)、mosques(清真寺)、<em>temples</em>(寺庙)</p>
+<p><img src="Generators.jpg" alt=""></p>
+<p>​    Figure 3 presents a graphical overview of the Spearman correlation coefficients between the facility frequencies in wards. All correlations are positive, indicating that different types of facilities tend to agglomerate and lead to facility concentrations. Most correlations are medium-level, between 0.20 and 0.60. High correlations of ~ 0.85 exists between <strong>textile stores, personal care and other retail businesses</strong>.    </p>
+<p><img src="Correlation.jpg" alt=""></p>
+<h4 id="Methods-1"><a href="#Methods-1" class="headerlink" title="Methods"></a><em>Methods</em></h4><p>​    To quantify the spatial preferences of snatching offenders(为了量化抢劫犯的空间偏好) and test the hypotheses(假设), we used the <strong><em>discrete crime location choice method</em></strong>(离散选择模型) (<em>Bernasco and Nieuwbeerta 2005</em>). This method applies McFadden’s <strong><em>random utility maximization theory</em></strong>(效用最大化理论) (<em>McFadden 2001</em>) and econometric discrete choice models(计量离散选择模型) (<em>Ben-Akiva and Lerman 1985; Train 2009</em>) to the offender’s decision of where to commit crime. </p>
+<p>​    This discrete crime location choice method is particularly appropriate for two reasons.  </p>
+<ul>
+<li>The  first  reason  is  the  intimate  link  it  provides  between  theory  and  statistical model.</li>
+<li>The second reason is that the method uses a model of individual choice, in which it is possible to include idiosyncratic individual characteristics in the analysis.</li>
+</ul>
+<p>​    If the person committing snatching offense <em>n</em> decides to commit it in ward <em>i</em>, he or she must expect to derive more utility than any of the other 200 wards would provide:</p>
+<script type="math/tex; mode=display">
+U_{ni} > U_{nj}{\forall}j{\neq}i</script><script type="math/tex; mode=display">
+U_{ni} = V_{ni} + \epsilon_{ni}</script><script type="math/tex; mode=display">
+P_{ni} = Pr(U_{ni} > U_{nj}{\forall}j{\neq}i) = Pr(\epsilon_{ni}-\epsilon_{nj}<V_{ni}-V_{nj}{\forall}j{\neq}i)</script><p>​    If the unobserved random utility components random error component(随机误差分量) are independent(独立) and identically distributed according to an extreme value distribution(和极值分布相同),The conditional logit model  can be derived, in which</p>
+<script type="math/tex; mode=display">
+P_{ni}=\frac {e^{V_{ni}}∑^J_{j=1}} {e^{V_{nj}}}</script><h3 id="Results-1"><a href="#Results-1" class="headerlink" title="Results"></a>Results</h3><p>​    Table 3 presents the results of two conditional logit models.</p>
+<p><img src="ModelResults.jpg" alt=""></p>
+<ul>
+<li><strong><em>Distance Hypothesis:</em></strong> The estimated odds ratio of the log-distance effect is 0.36 in Model 1 and 0.35 in Model 2. It indicates that if a ward is further away from the offender’s home, the odds of the offender selecting the ward for snatching decrease.</li>
+<li><strong><em>Repeat Offending Hypothesis</em></strong>: The odds ratios of 12.72 in Model 1 and 10.72 in Model 2 are quite similar, and indicate a large and statistically significant effect: the odds of selecting a ward are ~ 12 times larger if the offender has previously committed a snatching offense in the ward than if the offender had not committed a previous snatching offense in the ward. </li>
+<li><strong><em>Crime Generators and Attractors Hypothesis</em></strong>: Based on Table 3, the evidence for this hypothesis is mixed. Whereas we find that the estimated effects of some types of facilities are positive and statistically significant (<em>churches, educational institutions, marriage halls, personal care businesses, parks, restaurants and business offices</em>), the majority are not. </li>
+</ul>
+<h3 id="Discussion-and-Conclusion"><a href="#Discussion-and-Conclusion" class="headerlink" title="Discussion and Conclusion"></a>Discussion and Conclusion</h3><p>​    it is important not only to verify whether the established relationships also hold in other regions of the world, but also to make sure that key theoretical concepts are measured in a way that reflects relevant(相关的) local economic, social and cultural characteristics. Our analysis of snatching location choices in India, for example, emphasized the potential relevance of specific places (marriage halls(婚礼大厅) and places of worship(礼拜场所)) where many people wear valuable jewelry and clothing ornaments(装饰品) in outdoor settings.</p>
+<h3 id="Limitations"><a href="#Limitations" class="headerlink" title="Limitations"></a>Limitations</h3><ol>
+<li><p>Crime better be studied at more fine-grained resolutions, such as streets, street segments or parcels(研究尺度问题——大尺度在空间上具有异质性)</p>
+</li>
+<li><p>Although the coverage of facilities appears sufficient (fieldwork observations suggested a coverage of more than 95 percent of the facilities), the data do not allow facilities to be differentiated by size. Even facilities of the same type (e.g. hospital, church, or store) can vary widely in the number of visitors they attract, but this variation is not reflected in our facility frequencies.(POIs 的大小对人群的吸引作用存在差异，但由于数据问题无法对POI的大小进行区分)</p>
+</li>
+<li><p><strong>A final limitation, one that applies to all published crime location choice studies using the discrete spatial choice framework, is that our findings cannot identify the intentions that motivate offenders’ mobility.</strong> (无法确定促使犯罪者流动的动机). The crime location choice model cannot distinguish between the choice of <em>whether</em> to commit crime (given the location where the individual is) and the choice of <em>where</em> to commit crime (given sufficient motivation to commit it). This is an important distinction that hinges on the offender’s level of premeditation, i.e. on the extent to which the offense is planned in advance.</p>
+</li>
+</ol>
+<h3 id="Inspires"><a href="#Inspires" class="headerlink" title="Inspires"></a>Inspires</h3><ol>
+<li>The estimated coefficients of the discrete choice model are valid indicators of how land use categories affect the criminal attractiveness of potential target areas.</li>
+<li>Many studies have demonstrated that <strong>crime frequencies vary by time of day, by day of week and by season</strong> (Andresen and Malleson<br>2013; Haberman and Ratcliffe 2015; Tompson and Bowers 2013) and <strong>some studies have examined whether location preferences also vary</strong> temporally (van Sleeuwen et al. 2018). </li>
+<li>The present study investigated the effects of offenders’ home locations and of their prior offending locations. <strong>Future research could focus on effects of offenders’ work place, previous residences and other anchor points that are part of their awareness space and have a possible impact on their offending location choices.</strong>(考虑犯罪者的工作场所？之前的居住点？以及犯罪者意识空间中的其他地方)</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Paper</category>
+        <category>Mechanism research</category>
+      </categories>
+      <tags>
+        <tag>Crime location choice</tag>
+        <tag>Snatching</tag>
+        <tag>Repeat offending</tag>
+        <tag>Crime generators</tag>
+        <tag>Crime pattern theory</tag>
+        <tag>India</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>统计学习方法-李航</title>
+    <url>/2021/11/02/Statical-Learning-with-R-Chapter2/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Books</category>
+        <category>Statical</category>
+      </categories>
+      <tags>
+        <tag>Books</tag>
+        <tag>Statical</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Statistical Learning with R</title>
+    <url>/2021/11/02/Statistical-Learning-with-R/</url>
+    <content><![CDATA[<p> 统计学习系列——引言</p>
+<p>什么是统计学习？统计学习是指大量用于理解数据的工具。同时这些工具可分为有监督和无监督的。</p>
+<p>广义来说(Broadly speaking)，有监督的统计学习包括构建一个用于预测、估计或基于一个或多个输入的输出的统计模型。</p>
+<p>在无监督学习中，则只有输入而无有监督的输出；因此我们可以从这类数据中学习它们之间的关系和结构。</p>
+<span id="more"></span>
+<h3 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h3><hr>
+<p>本书提供三个数据集用于举例说明统计学习的应用：工资数据集、股票市场数据集和基因表达数据集。</p>
+<h4 id="工资数据集"><a href="#工资数据集" class="headerlink" title="工资数据集"></a>工资数据集</h4><hr>
+<p>数据集主要内容是与美国大西洋地区男性工资相关的因素，通过此数据理解员工的年龄、教育程度和年份与工资之间的关系。因为该数据涉及到预测连续或定量的输出值，所以这通常被称为回归问题。</p>
+<p><img src="wage.jpg" alt=""></p>
+<h4 id="股票市场数据"><a href="#股票市场数据" class="headerlink" title="股票市场数据"></a>股票市场数据</h4><hr>
+<p>但在具体的案例中我们也许会预测非数值的结果-比如分类或者定性(categorical or qualitative)的结果。该数据集包含2001年至2005年5年间标准普尔指数(S&amp;P 500)的每日走势。目标是利用过去五天指数的百分比变化来预测该指数在某一天是上升还是下降。这里的统计学习问题涉及到预测某天的股市表现是会进入上升区间还是下降区间-即所谓的分类问题。</p>
+<p><img src="stockmarket.jpg" alt=""></p>
+<h4 id="基因表达数据"><a href="#基因表达数据" class="headerlink" title="基因表达数据"></a>基因表达数据</h4><hr>
+<p>前面两个例子表示了具有输入变量和输出变量的数据集，然而另一类重要的问题设计我们只观察输入变量而没有相应输入的情况。例如，在营销设置中，我们可能有许多当前客户或者潜在客户的人口统计信息，我们可能希望通过提取观测到的特征对个体进行分组，以此来了解那些类型的客户彼此相似。这就是所谓的聚类问题。针对该问题本文所使用的数据集为NCI60数据集，其内容包含64个癌症细胞系中每个细胞系的6,830个基因表达测量值。研究目的是根据他们的基因表达测量值来确定细胞系中是否有组成簇。</p>
+<p><img src="gene.jpg" alt=""></p>
+<p><strong><em>PS：分类和聚类的比较</em></strong></p>
+<ul>
+<li><em>聚类分析研究如何在没有训练条件的情况下将样本分为若干类</em></li>
+<li><em>分类中，对于目标数据库存在哪些类是存在的，要做的是把每一条记录分别属于哪一类标记出来。</em></li>
+</ul>
+<h3 id="本书的结构"><a href="#本书的结构" class="headerlink" title="本书的结构"></a>本书的结构</h3><hr>
+<p>首先，第二章介绍了统计学习中的基本术语和概念，还展示了K临近分类-一种非常简单但在很多问题上表现都很好的方法。</p>
+<p>接着，第三章和第四章涵盖了回归和分类的经典线性方法，其中第三章回顾了线性回归，这是所有回归方法的基础。第四章我们讨论了两种最重要的经典分类方法，<strong>逻辑回归分析</strong>(<em>logistic regression</em>)和<strong>线性判别分析</strong>(<em>linear discriminant analysis</em>)。</p>
+<p>所有统计学习背景下最关键的问题是，如何根据应用问题选择最优的方法。因此第五章介绍了<strong>交叉验证</strong>(<em>cross-validation</em>)和<strong><em>Bootstrap</em></strong>，用来评估几种不同方法的精确性，并以此选择最好的一种。</p>
+<p>在第六章中介绍更多的线性方法，包括<strong>逐步回归</strong>(<em>stepwise selection</em>)、<strong>岭回归</strong>(<em>ridge regression</em>)、<strong>主成分回归</strong>(<em>principal components regression</em>)、<strong>偏最小二乘法</strong>(<em>partial least squares</em>)和 <strong><em>Lasso</em>回归</strong>(<em>the lasso</em>)。</p>
+<p>紧接着，第七章介绍非线性统计学习，首先介绍一系列在单个输入变量问题上表现很好的非线性方法，接着介绍可用于拟合多个输入的<strong>非线性加法模型(<em>non-<em>*</em></em></strong>linear additive models<em>)*</em>。</p>
+<p>第八章中介绍基于树的方法，其中包括<strong>套袋法</strong>(<em>bagging</em>)、<strong>提升法</strong>(<em>boosting</em>)和<strong>随机森林</strong>(<em>random forests</em>)。</p>
+<p>第九章介绍一组执行线性和非线性分类的方法—<strong>支持向量机</strong>(<em>Support vector machines</em>)。</p>
+<p>第十章介绍有关<strong>深度学习</strong>(<em>deep learning</em>)的方法。</p>
+<p>第十一章探讨了<strong>生存分析</strong>(<em>survival analysis</em>)，一种回归方法，专门用于输出变量未完全观察的回归问题。</p>
+<p>第十二章考虑的问题类型是只有输入变量而没有输出变量的设置，具体的方法有<strong>主成分分析</strong>(<em>principal components analysis</em>)、<strong>K均值聚类</strong>(<em>K-means clustering</em>)、<strong>层次聚类</strong>(<em>hierarchical clustering</em>)。</p>
+]]></content>
+      <categories>
+        <category>Books</category>
+        <category>Statical</category>
+      </categories>
+      <tags>
+        <tag>Books</tag>
+        <tag>Statical</tag>
+        <tag>R</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>深度学习与神经网络</title>
+    <url>/2021/10/27/Neural-Networks-and-Deep-Learning-Chapter-1/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Books</category>
+        <category>Deep Learning</category>
+      </categories>
+      <tags>
+        <tag>Books</tag>
+        <tag>Deep Learning</tag>
+      </tags>
+  </entry>
+</search>
