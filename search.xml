@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>2022-01-26-随笔</title>
+    <url>/2022/01/26/2022-01-26-%E9%9A%8F%E7%AC%94/</url>
+    <content><![CDATA[<p>2022-01-26 读点淘产品分析的收获</p>
+<span id="more"></span>
+<h1 id="产品分析的流程"><a href="#产品分析的流程" class="headerlink" title="产品分析的流程"></a>产品分析的流程</h1><h2 id="一、行业分析"><a href="#一、行业分析" class="headerlink" title="一、行业分析"></a>一、行业分析</h2><p><strong>对比分析，深挖行业的底层逻辑以及核心特点。</strong>例如：传统电商的底层逻辑是“人找货”，用户使用场景与线下购物类似；而直播电商的核心特点是快速匹配、及时下单、优惠以及正品保障（我觉得后两者是大头）</p>
+<p>因此对比之下直播电商的转化路径更短，购物过程实时化、线上化是直播电商行业保障高转化率的关键因素。</p>
+<p><strong>PEST 模型</strong>（<strong>P</strong>olices <strong>E</strong>conomy <strong>S</strong>ociety <strong>T</strong>echnology），分别从政治（政策）、经济、社会、科技等方面所探讨该行业的快速发展的底层逻辑。</p>
+<h3 id="1、Polices"><a href="#1、Polices" class="headerlink" title="1、Polices"></a>1、Polices</h3><p>得益于国内“互联网+”模式的多年发展，直播电商等线上经济成为常态化疫情背景下有效稳定市场经济发展的工具之一。</p>
+<p>ps：密切关注国家政策和商务部的政策</p>
+<h3 id="2、Economy"><a href="#2、Economy" class="headerlink" title="2、Economy"></a>2、Economy</h3><p><strong>GMV</strong> ：商品交易总额（一定时间段内），多用于电商行业，一般包括拍下未支付订单金额。</p>
+<p>通过各种图表说明变化趋势</p>
+<h3 id="3、Society"><a href="#3、Society" class="headerlink" title="3、Society"></a>3、Society</h3><p>从直播电商的用户数量、比例的变化入手，分析直播电商的受众规模以及对用户习惯性为。</p>
+<h3 id="4、Technology"><a href="#4、Technology" class="headerlink" title="4、Technology"></a>4、Technology</h3><p>IT 新型技术（5G、云计算、区块链、人工智能、大数据等）的的落地给产品带来的变化和改善</p>
+<h2 id="二、竞品分析"><a href="#二、竞品分析" class="headerlink" title="二、竞品分析"></a>二、竞品分析</h2><h2 id="三、用户价值分析"><a href="#三、用户价值分析" class="headerlink" title="三、用户价值分析"></a>三、用户价值分析</h2><h2 id="四、商业价值分析"><a href="#四、商业价值分析" class="headerlink" title="四、商业价值分析"></a>四、商业价值分析</h2><h2 id="五、产品迭代分析"><a href="#五、产品迭代分析" class="headerlink" title="五、产品迭代分析"></a>五、产品迭代分析</h2><h2 id="六、产品结构分析"><a href="#六、产品结构分析" class="headerlink" title="六、产品结构分析"></a>六、产品结构分析</h2><h2 id="七、运营分析"><a href="#七、运营分析" class="headerlink" title="七、运营分析"></a>七、运营分析</h2>]]></content>
+      <categories>
+        <category>Note</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2022-1-23-随笔</title>
+    <url>/2022/01/23/2022-1-23-%E9%9A%8F%E7%AC%94/</url>
+    <content><![CDATA[<p>2022-1-23 学习随笔</p>
+<span id="more"></span>
+<h3 id="今日收获"><a href="#今日收获" class="headerlink" title="今日收获"></a>今日收获</h3><p>​    <strong>1、互联网产品经理的核心竞争力的是创意和想法</strong>，但传统企业缺乏基本功（写需求、画原型）扎实的产品经理。</p>
+<p>​    <strong>2、互联网产品经理通常需要将需求梳理合理、并且能清晰表达出来</strong>。很多传统行业的产品经理属于业务领域，如保险公司的产品经理即保险产品的设计者，与 IT 不相关。</p>
+<p>​    <strong>3、需求撰写人员需要由非常强的逻辑性！</strong>产品需求上的逻辑性往往隐含在一些事物的背后。</p>
+<p>​    <strong>4</strong>、优秀的产品经理输出的需求文档，不仅<strong>层次清晰、表达效率高</strong>，且细化程度甚至可以与开发代码相媲美，输出的需求涵盖了所有应该考虑到的情况</p>
+<p>​    <strong>5、需求中关于产品设计的相关内容描述要全且合理</strong>。用户体验好的前提：功能划分要合理、页面层级适中、页面内容层次结构清晰、页面设计重点突出、页面内容主题明确、页面元素只管、用户路径明确、交互方式友好、文案表达清晰准确等。</p>
+<p>​    <strong>6、什么是产品思维？</strong>产品思维讲究系统化，站在未来看现在，面对某个需求，产品思维思考的是这个需求的价值是什么，如何一次性解决未来可能再出现的同质需求，是否还有与之相关的需求或问题等。产品思维的出发点是通过一个什么产品或功能，可以解决业务上的哪些需求和问题。</p>
+<p>​    <strong>7、什么是业务思维？</strong>业务思维讲究目标和结果，讲究投入产出和效率，涉及计划、KPI、业务方案、执行、分析与评价等，业务思维的出发点是我的目标是什么，要采用什么样的方法来达成这个目标。</p>
+]]></content>
+      <categories>
+        <category>Note</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>A Global Analysis of the Impact of COVID-19</title>
     <url>/2021/10/31/A-global-analysis-of-the-impact-of-COVID-19/</url>
     <content><![CDATA[<p><strong>A Global Analysis of the Impact of COVID-19 Stay-At-Home Restrictions on Crime</strong> </p>
@@ -109,6 +151,29 @@
         <tag>Theft from the person</tag>
         <tag>Mobility</tag>
         <tag>Routine activities</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Go language</title>
+    <url>/2021/11/13/Go-language/</url>
+    <content><![CDATA[<p>Go语言的特性：</p>
+<ul>
+<li>简化问题，利于学习</li>
+<li>内存管理，简介语法，易于使用</li>
+<li>快速编译，高效并发</li>
+<li>高效执行</li>
+<li>并发支持，轻松驾驭</li>
+<li>标准类库，规范统一</li>
+<li>易于部署</li>
+<li>文档全面</li>
+<li>免费开源</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Go</category>
+      </categories>
+      <tags>
+        <tag>Go</tag>
       </tags>
   </entry>
   <entry>
@@ -225,29 +290,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Go language</title>
-    <url>/2021/11/13/Go-language/</url>
-    <content><![CDATA[<p>Go语言的特性：</p>
-<ul>
-<li>简化问题，利于学习</li>
-<li>内存管理，简介语法，易于使用</li>
-<li>快速编译，高效并发</li>
-<li>高效执行</li>
-<li>并发支持，轻松驾驭</li>
-<li>标准类库，规范统一</li>
-<li>易于部署</li>
-<li>文档全面</li>
-<li>免费开源</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Go</category>
-      </categories>
-      <tags>
-        <tag>Go</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo - How to hexo blog and submit it to github.</title>
     <url>/2021/10/25/How-to-hexo-blog/</url>
     <content><![CDATA[<p>An article about how to use hexo to write a blog !</p>
@@ -310,20 +352,6 @@
       </categories>
       <tags>
         <tag>Thoughts</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>My first bolg</title>
-    <url>/2021/10/25/My-first-bolg/</url>
-    <content><![CDATA[<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Hello! I am Xuewei Zhang.Well, you can also call me Nick. I create this website to record my study life.</p>
-<span id="more"></span>
-<h1 id="About-me"><a href="#About-me" class="headerlink" title="About me"></a>About me</h1><p> A postgraduate from Guangzhou University.</p>
-]]></content>
-      <categories>
-        <category>Life</category>
-      </categories>
-      <tags>
-        <tag>Life</tag>
       </tags>
   </entry>
   <entry>
@@ -396,16 +424,30 @@ P_{ni}=\frac {e^{V_{ni}}∑^J_{j=1}} {e^{V_{nj}}}</script><h3 id="Results-1"><a 
       </tags>
   </entry>
   <entry>
-    <title>统计学习方法-李航</title>
-    <url>/2021/11/02/Statical-Learning-with-R-Chapter2/</url>
+    <title>My first bolg</title>
+    <url>/2021/10/25/My-first-bolg/</url>
+    <content><![CDATA[<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Hello! I am Xuewei Zhang.Well, you can also call me Nick. I create this website to record my study life.</p>
+<span id="more"></span>
+<h1 id="About-me"><a href="#About-me" class="headerlink" title="About me"></a>About me</h1><p> A postgraduate from Guangzhou University.</p>
+]]></content>
+      <categories>
+        <category>Life</category>
+      </categories>
+      <tags>
+        <tag>Life</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>深度学习与神经网络</title>
+    <url>/2021/10/27/Neural-Networks-and-Deep-Learning-Chapter-1/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>Books</category>
-        <category>Statical</category>
+        <category>Deep Learning</category>
       </categories>
       <tags>
         <tag>Books</tag>
-        <tag>Statical</tag>
+        <tag>Deep Learning</tag>
       </tags>
   </entry>
   <entry>
@@ -455,38 +497,16 @@ P_{ni}=\frac {e^{V_{ni}}∑^J_{j=1}} {e^{V_{nj}}}</script><h3 id="Results-1"><a 
       </tags>
   </entry>
   <entry>
-    <title>深度学习与神经网络</title>
-    <url>/2021/10/27/Neural-Networks-and-Deep-Learning-Chapter-1/</url>
+    <title>统计学习方法-李航</title>
+    <url>/2021/11/02/Statical-Learning-with-R-Chapter2/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>Books</category>
-        <category>Deep Learning</category>
+        <category>Statical</category>
       </categories>
       <tags>
         <tag>Books</tag>
-        <tag>Deep Learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2022-1-23-随笔</title>
-    <url>/2022/01/23/2022-1-23-%E9%9A%8F%E7%AC%94/</url>
-    <content><![CDATA[<p>2022-1-23 学习随笔</p>
-<span id="more"></span>
-<h3 id="今日收获"><a href="#今日收获" class="headerlink" title="今日收获"></a>今日收获</h3><ol>
-<li>互联网产品经理的核心竞争力的是创意和想法，但传统企业缺乏基本功（写需求、画原型）扎实的产品经理。</li>
-<li>互联网产品经理通常需要将需求梳理合理、并且能清晰表达出来。很多传统行业的产品经理属于业务领域，如保险公司的产品经理即保险产品的设计者，与 IT 不相关。</li>
-<li>需求撰写人员需要由非常强的逻辑性！产品需求上的逻辑性往往隐含在一些事物的背后。</li>
-<li>优秀的产品经理输出的需求文档，不仅层次清晰、表达效率高，且细化程度甚至可以与开发代码相媲美，输出的需求涵盖了所有应该考虑到的情况</li>
-<li>需求中关于产品设计的相关内容描述要全且合理。用户体验好的前提：功能划分要合理、页面层级适中、页面内容层次结构清晰、页面设计重点突出、页面内容主题明确、页面元素只管、用户路径明确、交互方式友好、文案表达清晰准确等。</li>
-<li>什么是好的产品思维？产品思维讲究系统化，站在未来看现在，面对某个需求，产品思维思考的是这个需求的价值是什么，如何一次性解决未来可能再出现的同质需求，是否还有与之相关的需求或问题等。产品思维的出发点是通过一个什么产品或功能，可以解决业务上的哪些需求和问题。</li>
-<li>什么是业务思维？业务思维讲究目标和结果，讲究投入产出和效率，涉及计划、KPI、业务方案、执行、分析与评价等，业务思维的出发点是我的目标是什么，要采用什么样的方法来达成这个目标。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Note</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
+        <tag>Statical</tag>
       </tags>
   </entry>
 </search>
