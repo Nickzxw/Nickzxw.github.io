@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>2022-01-26-随笔</title>
+    <title>【笔记】产品分析实例— 点淘（淘宝直播）</title>
     <url>/2022/01/26/2022-01-26-%E9%9A%8F%E7%AC%94/</url>
     <content><![CDATA[<p>2022-01-26 读点淘产品分析的收获</p>
 <span id="more"></span>
@@ -23,7 +23,7 @@
       </tags>
   </entry>
   <entry>
-    <title>2022-1-23-随笔</title>
+    <title>【笔记】优秀的 PM</title>
     <url>/2022/01/23/2022-1-23-%E9%9A%8F%E7%AC%94/</url>
     <content><![CDATA[<p>2022-1-23 学习随笔</p>
 <span id="more"></span>
@@ -438,7 +438,7 @@ P_{ni}=\frac {e^{V_{ni}}∑^J_{j=1}} {e^{V_{nj}}}</script><h3 id="Results-1"><a 
       </tags>
   </entry>
   <entry>
-    <title>深度学习与神经网络</title>
+    <title>【笔记】深度学习与神经网络</title>
     <url>/2021/10/27/Neural-Networks-and-Deep-Learning-Chapter-1/</url>
     <content><![CDATA[]]></content>
       <categories>
@@ -451,7 +451,7 @@ P_{ni}=\frac {e^{V_{ni}}∑^J_{j=1}} {e^{V_{nj}}}</script><h3 id="Results-1"><a 
       </tags>
   </entry>
   <entry>
-    <title>Statistical Learning with R</title>
+    <title>【笔记】Statistical Learning with R</title>
     <url>/2021/11/02/Statistical-Learning-with-R/</url>
     <content><![CDATA[<p> 统计学习系列——引言</p>
 <p>什么是统计学习？统计学习是指大量用于理解数据的工具。同时这些工具可分为有监督和无监督的。</p>
@@ -497,7 +497,7 @@ P_{ni}=\frac {e^{V_{ni}}∑^J_{j=1}} {e^{V_{nj}}}</script><h3 id="Results-1"><a 
       </tags>
   </entry>
   <entry>
-    <title>统计学习方法-李航</title>
+    <title>【笔记】统计学习方法-李航</title>
     <url>/2021/11/02/Statical-Learning-with-R-Chapter2/</url>
     <content><![CDATA[]]></content>
       <categories>
