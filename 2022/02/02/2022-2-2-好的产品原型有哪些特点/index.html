@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/panda.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/panda.svg">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|ZCOOL XiaoWei:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="2022-2-2-PM 学习心得 原文戳此链接">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【笔记】好的产品原型有哪些特点">
+<meta property="og:url" content="http://example.com/2022/02/02/2022-2-2-%E5%A5%BD%E7%9A%84%E4%BA%A7%E5%93%81%E5%8E%9F%E5%9E%8B%E6%9C%89%E5%93%AA%E4%BA%9B%E7%89%B9%E7%82%B9/index.html">
+<meta property="og:site_name" content="X.Zhang&#39;s Blog.">
+<meta property="og:description" content="2022-2-2-PM 学习心得 原文戳此链接">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2022/02/02/2022-2-2-%E5%A5%BD%E7%9A%84%E4%BA%A7%E5%93%81%E5%8E%9F%E5%9E%8B%E6%9C%89%E5%93%AA%E4%BA%9B%E7%89%B9%E7%82%B9/FourRules.png">
+<meta property="og:image" content="http://example.com/2022/02/02/2022-2-2-%E5%A5%BD%E7%9A%84%E4%BA%A7%E5%93%81%E5%8E%9F%E5%9E%8B%E6%9C%89%E5%93%AA%E4%BA%9B%E7%89%B9%E7%82%B9/Request.png">
+<meta property="og:image" content="http://example.com/2022/02/02/2022-2-2-%E5%A5%BD%E7%9A%84%E4%BA%A7%E5%93%81%E5%8E%9F%E5%9E%8B%E6%9C%89%E5%93%AA%E4%BA%9B%E7%89%B9%E7%82%B9/Business.png">
+<meta property="og:image" content="http://example.com/2022/02/02/2022-2-2-%E5%A5%BD%E7%9A%84%E4%BA%A7%E5%93%81%E5%8E%9F%E5%9E%8B%E6%9C%89%E5%93%AA%E4%BA%9B%E7%89%B9%E7%82%B9/Features.png">
+<meta property="og:image" content="http://example.com/2022/02/02/2022-2-2-%E5%A5%BD%E7%9A%84%E4%BA%A7%E5%93%81%E5%8E%9F%E5%9E%8B%E6%9C%89%E5%93%AA%E4%BA%9B%E7%89%B9%E7%82%B9/Page.png">
+<meta property="og:image" content="http://example.com/2022/02/02/2022-2-2-%E5%A5%BD%E7%9A%84%E4%BA%A7%E5%93%81%E5%8E%9F%E5%9E%8B%E6%9C%89%E5%93%AA%E4%BA%9B%E7%89%B9%E7%82%B9/duiqi.png">
+<meta property="og:image" content="http://example.com/2022/02/02/2022-2-2-%E5%A5%BD%E7%9A%84%E4%BA%A7%E5%93%81%E5%8E%9F%E5%9E%8B%E6%9C%89%E5%93%AA%E4%BA%9B%E7%89%B9%E7%82%B9/duiqi.png">
+<meta property="og:image" content="http://example.com/2022/02/02/2022-2-2-%E5%A5%BD%E7%9A%84%E4%BA%A7%E5%93%81%E5%8E%9F%E5%9E%8B%E6%9C%89%E5%93%AA%E4%BA%9B%E7%89%B9%E7%82%B9/yizhi.png">
+<meta property="article:published_time" content="2022-02-02T14:50:28.000Z">
+<meta property="article:modified_time" content="2022-02-03T14:29:36.780Z">
+<meta property="article:author" content="Xuewei Zhang">
+<meta property="article:tag" content="Note">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/02/02/2022-2-2-%E5%A5%BD%E7%9A%84%E4%BA%A7%E5%93%81%E5%8E%9F%E5%9E%8B%E6%9C%89%E5%93%AA%E4%BA%9B%E7%89%B9%E7%82%B9/FourRules.png">
+
+<link rel="canonical" href="http://example.com/2022/02/02/2022-2-2-%E5%A5%BD%E7%9A%84%E4%BA%A7%E5%93%81%E5%8E%9F%E5%9E%8B%E6%9C%89%E5%93%AA%E4%BA%9B%E7%89%B9%E7%82%B9/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>【笔记】好的产品原型有哪些特点 | X.Zhang's Blog.</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?a1693fc5c0727c998ed003c4bf9d4926";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">X.Zhang's Blog.</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">I CAN DO ALL THING</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/aboutme/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/02/2022-2-2-%E5%A5%BD%E7%9A%84%E4%BA%A7%E5%93%81%E5%8E%9F%E5%9E%8B%E6%9C%89%E5%93%AA%E4%BA%9B%E7%89%B9%E7%82%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="Xuewei Zhang">
+      <meta itemprop="description" content="Please read carefully the books you can understand">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="X.Zhang's Blog.">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【笔记】好的产品原型有哪些特点
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-02-02 22:50:28" itemprop="dateCreated datePublished" datetime="2022-02-02T22:50:28+08:00">2022-02-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-02-03 22:29:36" itemprop="dateModified" datetime="2022-02-03T22:29:36+08:00">2022-02-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Note/" itemprop="url" rel="index"><span itemprop="name">Note</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>2022-2-2-PM 学习心得</p>
+<p><a target="_blank" rel="noopener" href="http://www.woshipm.com/rp/5306273.html">原文戳此链接</a></p>
+<span id="more"></span>
+<h1 id="产品原型的设计原则"><a href="#产品原型的设计原则" class="headerlink" title="产品原型的设计原则"></a>产品原型的设计原则</h1><p>我所收获到的知识：知道好的原型应该写什么，应该怎么写，即对原型方案设计具有清晰的认知。避免出现最后上线内容与PM 所想的偏差很大的情况出现。</p>
+<h2 id="一、先对产品原型本身进行深入认知"><a href="#一、先对产品原型本身进行深入认知" class="headerlink" title="一、先对产品原型本身进行深入认知"></a>一、先对产品原型本身进行深入认知</h2><p>一个完整的需求 = 目标用户 + 使用场景 + 用户在该场景下想要完成的目标。产品原型本身包含下面两个场景：</p>
+<h3 id="1、弱使用场景"><a href="#1、弱使用场景" class="headerlink" title="1、弱使用场景"></a>1、弱使用场景</h3><p>a、产品经理接到运营的需求后给出对应的解决方案（为什么是运营？），并用原型的形式向运营确定这种解决方案是否能达到运营的设想；</p>
+<p>b、完成整体的产品方案后，向上级领导进行汇报，确认领导们是否认可整体的方案设计思路或细节。</p>
+<h3 id="2、强使用场景"><a href="#2、强使用场景" class="headerlink" title="2、强使用场景"></a>2、强使用场景</h3><p>a、产品经理在需求宣讲会上以产品原型为依据，对开发、测试、设计人员进行需求宣讲，以便所有项目内成员对需求有大体上的了解；</p>
+<p>b、开发、测试、设计人员在需求宣讲后依据产品原型对工作量进行拆分并安排工作任务，以便所有项目成员能准确的评估项目完成时间进行科学的工作划分；</p>
+<p>c、开发人员在实现过程中，以原型为依据进行技术开发，以便最终上线交付的内容是符合项目整体目标的高质量产品。</p>
+<h3 id="3、小结"><a href="#3、小结" class="headerlink" title="3、小结"></a>3、小结</h3><p>因此，产品原型的主要使用者是配合 PM 一起完成上线目标的研发同学们，所以一旦 PM 在产品原型上出现表达失误，就会影响整个团队的进度。</p>
+<h2 id="二、撰写产品原型的原则"><a href="#二、撰写产品原型的原则" class="headerlink" title="二、撰写产品原型的原则"></a>二、撰写产品原型的原则</h2><p>主要有以下四大原则：</p>
+<p><img src="FourRules.png" alt=""></p>
+<h3 id="1、边界清晰原则"><a href="#1、边界清晰原则" class="headerlink" title="1、边界清晰原则"></a>1、边界清晰原则</h3><p>边界清晰是指让阅读这份产品原型的人知道哪些是本次研发项目的内容，需要清晰定义边界才能分工明确，拆分任务。</p>
+<ul>
+<li>若产品已上线，此后产品的需求基本是在上线基础上迭代优化，需要重点标注<strong>新增点、修改点和不修改的部分</strong></li>
+<li>产品包含多变用户的时候需要准确说明当前产品的用户是谁，不同的用户操作权限是否有区别</li>
+</ul>
+<h3 id="2、内容完整性原则"><a href="#2、内容完整性原则" class="headerlink" title="2、内容完整性原则"></a>2、内容完整性原则</h3><p>一般日常迭代的小型需求需要包含的内容有：</p>
+<ul>
+<li>背景说明—让参与者知道为什么要做这个需求，该需求要实现什么样的目标？</li>
+<li>需求清单—需求有哪些？</li>
+<li>流程图—需求通过怎样的方式闭环？</li>
+<li>功能界面—具体的需求是怎样的？</li>
+<li>需求标注—怎样实现需求的效果？</li>
+</ul>
+<p>项目型的原型还需要包括该项目的顶层设计和版本规划，以此来让所有参与者知悉项目的发展全貌和达成路径，让团队的整体思想在同一高度。</p>
+<h4 id="1）背景说明"><a href="#1）背景说明" class="headerlink" title="1）背景说明"></a>1）背景说明</h4><p><strong>5W1H 原则</strong></p>
+<ul>
+<li>Who：是什么用户群体？产品或功能为谁设计？</li>
+<li>What：用户可以用这个产品或功能可以做什么？产品或功能能够为用户解决什么问题？</li>
+<li>Where：用户在什么样的场景下使用这个产品或功能？</li>
+<li>When：用户什么时候会使用这个产品或功能？</li>
+<li>Why：用户为什么用这个歌产品，而不用别的？为什么需要这个功能？和其它产品相比它的优势在哪？。</li>
+<li>How：用户怎样使用这个产品或功能？</li>
+</ul>
+<h4 id="2）需求清单"><a href="#2）需求清单" class="headerlink" title="2）需求清单"></a>2）需求清单</h4><p>区分功能性需求和非功能性需求，包含但不仅限于以下内容：需求编号、所属模块（可持续划分）、需求概述、开发方式、是否需要设计、优先级、产品负责人等。</p>
+<p><img src="Request.png" alt=""></p>
+<h4 id="3）流程图"><a href="#3）流程图" class="headerlink" title="3）流程图"></a>3）流程图</h4><p>根据实际需求绘制业务、功能、页面流程图：<strong>业务流程图</strong>用于描述完整的业务流程（包括角色、环节），即要完成一项任务所涉及到的操作流程；<strong>功能流程图</strong>用于明确功能的设计逻辑，以业务流程图为主线，去细化每个环节的功能逻辑（如判断必填项/判断登录状态/判断操作权限等等）；<strong>页面流程图</strong>用于明确用户在操作产品时，涉及的页面以及页面之间的流向关系。</p>
+<p>下面截取了文中的举例：</p>
+<p><img src="Business.png" alt=""></p>
+<p><img src="Features.png" alt=""></p>
+<p><img src="Page.png" alt=""></p>
+<h4 id="4）功能界面"><a href="#4）功能界面" class="headerlink" title="4）功能界面"></a>4）功能界面</h4><p>功能界面是原型方案的重头戏，需要明确：</p>
+<ol>
+<li>按照流程绘制内容。</li>
+<li>确保方案中每个模块的层次是清晰的。</li>
+</ol>
+<h5 id="a、按照流程绘制内容"><a href="#a、按照流程绘制内容" class="headerlink" title="a、按照流程绘制内容"></a>a、按照流程绘制内容</h5><p>推荐按照业务流程图的顺序来进行内容绘制，切忌打乱流程顺序想到哪里就画到哪里。这样做的好处是产品经理不容易漏掉产品需求中的环节，还能让阅读原型人通过原型里内容顺序快速了解用户的行为路径。</p>
+<h5 id="b、确保层次清晰"><a href="#b、确保层次清晰" class="headerlink" title="b、确保层次清晰"></a>b、确保层次清晰</h5><p>一份需求文档中可能包含多个产品板块，在进行多板块的产品原型绘制时需要注意每个板块之间的逻辑关系和层次递进。</p>
+<h4 id="5）需求标注"><a href="#5）需求标注" class="headerlink" title="5）需求标注"></a>5）需求标注</h4><p>需求标注也考核一个产品经理基本功的重要指标。一个完整的需求标注至少需要包含4部分的内容：<strong>功能默认形态、功能操作反馈逻辑、功能容错性、功能拓展性</strong>四方面的说明。</p>
+<h5 id="a、功能默认形态"><a href="#a、功能默认形态" class="headerlink" title="a、功能默认形态"></a>a、功能默认形态</h5><p>指此功能在默认情况下的状态说明。例如：你在淘宝购物时，下单后你的收货地址是你所设置的默认收货地址。</p>
+<h5 id="b、功能操作反馈逻辑"><a href="#b、功能操作反馈逻辑" class="headerlink" title="b、功能操作反馈逻辑"></a>b、功能操作反馈逻辑</h5><p>标注功能是否可以进行交互操作，操作的方式是怎样的，操作后会有什么样的变化等。还是上面的例子：当你i点击你的收货地址时会进入下级页面，可以将你的地址切换为其他已经定义的地址。</p>
+<h5 id="c、功能容错性"><a href="#c、功能容错性" class="headerlink" title="c、功能容错性"></a>c、功能容错性</h5><p>可以理解为当默认形态失效或出错时，需要进行怎样的变化来应对。如果你第一次在淘宝购物没有默认地址时，显示“请添加地址”。</p>
+<h5 id="d、功能拓展性"><a href="#d、功能拓展性" class="headerlink" title="d、功能拓展性"></a>d、功能拓展性</h5><p>即当某些功能在极限情况下，是否有所变化来包容功能的扩展。例如标题过长时，折叠或者以“…”显示。</p>
+<h3 id="3、逻辑严谨性原则"><a href="#3、逻辑严谨性原则" class="headerlink" title="3、逻辑严谨性原则"></a>3、逻辑严谨性原则</h3><p><strong>通畅性：</strong>进行原型设计时需确认流程能否顺利跑通、是否有断崖或死循环？</p>
+<p><strong>容错性：</strong>进行原型设计时需确认方案包含正向流程、逆向流程、异常状态所需的所有功能。</p>
+<h3 id="4、设计合理性原则"><a href="#4、设计合理性原则" class="headerlink" title="4、设计合理性原则"></a>4、设计合理性原则</h3><p>好的原型方案还要绘制的”好看“。</p>
+<p>设计小技巧：</p>
+<h4 id="1）对齐原则"><a href="#1）对齐原则" class="headerlink" title="1）对齐原则"></a>1）对齐原则</h4><p>原型里的每个元素不论是图形还是文字都有其对应的对齐规则。</p>
+<p><img src="duiqi.png" alt=""></p>
+<h4 id="2）对比原则"><a href="#2）对比原则" class="headerlink" title="2）对比原则"></a>2）对比原则</h4><p>加大不同元素或者板块的对比和视觉差异，当需要对某些内容进行强调时通过对比实现分层。</p>
+<p><img src="duiqi.png" alt=""></p>
+<h4 id="3）亲密原则"><a href="#3）亲密原则" class="headerlink" title="3）亲密原则"></a>3）亲密原则</h4><p>相邻的元素之间必须要有相关性，因为如果两个元素靠的很近，直觉上会令用户认为他们之间有关系。</p>
+<h4 id="4）一致性原则"><a href="#4）一致性原则" class="headerlink" title="4）一致性原则"></a>4）一致性原则</h4><p>页面的元素之间在设计上必须保证一致性和连贯性；不同页面如果使用了相同元件和相同的交互，方式必须保证一致性。</p>
+<p><img src="yizhi.png" alt=""></p>
+<h2 id="三、总结"><a href="#三、总结" class="headerlink" title="三、总结"></a>三、总结</h2><p>铭记 <strong>边界清晰、内容完整、逻辑严谨、设计合理</strong> 四大原则。</p>
+
+    </div>
+
+    
+    
+    
+
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------Ending of the article<i class="fa fa-paw"></i>Thanks For Your Reading-------------</div>
+    
+</div>
+  
+</div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Note/" rel="tag"><i class="fa fa-tags"></i> Note</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/01/29/%E4%BB%80%E4%B9%88%E6%98%AF-NFT-%EF%BC%9F/" rel="prev" title="2022-1-29-什么是 NFT ？音乐股票又是啥？">
+      <i class="fa fa-chevron-left"></i> 2022-1-29-什么是 NFT ？音乐股票又是啥？
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%A7%E5%93%81%E5%8E%9F%E5%9E%8B%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="nav-number">1.</span> <span class="nav-text">产品原型的设计原则</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%85%88%E5%AF%B9%E4%BA%A7%E5%93%81%E5%8E%9F%E5%9E%8B%E6%9C%AC%E8%BA%AB%E8%BF%9B%E8%A1%8C%E6%B7%B1%E5%85%A5%E8%AE%A4%E7%9F%A5"><span class="nav-number">1.1.</span> <span class="nav-text">一、先对产品原型本身进行深入认知</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E5%BC%B1%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.1.1.</span> <span class="nav-text">1、弱使用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E5%BC%BA%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.1.2.</span> <span class="nav-text">2、强使用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E5%B0%8F%E7%BB%93"><span class="nav-number">1.1.3.</span> <span class="nav-text">3、小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%92%B0%E5%86%99%E4%BA%A7%E5%93%81%E5%8E%9F%E5%9E%8B%E7%9A%84%E5%8E%9F%E5%88%99"><span class="nav-number">1.2.</span> <span class="nav-text">二、撰写产品原型的原则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E8%BE%B9%E7%95%8C%E6%B8%85%E6%99%B0%E5%8E%9F%E5%88%99"><span class="nav-number">1.2.1.</span> <span class="nav-text">1、边界清晰原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E5%86%85%E5%AE%B9%E5%AE%8C%E6%95%B4%E6%80%A7%E5%8E%9F%E5%88%99"><span class="nav-number">1.2.2.</span> <span class="nav-text">2、内容完整性原则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1%EF%BC%89%E8%83%8C%E6%99%AF%E8%AF%B4%E6%98%8E"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">1）背景说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2%EF%BC%89%E9%9C%80%E6%B1%82%E6%B8%85%E5%8D%95"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">2）需求清单</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3%EF%BC%89%E6%B5%81%E7%A8%8B%E5%9B%BE"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">3）流程图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4%EF%BC%89%E5%8A%9F%E8%83%BD%E7%95%8C%E9%9D%A2"><span class="nav-number">1.2.2.4.</span> <span class="nav-text">4）功能界面</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#a%E3%80%81%E6%8C%89%E7%85%A7%E6%B5%81%E7%A8%8B%E7%BB%98%E5%88%B6%E5%86%85%E5%AE%B9"><span class="nav-number">1.2.2.4.1.</span> <span class="nav-text">a、按照流程绘制内容</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#b%E3%80%81%E7%A1%AE%E4%BF%9D%E5%B1%82%E6%AC%A1%E6%B8%85%E6%99%B0"><span class="nav-number">1.2.2.4.2.</span> <span class="nav-text">b、确保层次清晰</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5%EF%BC%89%E9%9C%80%E6%B1%82%E6%A0%87%E6%B3%A8"><span class="nav-number">1.2.2.5.</span> <span class="nav-text">5）需求标注</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#a%E3%80%81%E5%8A%9F%E8%83%BD%E9%BB%98%E8%AE%A4%E5%BD%A2%E6%80%81"><span class="nav-number">1.2.2.5.1.</span> <span class="nav-text">a、功能默认形态</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#b%E3%80%81%E5%8A%9F%E8%83%BD%E6%93%8D%E4%BD%9C%E5%8F%8D%E9%A6%88%E9%80%BB%E8%BE%91"><span class="nav-number">1.2.2.5.2.</span> <span class="nav-text">b、功能操作反馈逻辑</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#c%E3%80%81%E5%8A%9F%E8%83%BD%E5%AE%B9%E9%94%99%E6%80%A7"><span class="nav-number">1.2.2.5.3.</span> <span class="nav-text">c、功能容错性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#d%E3%80%81%E5%8A%9F%E8%83%BD%E6%8B%93%E5%B1%95%E6%80%A7"><span class="nav-number">1.2.2.5.4.</span> <span class="nav-text">d、功能拓展性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E9%80%BB%E8%BE%91%E4%B8%A5%E8%B0%A8%E6%80%A7%E5%8E%9F%E5%88%99"><span class="nav-number">1.2.3.</span> <span class="nav-text">3、逻辑严谨性原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81%E8%AE%BE%E8%AE%A1%E5%90%88%E7%90%86%E6%80%A7%E5%8E%9F%E5%88%99"><span class="nav-number">1.2.4.</span> <span class="nav-text">4、设计合理性原则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1%EF%BC%89%E5%AF%B9%E9%BD%90%E5%8E%9F%E5%88%99"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">1）对齐原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2%EF%BC%89%E5%AF%B9%E6%AF%94%E5%8E%9F%E5%88%99"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">2）对比原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3%EF%BC%89%E4%BA%B2%E5%AF%86%E5%8E%9F%E5%88%99"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">3）亲密原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4%EF%BC%89%E4%B8%80%E8%87%B4%E6%80%A7%E5%8E%9F%E5%88%99"><span class="nav-number">1.2.4.4.</span> <span class="nav-text">4）一致性原则</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E6%80%BB%E7%BB%93"><span class="nav-number">1.3.</span> <span class="nav-text">三、总结</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xuewei Zhang"
+      src="/images/touxiang.png">
+  <p class="site-author-name" itemprop="name">Xuewei Zhang</p>
+  <div class="site-description" itemprop="description">Please read carefully the books you can understand</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Nickzxw" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Nickzxw" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/13690112205@163.com" title="E-Mail → 13690112205@163.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+	
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xuewei Zhang</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/nipsilon.model.json"},"display":{"position":"right","width":250,"height":250},"mobile":{"show":false},"log":false});</script></body>
+</html>

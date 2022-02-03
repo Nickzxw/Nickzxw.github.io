@@ -139,22 +139,26 @@ body {
     font-size: 1.2em;
 }
 
-// 美化h1 h2 h3 标签
+// 美化h1 h2 h3 h4 h5 标签
 .post-body h1 {
     font-size: 34px;
     color: #d9534f;
 }
 .post-body h2 {
     font-size: 30px;
-    color: #7FB174
+    color: #1D6A96
 }
 .post-body h3 {
     font-size: 26px;
-    color: #d9534f
+    color: #7FB174
 }
 .post-body h4 {
     font-size: 22px;
     color: #1D6A96
+}
+.post-body h5 {
+    font-size: 22px;
+    color: #000033
 }
 .post-eof {
     background: #ccc;
