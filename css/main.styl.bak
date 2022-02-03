@@ -154,7 +154,7 @@ body {
 }
 .post-body h4 {
     font-size: 22px;
-    color: #1D6A96
+    color: #99FFCC
 }
 .post-body h5 {
     font-size: 22px;
