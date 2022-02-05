@@ -20,26 +20,22 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="统计学习系列——引言 什么是统计学习？统计学习是指大量用于理解数据的工具。同时这些工具可分为有监督和无监督的。 广义来说(Broadly speaking)，有监督的统计学习包括构建一个用于预测、估计或基于一个或多个输入的输出的统计模型。 在无监督学习中，则只有输入而无有监督的输出；因此我们可以从这类数据中学习它们之间的关系和结构。">
+  <meta name="description" content="2022-2-5-学习笔记 PM 需要形成自己的、符合产品岗位的思维方式、才能更好地做出适应市场、满足用户需求的产品。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【笔记】Statistical Learning with R">
-<meta property="og:url" content="http://example.com/2021/11/02/Statistical-Learning-with-R/index.html">
+<meta property="og:title" content="【笔记】产品品经理的思维方式">
+<meta property="og:url" content="http://example.com/2022/02/05/2022-2-5-%E4%BA%A7%E5%93%81%E5%93%81%E7%BB%8F%E7%90%86%E7%9A%84%E6%80%9D%E7%BB%B4%E6%96%B9%E5%BC%8F/index.html">
 <meta property="og:site_name" content="X.Zhang&#39;s Blog.">
-<meta property="og:description" content="统计学习系列——引言 什么是统计学习？统计学习是指大量用于理解数据的工具。同时这些工具可分为有监督和无监督的。 广义来说(Broadly speaking)，有监督的统计学习包括构建一个用于预测、估计或基于一个或多个输入的输出的统计模型。 在无监督学习中，则只有输入而无有监督的输出；因此我们可以从这类数据中学习它们之间的关系和结构。">
+<meta property="og:description" content="2022-2-5-学习笔记 PM 需要形成自己的、符合产品岗位的思维方式、才能更好地做出适应市场、满足用户需求的产品。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2021/11/02/Statistical-Learning-with-R/wage.jpg">
-<meta property="og:image" content="http://example.com/2021/11/02/Statistical-Learning-with-R/stockmarket.jpg">
-<meta property="og:image" content="http://example.com/2021/11/02/Statistical-Learning-with-R/gene.jpg">
-<meta property="article:published_time" content="2021-11-02T00:47:28.000Z">
-<meta property="article:modified_time" content="2022-01-26T10:30:32.787Z">
+<meta property="og:image" content="http://example.com/2022/02/05/2022-2-5-%E4%BA%A7%E5%93%81%E5%93%81%E7%BB%8F%E7%90%86%E7%9A%84%E6%80%9D%E7%BB%B4%E6%96%B9%E5%BC%8F/question.png">
+<meta property="article:published_time" content="2022-02-05T07:22:18.000Z">
+<meta property="article:modified_time" content="2022-02-05T08:44:58.209Z">
 <meta property="article:author" content="Xuewei Zhang">
-<meta property="article:tag" content="Books">
-<meta property="article:tag" content="Statical">
-<meta property="article:tag" content="R">
+<meta property="article:tag" content="Note">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/11/02/Statistical-Learning-with-R/wage.jpg">
+<meta name="twitter:image" content="http://example.com/2022/02/05/2022-2-5-%E4%BA%A7%E5%93%81%E5%93%81%E7%BB%8F%E7%90%86%E7%9A%84%E6%80%9D%E7%BB%B4%E6%96%B9%E5%BC%8F/question.png">
 
-<link rel="canonical" href="http://example.com/2021/11/02/Statistical-Learning-with-R/">
+<link rel="canonical" href="http://example.com/2022/02/05/2022-2-5-%E4%BA%A7%E5%93%81%E5%93%81%E7%BB%8F%E7%90%86%E7%9A%84%E6%80%9D%E7%BB%B4%E6%96%B9%E5%BC%8F/">
 
 
 <script id="page-configurations">
@@ -52,7 +48,7 @@
   };
 </script>
 
-  <title>【笔记】Statistical Learning with R | X.Zhang's Blog.</title>
+  <title>【笔记】产品品经理的思维方式 | X.Zhang's Blog.</title>
   
 
 
@@ -210,7 +206,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/02/Statistical-Learning-with-R/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/05/2022-2-5-%E4%BA%A7%E5%93%81%E5%93%81%E7%BB%8F%E7%90%86%E7%9A%84%E6%80%9D%E7%BB%B4%E6%96%B9%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/touxiang.png">
@@ -223,7 +219,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          【笔记】Statistical Learning with R
+          【笔记】产品品经理的思维方式
         </h1>
 
         <div class="post-meta">
@@ -232,27 +228,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2021-11-02 08:47:28" itemprop="dateCreated datePublished" datetime="2021-11-02T08:47:28+08:00">2021-11-02</time>
+              <time title="Created: 2022-02-05 15:22:18 / Modified: 16:44:58" itemprop="dateCreated datePublished" datetime="2022-02-05T15:22:18+08:00">2022-02-05</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-26 18:30:32" itemprop="dateModified" datetime="2022-01-26T18:30:32+08:00">2022-01-26</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Books/" itemprop="url" rel="index"><span itemprop="name">Books</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Books/Statical/" itemprop="url" rel="index"><span itemprop="name">Statical</span></a>
+                  <a href="/categories/Note/" itemprop="url" rel="index"><span itemprop="name">Note</span></a>
                 </span>
             </span>
 
@@ -267,38 +253,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p> 统计学习系列——引言</p>
-<p>什么是统计学习？统计学习是指大量用于理解数据的工具。同时这些工具可分为有监督和无监督的。</p>
-<p>广义来说(Broadly speaking)，有监督的统计学习包括构建一个用于预测、估计或基于一个或多个输入的输出的统计模型。</p>
-<p>在无监督学习中，则只有输入而无有监督的输出；因此我们可以从这类数据中学习它们之间的关系和结构。</p>
+        <p>2022-2-5-学习笔记</p>
+<p>PM 需要形成自己的、符合产品岗位的思维方式、才能更好地做出适应市场、满足用户需求的产品。</p>
 <span id="more"></span>
-<h3 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h3><hr>
-<p>本书提供三个数据集用于举例说明统计学习的应用：工资数据集、股票市场数据集和基因表达数据集。</p>
-<h4 id="工资数据集"><a href="#工资数据集" class="headerlink" title="工资数据集"></a>工资数据集</h4><hr>
-<p>数据集主要内容是与美国大西洋地区男性工资相关的因素，通过此数据理解员工的年龄、教育程度和年份与工资之间的关系。因为该数据涉及到预测连续或定量的输出值，所以这通常被称为回归问题。</p>
-<p><img src="wage.jpg" alt=""></p>
-<h4 id="股票市场数据"><a href="#股票市场数据" class="headerlink" title="股票市场数据"></a>股票市场数据</h4><hr>
-<p>但在具体的案例中我们也许会预测非数值的结果-比如分类或者定性(categorical or qualitative)的结果。该数据集包含2001年至2005年5年间标准普尔指数(S&amp;P 500)的每日走势。目标是利用过去五天指数的百分比变化来预测该指数在某一天是上升还是下降。这里的统计学习问题涉及到预测某天的股市表现是会进入上升区间还是下降区间-即所谓的分类问题。</p>
-<p><img src="stockmarket.jpg" alt=""></p>
-<h4 id="基因表达数据"><a href="#基因表达数据" class="headerlink" title="基因表达数据"></a>基因表达数据</h4><hr>
-<p>前面两个例子表示了具有输入变量和输出变量的数据集，然而另一类重要的问题设计我们只观察输入变量而没有相应输入的情况。例如，在营销设置中，我们可能有许多当前客户或者潜在客户的人口统计信息，我们可能希望通过提取观测到的特征对个体进行分组，以此来了解那些类型的客户彼此相似。这就是所谓的聚类问题。针对该问题本文所使用的数据集为NCI60数据集，其内容包含64个癌症细胞系中每个细胞系的6,830个基因表达测量值。研究目的是根据他们的基因表达测量值来确定细胞系中是否有组成簇。</p>
-<p><img src="gene.jpg" alt=""></p>
-<p><strong><em>PS：分类和聚类的比较</em></strong></p>
-<ul>
-<li><em>聚类分析研究如何在没有训练条件的情况下将样本分为若干类</em></li>
-<li><em>分类中，对于目标数据库存在哪些类是存在的，要做的是把每一条记录分别属于哪一类标记出来。</em></li>
-</ul>
-<h3 id="本书的结构"><a href="#本书的结构" class="headerlink" title="本书的结构"></a>本书的结构</h3><hr>
-<p>首先，第二章介绍了统计学习中的基本术语和概念，还展示了K临近分类-一种非常简单但在很多问题上表现都很好的方法。</p>
-<p>接着，第三章和第四章涵盖了回归和分类的经典线性方法，其中第三章回顾了线性回归，这是所有回归方法的基础。第四章我们讨论了两种最重要的经典分类方法，<strong>逻辑回归分析</strong>(<em>logistic regression</em>)和<strong>线性判别分析</strong>(<em>linear discriminant analysis</em>)。</p>
-<p>所有统计学习背景下最关键的问题是，如何根据应用问题选择最优的方法。因此第五章介绍了<strong>交叉验证</strong>(<em>cross-validation</em>)和<strong><em>Bootstrap</em></strong>，用来评估几种不同方法的精确性，并以此选择最好的一种。</p>
-<p>在第六章中介绍更多的线性方法，包括<strong>逐步回归</strong>(<em>stepwise selection</em>)、<strong>岭回归</strong>(<em>ridge regression</em>)、<strong>主成分回归</strong>(<em>principal components regression</em>)、<strong>偏最小二乘法</strong>(<em>partial least squares</em>)和 <strong><em>Lasso</em>回归</strong>(<em>the lasso</em>)。</p>
-<p>紧接着，第七章介绍非线性统计学习，首先介绍一系列在单个输入变量问题上表现很好的非线性方法，接着介绍可用于拟合多个输入的<strong>非线性加法模型(<em>non-<em>*</em></em></strong>linear additive models<em>)*</em>。</p>
-<p>第八章中介绍基于树的方法，其中包括<strong>套袋法</strong>(<em>bagging</em>)、<strong>提升法</strong>(<em>boosting</em>)和<strong>随机森林</strong>(<em>random forests</em>)。</p>
-<p>第九章介绍一组执行线性和非线性分类的方法—<strong>支持向量机</strong>(<em>Support vector machines</em>)。</p>
-<p>第十章介绍有关<strong>深度学习</strong>(<em>deep learning</em>)的方法。</p>
-<p>第十一章探讨了<strong>生存分析</strong>(<em>survival analysis</em>)，一种回归方法，专门用于输出变量未完全观察的回归问题。</p>
-<p>第十二章考虑的问题类型是只有输入变量而没有输出变量的设置，具体的方法有<strong>主成分分析</strong>(<em>principal components analysis</em>)、<strong>K均值聚类</strong>(<em>K-means clustering</em>)、<strong>层次聚类</strong>(<em>hierarchical clustering</em>)。</p>
+<h1 id="一、PM-的思维方式"><a href="#一、PM-的思维方式" class="headerlink" title="一、PM 的思维方式"></a>一、PM 的思维方式</h1><h2 id="1、从直接回答问题，到先搞清楚问题"><a href="#1、从直接回答问题，到先搞清楚问题" class="headerlink" title="1、从直接回答问题，到先搞清楚问题"></a>1、从直接回答问题，到先搞清楚问题</h2><p>看到问题不要先回答，面对一个问题时首先要收集信息，采集需求然后整理信息，找出问题的核心是什么？将问题拆解，多问自己对于问题的 what、why、who、where、fluency、emergency 都足够了解了没。</p>
+<p><img src="question.png" alt=""></p>
+<p><strong>只做一次的事情找可行解，反复做的事情则要寻找最优解。</strong></p>
+<p>学会断舍离，找到用户的核心需求，围绕核心需求去做产品，去除冗余功能。</p>
+<h2 id="2、以自我为中心，到以用户为中心"><a href="#2、以自我为中心，到以用户为中心" class="headerlink" title="2、以自我为中心，到以用户为中心"></a>2、以自我为中心，到以用户为中心</h2><p>不同用户的需求是不一样，所以解决方式也不一样。这会影响到产品的架构设计，比如滴滴，用户的需求是快速打到车，所以主页面是地图，用户填写目的地，选择不同的车型，就可以了；而司机的需求是快速抢单，所以主页面是用户订单列表。</p>
+<p>我们要具备 “同理心 ”，学会换位思考，站在用户的角度去思考问题，而不是以个人喜好主观的去判断一个产品的好坏。比如在竞品分析中，需要客观地去评价竞品的功能，使用数据和信息来作证判断。</p>
+<h2 id="3、从只看到现象，到发现问题的本质"><a href="#3、从只看到现象，到发现问题的本质" class="headerlink" title="3、从只看到现象，到发现问题的本质"></a>3、从只看到现象，到发现问题的本质</h2><p><strong>不再被表面蒙骗，要学会追问逻辑的尽头。任何事物的本质都相对简单。</strong></p>
+<p>最经典的一个商业案例来自麦当劳的一个内部项目，目标是增加店里奶昔的销量。</p>
+<p>大公司做这类项目的一般流程都是：先定义奶昔这个产品在市场的定位是什么，然后选出最可能购买奶昔的人群，之后组织一些典型客户来做各种调研和采访。</p>
+<p>这么一通折腾下来，麦当劳的奶昔在口味和性价比上越来越有进步，但是销量却没什么增长。后来，麦当劳就请了哈佛商学院的克里斯滕森教授来继续研究这个项目，看看有没有一些其他的解决方案。</p>
+<p>一开始，克里斯滕森的团队关注的主要也是产品。他们对产品做了很多研究，但也没得出什么新的结论。这时候，团队里面有一个研究人员决定忽略奶昔本身，直接去研究顾客。于是他每天坐在麦当劳里长达18个小时，观察都有哪些人在什么时候买奶昔。</p>
+<p>结果，他发现了一个有意思的事情： 他所在的那家麦当劳40%的奶昔都是早上卖出去的，而且买这些奶昔的顾客一般都是一个人，也不会搭配奶昔买其他别的东西，并且基本都是拿回车上喝。</p>
+<p>克里斯滕森的团队觉得很奇怪，因为早上喝奶昔好像并不太符合大家对这种食物的印象。于是他们就开始采访这些买奶昔的顾客，问他们为什么要买奶昔。最终他们发现，这些顾客买奶昔的理由是这样的：</p>
+<p>首先，他们都要开一段很长又无聊的车，一般是去公司上班或者去办事，所以想买个好吃的在路上打发时间；</p>
+<p>其次，他们早上的时候虽然不饿，但一般等到10点至11点左右就会开始饿了，所以先提前垫垫肚子；</p>
+<p>另外还有一个特点，就是这些人一般在吃东西的时候都有一些限制。比如一般他们着急去上班，没法等太久；穿着工作服，不能弄脏；再有就是，大部分人因为要开车，最多只能空出一只手来。</p>
+<p>观察到这些之后，克里斯滕森就提出了一个很经典的观点，他说， <strong>用户购买的并不是某种产品或者服务，其实他们做的是，“雇佣”你的产品或者服务，来完成他们面临的某种任务。</strong></p>
+<p><strong>真正的理解客户不是机械地去做调研、问一些调查问题，简单得出一些结论就完了。重要的是真正带着同理心去观察你的客户，了解隐藏在他们行为后面真正的需求和渴望是什么，透过表象看到本质。这样才能真正做出好的产品。</strong></p>
+<h1 id="二、PM-需要有哪些性格特性"><a href="#二、PM-需要有哪些性格特性" class="headerlink" title="二、PM 需要有哪些性格特性"></a>二、PM 需要有哪些性格特性</h1><h2 id="1、保持好奇心"><a href="#1、保持好奇心" class="headerlink" title="1、保持好奇心"></a>1、保持好奇心</h2><p>当今互联网的信息具有很强的时效性，如果不提前抓住机会进入到需求蓝海就会错失先机，那么再次进入这个领域就会很困难。</p>
+<p>养成每天都去思考手机的里产品的习惯，尝试着多问问自己，这个产品/功能满足得了哪几类的哪些需求？为什么这个功能这么做，而不那样做？这个产品/功能是否还可以改善？</p>
+<h2 id="2、创新和持续学习"><a href="#2、创新和持续学习" class="headerlink" title="2、创新和持续学习"></a>2、创新和持续学习</h2><p>创新精神很重要，做同类产品时，我们一定要做出差异性来，否则，原先的用户是很难转移过来。因为人会习惯性的使用之前的产品。</p>
+<h2 id="3、良好的逻辑思维"><a href="#3、良好的逻辑思维" class="headerlink" title="3、良好的逻辑思维"></a>3、良好的逻辑思维</h2><p>一方面需要人们对关键细节的追求，另一方面也需要有大局观，知道战略比战术更重要，知道合理妥协的必要性。</p>
+<p>这是一种自上而下的产品设计，切忌再没有弄清楚产品需求和逻辑时，就直接开始画图。</p>
+<h2 id="4、善于沟通"><a href="#4、善于沟通" class="headerlink" title="4、善于沟通"></a>4、善于沟通</h2><p>因为产品是有多个角色一起去协助完成的，所以良好的团队沟通是必不可少的。</p>
+<h2 id="5、抗压"><a href="#5、抗压" class="headerlink" title="5、抗压"></a>5、抗压</h2><p>协调多方的角色，不要变成背锅侠……</p>
 
     </div>
 
@@ -317,9 +299,7 @@
 </div>
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Books/" rel="tag"><i class="fa fa-tags"></i> Books</a>
-              <a href="/tags/Statical/" rel="tag"><i class="fa fa-tags"></i> Statical</a>
-              <a href="/tags/R/" rel="tag"><i class="fa fa-tags"></i> R</a>
+              <a href="/tags/Note/" rel="tag"><i class="fa fa-tags"></i> Note</a>
           </div>
 
         
@@ -328,13 +308,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/10/31/A-global-analysis-of-the-impact-of-COVID-19/" rel="prev" title="A Global Analysis of the Impact of COVID-19">
-      <i class="fa fa-chevron-left"></i> A Global Analysis of the Impact of COVID-19
+    <a href="/2022/02/02/2022-2-2-%E5%A5%BD%E7%9A%84%E4%BA%A7%E5%93%81%E5%8E%9F%E5%9E%8B%E6%9C%89%E5%93%AA%E4%BA%9B%E7%89%B9%E7%82%B9/" rel="prev" title="【笔记】好的产品原型有哪些特点">
+      <i class="fa fa-chevron-left"></i> 【笔记】好的产品原型有哪些特点
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/11/02/Statical-Learning-with-R-Chapter2/" rel="next" title="【笔记】统计学习方法-李航">
-      【笔记】统计学习方法-李航 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -393,7 +370,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-number">1.</span> <span class="nav-text">数据集</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B7%A5%E8%B5%84%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-number">1.1.</span> <span class="nav-text">工资数据集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%82%A1%E7%A5%A8%E5%B8%82%E5%9C%BA%E6%95%B0%E6%8D%AE"><span class="nav-number">1.2.</span> <span class="nav-text">股票市场数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E5%9B%A0%E8%A1%A8%E8%BE%BE%E6%95%B0%E6%8D%AE"><span class="nav-number">1.3.</span> <span class="nav-text">基因表达数据</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E4%B9%A6%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">本书的结构</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81PM-%E7%9A%84%E6%80%9D%E7%BB%B4%E6%96%B9%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">一、PM 的思维方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E4%BB%8E%E7%9B%B4%E6%8E%A5%E5%9B%9E%E7%AD%94%E9%97%AE%E9%A2%98%EF%BC%8C%E5%88%B0%E5%85%88%E6%90%9E%E6%B8%85%E6%A5%9A%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">1、从直接回答问题，到先搞清楚问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E4%BB%A5%E8%87%AA%E6%88%91%E4%B8%BA%E4%B8%AD%E5%BF%83%EF%BC%8C%E5%88%B0%E4%BB%A5%E7%94%A8%E6%88%B7%E4%B8%BA%E4%B8%AD%E5%BF%83"><span class="nav-number">1.2.</span> <span class="nav-text">2、以自我为中心，到以用户为中心</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E4%BB%8E%E5%8F%AA%E7%9C%8B%E5%88%B0%E7%8E%B0%E8%B1%A1%EF%BC%8C%E5%88%B0%E5%8F%91%E7%8E%B0%E9%97%AE%E9%A2%98%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="nav-number">1.3.</span> <span class="nav-text">3、从只看到现象，到发现问题的本质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81PM-%E9%9C%80%E8%A6%81%E6%9C%89%E5%93%AA%E4%BA%9B%E6%80%A7%E6%A0%BC%E7%89%B9%E6%80%A7"><span class="nav-number">2.</span> <span class="nav-text">二、PM 需要有哪些性格特性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E4%BF%9D%E6%8C%81%E5%A5%BD%E5%A5%87%E5%BF%83"><span class="nav-number">2.1.</span> <span class="nav-text">1、保持好奇心</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E5%88%9B%E6%96%B0%E5%92%8C%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0"><span class="nav-number">2.2.</span> <span class="nav-text">2、创新和持续学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E8%89%AF%E5%A5%BD%E7%9A%84%E9%80%BB%E8%BE%91%E6%80%9D%E7%BB%B4"><span class="nav-number">2.3.</span> <span class="nav-text">3、良好的逻辑思维</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81%E5%96%84%E4%BA%8E%E6%B2%9F%E9%80%9A"><span class="nav-number">2.4.</span> <span class="nav-text">4、善于沟通</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%E3%80%81%E6%8A%97%E5%8E%8B"><span class="nav-number">2.5.</span> <span class="nav-text">5、抗压</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
