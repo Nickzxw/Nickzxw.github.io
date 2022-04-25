@@ -1252,30 +1252,4 @@ P_{ni}=\frac {e^{V_{ni}}∑^J_{j=1}} {e^{V_{nj}}}</script><h3 id="Results-1"><a 
         <tag>Note</tag>
       </tags>
   </entry>
-  <entry>
-    <title>前端 HTTP 知识总结</title>
-    <url>/2022/04/22/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<blockquote>
-<p>基础不牢，地动山摇</p>
-</blockquote>
-<p>前端HTTP知识点总结笔记。</p>
-<span id="more"></span>
-<h1 id="什么是跨域"><a href="#什么是跨域" class="headerlink" title="什么是跨域"></a>什么是跨域</h1><p>提到跨域，首先需要明确浏览器的同源安全策略。</p>
-<p>同源：协议(http 或 https)、域名(www.nickzxw.top)和端口号(80、8080)都相同则称之为同源，与之不同的皆是不同源，也就是跨域。</p>
-<p><strong>跨域解决方法：</strong></p>
-<p>一般有以下几种方法</p>
-<ul>
-<li>jsonp 方法，只适用于 GET 请求</li>
-<li>CROS（跨域资源共享协议），适用于各种请求</li>
-<li>domain 设置，只适用于子域名</li>
-<li>POST Message，适用于父子网页 iframe 通信</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Note</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-      </tags>
-  </entry>
 </search>
