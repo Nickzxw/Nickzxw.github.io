@@ -28,7 +28,7 @@
     "hexo-renderer-stylus": "^2.0.0",
     "hexo-server": "^2.0.0",
     "hexo-theme-landscape": "^0.0.3",
-    "hexo-util": "^2.5.0",
+    "hexo-util": "^2.6.1",
     "inferno": "^7.4.10",
     "inferno-create-element": "^7.4.10",
     "live2d-widget-model-nipsilon": "^1.0.5",
