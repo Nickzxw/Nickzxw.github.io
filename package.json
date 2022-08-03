@@ -30,7 +30,7 @@
     "hexo-theme-landscape": "^0.0.3",
     "hexo-util": "^2.5.0",
     "inferno": "^7.4.10",
-    "inferno-create-element": "^7.4.10",
+    "inferno-create-element": "^8.0.2",
     "live2d-widget-model-nipsilon": "^1.0.5",
     "live2d-widget-model-nito": "^1.0.5"
   }
