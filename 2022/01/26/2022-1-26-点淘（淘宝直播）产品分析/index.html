@@ -2,126 +2,106 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.2">
+
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/panda.svg">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/panda.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|ZCOOL XiaoWei:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
 
-  <meta name="description" content="2022-01-26 读点淘产品分析的收获">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"nickzxw.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="2022-01-26 读点淘产品分析的收获">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【笔记】产品分析实例— 点淘（淘宝直播）">
-<meta property="og:url" content="http://example.com/2022/01/26/2022-1-26-%E7%82%B9%E6%B7%98%EF%BC%88%E6%B7%98%E5%AE%9D%E7%9B%B4%E6%92%AD%EF%BC%89%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90/index.html">
+<meta property="og:url" content="https://nickzxw.github.io/2022/01/26/2022-1-26-%E7%82%B9%E6%B7%98%EF%BC%88%E6%B7%98%E5%AE%9D%E7%9B%B4%E6%92%AD%EF%BC%89%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90/index.html">
 <meta property="og:site_name" content="X.Zhang&#39;s Blog.">
 <meta property="og:description" content="2022-01-26 读点淘产品分析的收获">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2022/01/26/2022-1-26-%E7%82%B9%E6%B7%98%EF%BC%88%E6%B7%98%E5%AE%9D%E7%9B%B4%E6%92%AD%EF%BC%89%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90/business.png">
-<meta property="og:image" content="http://example.com/2022/01/26/2022-1-26-%E7%82%B9%E6%B7%98%EF%BC%88%E6%B7%98%E5%AE%9D%E7%9B%B4%E6%92%AD%EF%BC%89%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90/douyin.png">
-<meta property="og:image" content="http://example.com/2022/01/26/2022-1-26-%E7%82%B9%E6%B7%98%EF%BC%88%E6%B7%98%E5%AE%9D%E7%9B%B4%E6%92%AD%EF%BC%89%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90/user_value.png">
-<meta property="og:image" content="http://example.com/2022/01/26/2022-1-26-%E7%82%B9%E6%B7%98%EF%BC%88%E6%B7%98%E5%AE%9D%E7%9B%B4%E6%92%AD%EF%BC%89%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90/business_value.png">
-<meta property="og:image" content="http://example.com/2022/01/26/2022-1-26-%E7%82%B9%E6%B7%98%EF%BC%88%E6%B7%98%E5%AE%9D%E7%9B%B4%E6%92%AD%EF%BC%89%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90/structure.png">
-<meta property="og:image" content="http://example.com/2022/01/26/2022-1-26-%E7%82%B9%E6%B7%98%EF%BC%88%E6%B7%98%E5%AE%9D%E7%9B%B4%E6%92%AD%EF%BC%89%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90/require.png">
+<meta property="og:image" content="https://nickzxw.github.io/business.png">
+<meta property="og:image" content="https://nickzxw.github.io/douyin.png">
+<meta property="og:image" content="https://nickzxw.github.io/user_value.png">
+<meta property="og:image" content="https://nickzxw.github.io/business_value.png">
+<meta property="og:image" content="https://nickzxw.github.io/structure.png">
+<meta property="og:image" content="https://nickzxw.github.io/require.png">
 <meta property="article:published_time" content="2022-01-26T04:50:28.000Z">
-<meta property="article:modified_time" content="2023-06-18T14:14:41.000Z">
+<meta property="article:modified_time" content="2026-05-10T16:43:16.432Z">
 <meta property="article:author" content="Xuewei Zhang">
 <meta property="article:tag" content="Note">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2022/01/26/2022-1-26-%E7%82%B9%E6%B7%98%EF%BC%88%E6%B7%98%E5%AE%9D%E7%9B%B4%E6%92%AD%EF%BC%89%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90/business.png">
-
-<link rel="canonical" href="http://example.com/2022/01/26/2022-1-26-%E7%82%B9%E6%B7%98%EF%BC%88%E6%B7%98%E5%AE%9D%E7%9B%B4%E6%92%AD%EF%BC%89%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90/">
+<meta name="twitter:image" content="https://nickzxw.github.io/business.png">
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'en'
-  };
-</script>
+<link rel="canonical" href="https://nickzxw.github.io/2022/01/26/2022-1-26-%E7%82%B9%E6%B7%98%EF%BC%88%E6%B7%98%E5%AE%9D%E7%9B%B4%E6%92%AD%EF%BC%89%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90/">
 
-  <title>【笔记】产品分析实例— 点淘（淘宝直播） | X.Zhang's Blog.</title>
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://nickzxw.github.io/2022/01/26/2022-1-26-%E7%82%B9%E6%B7%98%EF%BC%88%E6%B7%98%E5%AE%9D%E7%9B%B4%E6%92%AD%EF%BC%89%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90/","path":"2022/01/26/2022-1-26-点淘（淘宝直播）产品分析/","title":"【笔记】产品分析实例— 点淘（淘宝直播）"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>【笔记】产品分析实例— 点淘（淘宝直播） | X.Zhang's Blog.</title>
   
 
 
-  <script>
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?a1693fc5c0727c998ed003c4bf9d4926";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
 
 
 
 
   <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">X.Zhang's Blog.</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
+      <p class="site-title">X.Zhang's Blog.</p>
+      <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">I CAN DO ALL THING</p>
   </div>
 
   <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
     </div>
   </div>
 </div>
@@ -129,161 +109,153 @@
 
 
 
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
-  </li>
-        <li class="menu-item menu-item-about">
 
-    <a href="/aboutme/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+</header>
+        
+  
+  <aside class="sidebar">
 
-  </li>
-        <li class="menu-item menu-item-tags">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E7%9A%84%E6%B5%81%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">产品分析的流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E8%A1%8C%E4%B8%9A%E5%88%86%E6%9E%90"><span class="nav-number">1.1.</span> <span class="nav-text">一、行业分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81Polices"><span class="nav-number">1.1.1.</span> <span class="nav-text">1、Polices</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81Economy"><span class="nav-number">1.1.2.</span> <span class="nav-text">2、Economy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81Society"><span class="nav-number">1.1.3.</span> <span class="nav-text">3、Society</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81Technology"><span class="nav-number">1.1.4.</span> <span class="nav-text">4、Technology</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E7%AB%9E%E5%93%81%E5%88%86%E6%9E%90"><span class="nav-number">1.2.</span> <span class="nav-text">二、竞品分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E7%94%A8%E6%88%B7%E4%BB%B7%E5%80%BC%E5%88%86%E6%9E%90"><span class="nav-number">1.3.</span> <span class="nav-text">三、用户价值分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B6%88%E8%B4%B9%E8%80%85"><span class="nav-number">1.3.1.</span> <span class="nav-text">消费者</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MCN-%E6%9C%BA%E6%9E%84%E5%92%8C%E4%B8%BB%E6%92%AD"><span class="nav-number">1.3.2.</span> <span class="nav-text">MCN 机构和主播</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%95%86%E5%AE%B6%EF%BC%88%E5%93%81%E7%89%8C%E6%96%B9%EF%BC%89"><span class="nav-number">1.3.3.</span> <span class="nav-text">商家（品牌方）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B3%E5%8F%B0"><span class="nav-number">1.3.4.</span> <span class="nav-text">平台</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%95%86%E4%B8%9A%E4%BB%B7%E5%80%BC%E5%88%86%E6%9E%90"><span class="nav-number">1.4.</span> <span class="nav-text">四、商业价值分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E4%BA%A7%E5%93%81%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90"><span class="nav-number">1.5.</span> <span class="nav-text">五、产品结构分析</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
 
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
-
-  </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Xuewei Zhang</p>
+  <div class="site-description" itemprop="description">Please read carefully the books you can understand</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">posts</span>
         </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="Searching..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
 </div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
-</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
 
     </div>
-  </div>
 
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
+    <div class="main-inner post posts-expand">
 
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
+  
 
-          <div class="content post posts-expand">
-            
 
-    
+<div class="post-block">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/26/2022-1-26-%E7%82%B9%E6%B7%98%EF%BC%88%E6%B7%98%E5%AE%9D%E7%9B%B4%E6%92%AD%EF%BC%89%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90/">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://nickzxw.github.io/2022/01/26/2022-1-26-%E7%82%B9%E6%B7%98%EF%BC%88%E6%B7%98%E5%AE%9D%E7%9B%B4%E6%92%AD%EF%BC%89%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Xuewei Zhang">
-      <meta itemprop="description" content="Please read carefully the books you can understand">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="X.Zhang's Blog.">
+      <meta itemprop="description" content="Please read carefully the books you can understand">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="【笔记】产品分析实例— 点淘（淘宝直播） | X.Zhang's Blog.">
+      <meta itemprop="description" content="2022-01-26 读点淘产品分析的收获">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           【笔记】产品分析实例— 点淘（淘宝直播）
         </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-01-26 12:50:28" itemprop="dateCreated datePublished" datetime="2022-01-26T12:50:28+08:00">2022-01-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-06-18 22:14:41" itemprop="dateModified" datetime="2023-06-18T22:14:41+08:00">2023-06-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Note/" itemprop="url" rel="index"><span itemprop="name">Note</span></a>
-                </span>
-            </span>
+      <time title="Created: 2022-01-26 12:50:28" itemprop="dateCreated datePublished" datetime="2022-01-26T12:50:28+08:00">2022-01-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2026-05-11 00:43:16" itemprop="dateModified" datetime="2026-05-11T00:43:16+08:00">2026-05-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Note/" itemprop="url" rel="index"><span itemprop="name">Note</span></a>
+        </span>
+    </span>
 
-          
+  
+</div>
 
+            <div class="post-description">2022-01-26 读点淘产品分析的收获</div>
         </div>
       </header>
 
     
     
     
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <p>2022-01-26 读点淘产品分析的收获</p>
-<span id="more"></span>
-<h1 id="产品分析的流程"><a href="#产品分析的流程" class="headerlink" title="产品分析的流程"></a>产品分析的流程</h1><h2 id="一、行业分析"><a href="#一、行业分析" class="headerlink" title="一、行业分析"></a>一、行业分析</h2><p><strong>对比分析，深挖行业的底层逻辑以及核心特点。</strong>例如：传统电商的底层逻辑是“人找货”，用户使用场景与线下购物类似；而直播电商的核心特点是快速匹配、及时下单、优惠以及正品保障（我觉得后两者是大头）。</p>
+    <div class="post-body" itemprop="articleBody"><p>2022-01-26 读点淘产品分析的收获</p>
+<h1 id="产品分析的流程"><a href="#产品分析的流程" class="headerlink" title="产品分析的流程"></a>产品分析的流程</h1><h2 id="一、行业分析"><a href="#一、行业分析" class="headerlink" title="一、行业分析"></a>一、行业分析</h2><p>**对比分析，深挖行业的底层逻辑以及核心特点。**例如：传统电商的底层逻辑是”人找货”，用户使用场景与线下购物类似；而直播电商的核心特点是快速匹配、及时下单、优惠以及正品保障（我觉得后两者是大头）。</p>
 <p>因此对比之下直播电商的转化路径更短，购物过程实时化、线上化是直播电商行业保障高转化率的关键因素。</p>
-<p><strong>PEST 模型</strong>（<strong>P</strong>olices <strong>E</strong>conomy <strong>S</strong>ociety <strong>T</strong>echnology），分别从政治（政策）、经济、社会、科技等方面所探讨该行业的快速发展的底层逻辑。</p>
-<h3 id="1、Polices"><a href="#1、Polices" class="headerlink" title="1、Polices"></a>1、Polices</h3><p>得益于国内“互联网+”模式的多年发展，直播电商等线上经济成为常态化疫情背景下有效稳定市场经济发展的工具之一。</p>
+<p><strong>PEST 模型</strong>（<strong>P</strong>olices <strong>E</strong>conomy <strong>S</strong>ociety <strong>T</strong>echnology），分别从政治（政策）、经济、社会，科技等方面所探讨该行业的快速发展的底层逻辑。</p>
+<h3 id="1、Polices"><a href="#1、Polices" class="headerlink" title="1、Polices"></a>1、Polices</h3><p>得益于国内”互联网+”模式的多年发展，直播电商等线上经济成为常态化疫情背景下有效稳定市场经济发展的工具之一。</p>
 <p><strong>PS：密切关注国家政策和商务部的政策。</strong></p>
 <h3 id="2、Economy"><a href="#2、Economy" class="headerlink" title="2、Economy"></a>2、Economy</h3><p><strong>GMV</strong> ：商品交易总额（一定时间段内），多用于电商行业，一般包括拍下未支付订单金额。</p>
 <p>通过各种图表说明变化趋势，研究报告来源如：<a target="_blank" rel="noopener" href="https://www.askci.com/">中商情报网</a> 、<a target="_blank" rel="noopener" href="https://bg.qianzhan.com/">前瞻研究院</a>等。</p>
 <h3 id="3、Society"><a href="#3、Society" class="headerlink" title="3、Society"></a>3、Society</h3><p>从产品的用户数量、比例的变化入手，分析产品的受众规模以及对用户习惯性为。</p>
-<h3 id="4、Technology"><a href="#4、Technology" class="headerlink" title="4、Technology"></a>4、Technology</h3><p>IT 新型技术（5G、云计算、区块链、人工智能、大数据等）的的落地给产品带来的变化和改善。</p>
+<h3 id="4、Technology"><a href="#4、Technology" class="headerlink" title="4、Technology"></a>4、Technology</h3><p>IT 新型技术（5G、云计算、区块链、人工智能，大数据等）的的落地给产品带来的变化和改善。</p>
 <h2 id="二、竞品分析"><a href="#二、竞品分析" class="headerlink" title="二、竞品分析"></a>二、竞品分析</h2><p>成长路径、业务模式、商业画布</p>
 <p><strong>点淘 APP 的商业画布</strong></p>
-<p><img src="business.png" alt=""></p>
+<p><img src="/business.png"></p>
 <p>通过这个商业画布分析的例子，我们知道点淘 App 通过引入商家（品牌方）、主播（MCN）和消费者来形成线上购物闭环。</p>
 <p><strong>抖音直播电商的商业画布</strong></p>
-<p><img src="douyin.png" alt=""></p>
+<p><img src="/douyin.png"></p>
 <p>对比与竞品之间的异同，分析产品的<strong>核心竞争力</strong>所在，如：点淘 APP 依赖于淘宝及天猫的品牌方加持以及头部网红主播的流量支撑，能够实现高转化率以及高GMV，同时形成以商家、主播、消费者为核心的商业闭环，是促成点淘APP收获巨大业务量的核心原因。</p>
-<h2 id="三、用户价值分析"><a href="#三、用户价值分析" class="headerlink" title="三、用户价值分析"></a>三、用户价值分析</h2><p>分析产品的受众人群，例如：直播电商行业的参与方一般有四类：消费者、MCN 机构、主播、商家（品牌方）和平台。</p>
-<p><img src="user_value.png" alt=""></p>
+<h2 id="三、用户价值分析"><a href="#三、用户价值分析" class="headerlink" title="三、用户价值分析"></a>三、用户价值分析</h2><p>分析产品的受众人群，例如：直播电商行业的参与方一般有四类：消费者、MCN 机构，主播、商家（品牌方）和平台。</p>
+<p><img src="/user_value.png"></p>
 <h3 id="消费者"><a href="#消费者" class="headerlink" title="消费者"></a>消费者</h3><p>大数据时代的来临，导致用户进入信息大爆炸的环境。在这样的环境下，用户虽然能够获取到的信息更多，但信息壁垒反而更高，<strong>用户在海量信息中寻找有用价值信息的成本更高</strong>。</p>
 <p><strong>消费者在海量商品中选择到符合消费者预期的商品的难度不断加大</strong>，包括商品价格、商品外观、商品质量等各种因素导致用户购买决策难度加大。</p>
 <p>传统电商环境下，消费者购物过程中的信息获取成本高、对商品信任度不够、决策行为复杂、决策流程过长、决策成本高。</p>
@@ -320,11 +292,11 @@
 <li><strong>提供多元化内容分享方式</strong></li>
 <li><strong>构建流量分发机制</strong></li>
 </ol>
-<h2 id="四、商业价值分析"><a href="#四、商业价值分析" class="headerlink" title="四、商业价值分析"></a>四、商业价值分析</h2><p>点淘的核心业务是通过直播带货提高消费者购物转化率，判断点淘的营收指标可以在传统电商常用的GMV指标上进行改进，直播电商的GMV=场均UV <em> UV转化率 </em> 客单价 * 直播场次，如何从这四个方面进行优化是提升 GMV 的关键。</p>
+<h2 id="四、商业价值分析"><a href="#四、商业价值分析" class="headerlink" title="四、商业价值分析"></a>四、商业价值分析</h2><p>点淘的核心业务是通过直播带货提高消费者购物转化率，判断点淘的营收指标可以在传统电商常用的GMV指标上进行改进，直播电商的GMV&#x3D;场均UV * UV转化率 * 客单价 * 直播场次，如何从这四个方面进行优化是提升 GMV 的关键。</p>
 <p><strong>PS: 场均UV可以看做是直播间观众人数，UV转化率也就是直播间观众下单率</strong></p>
-<p><img src="business_value.png" alt=""></p>
-<h2 id="五、产品结构分析"><a href="#五、产品结构分析" class="headerlink" title="五、产品结构分析"></a>五、产品结构分析</h2><p><img src="structure.png" alt=""></p>
-<p><img src="require.png" alt=""></p>
+<p><img src="/business_value.png"></p>
+<h2 id="五、产品结构分析"><a href="#五、产品结构分析" class="headerlink" title="五、产品结构分析"></a>五、产品结构分析</h2><p><img src="/structure.png"></p>
+<p><img src="/require.png"></p>
 <p>点淘APP的目前功能设计基本可以满足消费者购物前和购物后两个场景下的需求，对于不同消费者的高频需求在产品结构上能够做到合理分布，突出重点，是一款出色的直播电商产品。</p>
 
     </div>
@@ -333,222 +305,69 @@
     
     
 
-<div>
-  
-    <div>
-    
-        <div style="text-align:center;color: #ccc;font-size:14px;">-------------Ending of the article<i class="fa fa-paw"></i>Thanks For Your Reading-------------</div>
-    
-</div>
-  
-</div>
-      <footer class="post-footer">
+    <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Note/" rel="tag"><i class="fa fa-tags"></i> Note</a>
+              <a href="/tags/Note/" rel="tag"># Note</a>
           </div>
 
         
 
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2022/01/23/2022-1-23-%E9%9A%8F%E7%AC%94/" rel="prev" title="【笔记】优秀的 PM">
-      <i class="fa fa-chevron-left"></i> 【笔记】优秀的 PM
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/01/29/%E4%BB%80%E4%B9%88%E6%98%AF-NFT-%EF%BC%9F/" rel="next" title="什么是 NFT ？音乐股票又是啥？">
-      什么是 NFT ？音乐股票又是啥？ <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-
-
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/01/23/2022-1-23-%E9%9A%8F%E7%AC%94-%E4%BC%98%E7%A7%80%E7%9A%84-PM/" rel="prev" title="【笔记】优秀的 PM">
+                  <i class="fa fa-angle-left"></i> 【笔记】优秀的 PM
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/01/29/%E4%BB%80%E4%B9%88%E6%98%AF-NFT-%E9%9F%B3%E4%B9%90%E8%82%A1%E7%A5%A8%E5%8F%88%E6%98%AF%E5%95%A5/" rel="next" title="什么是 NFT ？音乐股票又是啥？">
+                  什么是 NFT ？音乐股票又是啥？ <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
           </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E7%9A%84%E6%B5%81%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">产品分析的流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E8%A1%8C%E4%B8%9A%E5%88%86%E6%9E%90"><span class="nav-number">1.1.</span> <span class="nav-text">一、行业分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81Polices"><span class="nav-number">1.1.1.</span> <span class="nav-text">1、Polices</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81Economy"><span class="nav-number">1.1.2.</span> <span class="nav-text">2、Economy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81Society"><span class="nav-number">1.1.3.</span> <span class="nav-text">3、Society</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81Technology"><span class="nav-number">1.1.4.</span> <span class="nav-text">4、Technology</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E7%AB%9E%E5%93%81%E5%88%86%E6%9E%90"><span class="nav-number">1.2.</span> <span class="nav-text">二、竞品分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E7%94%A8%E6%88%B7%E4%BB%B7%E5%80%BC%E5%88%86%E6%9E%90"><span class="nav-number">1.3.</span> <span class="nav-text">三、用户价值分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B6%88%E8%B4%B9%E8%80%85"><span class="nav-number">1.3.1.</span> <span class="nav-text">消费者</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MCN-%E6%9C%BA%E6%9E%84%E5%92%8C%E4%B8%BB%E6%92%AD"><span class="nav-number">1.3.2.</span> <span class="nav-text">MCN 机构和主播</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%95%86%E5%AE%B6%EF%BC%88%E5%93%81%E7%89%8C%E6%96%B9%EF%BC%89"><span class="nav-number">1.3.3.</span> <span class="nav-text">商家（品牌方）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B3%E5%8F%B0"><span class="nav-number">1.3.4.</span> <span class="nav-text">平台</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%95%86%E4%B8%9A%E4%BB%B7%E5%80%BC%E5%88%86%E6%9E%90"><span class="nav-number">1.4.</span> <span class="nav-text">四、商业价值分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E4%BA%A7%E5%93%81%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90"><span class="nav-number">1.5.</span> <span class="nav-text">五、产品结构分析</span></a></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Xuewei Zhang"
-      src="/images/touxiang.png">
-  <p class="site-author-name" itemprop="name">Xuewei Zhang</p>
-  <div class="site-description" itemprop="description">Please read carefully the books you can understand</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">30</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">14</span>
-        <span class="site-state-item-name">categories</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">27</span>
-        <span class="site-state-item-name">tags</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/Nickzxw" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Nickzxw" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="/13690112205@163.com" title="E-Mail → 13690112205@163.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
-      </span>
-  </div>
-
-
-
-      </div>
-	
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 2021 – 
-  <span itemprop="copyrightYear">2026</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Xuewei Zhang</span>
-</div>
-
-        
-
-
-
-
-
-
-
-
-      </div>
     </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xuewei Zhang</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
 
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
+    </div>
+  </footer>
 
   
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
 
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-
-
-  
-<script src="/js/local-search.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-
-<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
-
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/nipsilon.model.json"},"display":{"position":"right","width":250,"height":250},"mobile":{"show":false},"log":false});</script></body>
+</body>
 </html>
