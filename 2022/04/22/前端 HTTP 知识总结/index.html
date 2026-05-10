@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/panda.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/panda.svg">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|ZCOOL XiaoWei:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="跨域是一个令人头疼的事情，也在跨域的过程中学到了不少知识，就在这里边学边总结吧。 基础不牢，地动山摇！  前端跨域知识点总结笔记。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端跨域知识总结">
+<meta property="og:url" content="http://example.com/2022/04/22/%E5%89%8D%E7%AB%AF%20HTTP%20%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="X.Zhang&#39;s Blog.">
+<meta property="og:description" content="跨域是一个令人头疼的事情，也在跨域的过程中学到了不少知识，就在这里边学边总结吧。 基础不牢，地动山摇！  前端跨域知识点总结笔记。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2022/04/22/%E5%89%8D%E7%AB%AF%20HTTP%20%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/host.jpg">
+<meta property="og:image" content="http://example.com/2022/04/22/%E5%89%8D%E7%AB%AF%20HTTP%20%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/connection.jpg">
+<meta property="og:image" content="http://example.com/2022/04/22/%E5%89%8D%E7%AB%AF%20HTTP%20%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/type.jpg">
+<meta property="og:image" content="http://example.com/2022/04/22/%E5%89%8D%E7%AB%AF%20HTTP%20%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/get.jpg">
+<meta property="article:published_time" content="2022-04-22T02:10:46.000Z">
+<meta property="article:modified_time" content="2023-06-18T14:14:41.000Z">
+<meta property="article:author" content="Xuewei Zhang">
+<meta property="article:tag" content="Note">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/04/22/%E5%89%8D%E7%AB%AF%20HTTP%20%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/host.jpg">
+
+<link rel="canonical" href="http://example.com/2022/04/22/%E5%89%8D%E7%AB%AF%20HTTP%20%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>前端跨域知识总结 | X.Zhang's Blog.</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?a1693fc5c0727c998ed003c4bf9d4926";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">X.Zhang's Blog.</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">I CAN DO ALL THING</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/aboutme/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/22/%E5%89%8D%E7%AB%AF%20HTTP%20%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="Xuewei Zhang">
+      <meta itemprop="description" content="Please read carefully the books you can understand">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="X.Zhang's Blog.">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          前端跨域知识总结
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-04-22 10:10:46" itemprop="dateCreated datePublished" datetime="2022-04-22T10:10:46+08:00">2022-04-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-06-18 22:14:41" itemprop="dateModified" datetime="2023-06-18T22:14:41+08:00">2023-06-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Note/" itemprop="url" rel="index"><span itemprop="name">Note</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>跨域是一个令人头疼的事情，也在跨域的过程中学到了不少知识，就在这里边学边总结吧。</p>
+<p>基础不牢，地动山摇！</p>
+</blockquote>
+<p>前端跨域知识点总结笔记。</p>
+<span id="more"></span>
+<h1 id="HTTP-基本概念"><a href="#HTTP-基本概念" class="headerlink" title="HTTP 基本概念"></a>HTTP 基本概念</h1><h2 id="什么是-HTTP-？"><a href="#什么是-HTTP-？" class="headerlink" title="什么是 HTTP ？"></a>什么是 HTTP ？</h2><p>HTTP 全称（HyperText Transfer Protocol）— 超文本传输协议。</p>
+<h2 id="详细描述【超文本传输协议】"><a href="#详细描述【超文本传输协议】" class="headerlink" title="详细描述【超文本传输协议】"></a>详细描述【超文本传输协议】</h2><h3 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h3><h4 id="什么是协议？"><a href="#什么是协议？" class="headerlink" title="什么是协议？"></a>什么是协议？</h4><p>【协】是指有两个级以上的的参与者。</p>
+<p>【议】是指对参与者的一种行为约定和规范。</p>
+<h4 id="HTTP-协议"><a href="#HTTP-协议" class="headerlink" title="HTTP 协议"></a>HTTP 协议</h4><p>HTTP 是一个用在计算机世界里的协议，它使用计算机能够理解的语言确立了一种计算机之间交流通信的规范，以及相关的各种控制和错误处理（行为约定和规范）。</p>
+<h3 id="传输"><a href="#传输" class="headerlink" title="传输"></a>传输</h3><p>传输，顾名思义是指把东西从一个位置运输到另外一个位置。</p>
+<p>HTTP 协议是一个双向协议，我们在网络世界冲浪的时候，浏览器是请求方 A，浏览的网站是应答方 B。双方约定使用 HTTP 协议进行通信，于是浏览器将请求数据发送给网站，网站再把返回浏览器请求的数据，最后由浏览器渲染展示在屏幕，就能看到图片、视频等信息。</p>
+<p>需要注意的是，虽然数据在 A 和 B 之间进行传输，但中间过程允许有中转或者接力，只要中间人同样遵从 HTTP 协议，不打扰基本的数据传输，就可以添加额外的东西。 </p>
+<p>针对传输，我们可以进一步说 HTTP 是一个在计算机世界里专门用来在两点之间传输数据的约定和规范。</p>
+<h3 id="超文本"><a href="#超文本" class="headerlink" title="超文本"></a>超文本</h3><p>前面提到 HTTP 是专门用来在两点之间传输数据的约定和规范，而两点间的数据传输的数据内容是<strong>超文本</strong>。</p>
+<p>超文本是超越了普通文本的文本，它是文字、图片、视频等混合体。最关键的部分是超链接，能让你从一个超文本跳转到另外一个超文本。</p>
+<p>HTML 是最常见的超文本，其本身只是文本文件，但其内部拥有大量标签用来定义图片、视频等链接，经过浏览器的渲染，呈现出网页。</p>
+<p><strong>综上所述， HTTP 是一个在计算机世界专门在【两点】之间【传输】文字、图片、音频、视频等【超文本】数据的【约定和规范】。</strong></p>
+<h2 id="HTTP-常见的状态码"><a href="#HTTP-常见的状态码" class="headerlink" title="HTTP 常见的状态码"></a>HTTP 常见的状态码</h2><p><strong>1xx：</strong></p>
+<ul>
+<li>1xx 状态码属于提示信息，是协议处理中的一种中间状态，实际用的比较少。</li>
+</ul>
+<p><strong>2xx：</strong>    </p>
+<ul>
+<li>2xx 类状态码表示服务器成功处理了客户端的请求，也是我最想看到的状态😭。</li>
+<li>【200 OK】是最常见的成功状态码，表示一切正常🆗</li>
+<li>【204 No Content】也是常见的成功状态码，与 200 OK 基本相同</li>
+<li>【206 Partial Content】是应用于 HTTP 分块下载或断电续传，表示相应返回的 body 数据并非资源的全部，而是其中一部分。</li>
+</ul>
+<p><strong>3xx：</strong></p>
+<ul>
+<li>3xx 类状态吧表示客户端请求的资源发生了变动，需要客户端用新的 URL 重新发送请求获取资源，也就是重定向。</li>
+<li>【301 Moved Permanently】表示永久重定向，说明请求的资源已经不存在了，需改用新的 URL 再次访问。</li>
+<li>【302 Moved Permanently】表示临时重定向，说明请求的资源还在，但需要用另外一个 URL 来访问。</li>
+<li>301 和 302 都会在响应头里使用字段 Location，指明后续要跳转的 URL ，浏览器会自动重定向新的 URL。</li>
+<li>【304 Not Modified】不具有跳转的含义，表示资源未修改，重定向已存在的缓冲文件，也称缓存重定向，用于缓存控制</li>
+</ul>
+<p><strong>4xx：</strong></p>
+<ul>
+<li>4xx 来状态码表示客户端发送的报文有误，服务端无法处理，也就是错误码。（看到4开头血压就开始上来了😡）</li>
+<li>【400 Bad Request】表示客户端请求的报文有错误，但只是个笼统的错误。</li>
+<li>【403 Forbidden】表示服务器禁止访问资源，但不是客户端的请求出错。</li>
+<li>【404 Not Found】表示请求的资源在服务器上不存在或未找到，所以无法提供给客户端。</li>
+</ul>
+<p><strong>5xx：</strong></p>
+<ul>
+<li>5xx 类状态码表示客户端请求报文正确，但是服务器处理内部时发生了错误，属于服务器端错误码。</li>
+<li>【500 Internal Server Error】与 400 类型相似，是个笼统通用的错误码，但服务器发生了什么错误我们并不知道，</li>
+<li>【501 Not Implemented】 表示客户端请求的功能还不支持。</li>
+<li>【502 Bad Gateway】通常是服务器作为网关或代理时返回的错误码，表示服务器自身工作正常，访问后端服务器发生了错误。</li>
+<li>【503 Service Unavailable】表示服务器当前很忙，暂时无法相应服务器，类似“网络服务正忙，请稍后重试”。</li>
+</ul>
+<h2 id="HTTP-常见的字段"><a href="#HTTP-常见的字段" class="headerlink" title="HTTP 常见的字段"></a>HTTP 常见的字段</h2><h3 id="Host"><a href="#Host" class="headerlink" title="Host"></a>Host</h3><p>客户端发送请求时，用来服务器的域名。</p>
+<p><img src="./host.jpg" alt=""></p>
+<p>Host：<a target="_blank" rel="noopener" href="http://www.A.com">http://www.A.com</a></p>
+<p>有了 host 字段，就可以将请求发往【同一台】服务器上的不同网站。</p>
+<h3 id="Content-Length"><a href="#Content-Length" class="headerlink" title="Content-Length"></a>Content-Length</h3><p>服务器在返回数据时，会有 Content-Length 字段，表明本次回应的数据长度。</p>
+<h3 id="Connection"><a href="#Connection" class="headerlink" title="Connection"></a>Connection</h3><p>Connection 字段最常用于客户端要求服务器使用 TCP 持久连接，以便其他请求复用。</p>
+<p><img src="./connection.jpg" alt=""></p>
+<h3 id="Content-Type"><a href="#Content-Type" class="headerlink" title="Content-Type"></a>Content-Type</h3><p>Content-Type 字段用于服务器回应时，告诉客户端，本次数据是什么格式。</p>
+<p><img src="./type.jpg" alt=""></p>
+<p>Content-type: text/html; charset=utf-8</p>
+<p>上面的类型表明，发送的是网页，并且编码格式是 UTF-8。</p>
+<p>客户端请求的时候，可以使用 Accept 字段声明自己可以接受哪些数据格式。</p>
+<p>Accept: */*.</p>
+<h3 id="Content-Encoding"><a href="#Content-Encoding" class="headerlink" title="Content-Encoding"></a>Content-Encoding</h3><p>Content-Encoding 字段说明了数据的压缩方法，表示服务器返回的数据使用了什么压缩格式。</p>
+<h1 id="GET-和-POST"><a href="#GET-和-POST" class="headerlink" title="GET 和 POST"></a>GET 和 POST</h1><h2 id="GET-和-POST-的区别"><a href="#GET-和-POST-的区别" class="headerlink" title="GET 和 POST 的区别"></a>GET 和 POST 的区别</h2><p>Get 方法的含义是请求从服务器获取资源，这个资源可以是静态的文本、页面、图片视频等。</p>
+<p><img src="./get.jpg" alt=""></p>
+<h2 id="GET-和-POST-都是安全和幂等的吗？"><a href="#GET-和-POST-都是安全和幂等的吗？" class="headerlink" title="GET 和 POST 都是安全和幂等的吗？"></a>GET 和 POST 都是安全和幂等的吗？</h2><h1 id="HTTP-特性"><a href="#HTTP-特性" class="headerlink" title="HTTP 特性"></a>HTTP 特性</h1><h1 id="HTTP-和-HTTPS"><a href="#HTTP-和-HTTPS" class="headerlink" title="HTTP 和 HTTPS"></a>HTTP 和 HTTPS</h1>
+    </div>
+
+    
+    
+    
+
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------Ending of the article<i class="fa fa-paw"></i>Thanks For Your Reading-------------</div>
+    
+</div>
+  
+</div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Note/" rel="tag"><i class="fa fa-tags"></i> Note</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/04/22/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" rel="prev" title="前端 HTTP 知识总结">
+      <i class="fa fa-chevron-left"></i> 前端 HTTP 知识总结
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/10/14/Density-Based-Spatial-Clustering-of-Applications-with-Noise-DBSCAN-%E7%AE%97%E6%B3%95/" rel="next" title="Density-Based Spatial Clustering of Applications with Noise(DBSCAN)算法">
+      Density-Based Spatial Clustering of Applications with Noise(DBSCAN)算法 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">HTTP 基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-HTTP-%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">什么是 HTTP ？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%A6%E7%BB%86%E6%8F%8F%E8%BF%B0%E3%80%90%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%E3%80%91"><span class="nav-number">1.2.</span> <span class="nav-text">详细描述【超文本传输协议】</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%8F%E8%AE%AE"><span class="nav-number">1.2.1.</span> <span class="nav-text">协议</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%8F%E8%AE%AE%EF%BC%9F"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">什么是协议？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP-%E5%8D%8F%E8%AE%AE"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">HTTP 协议</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E8%BE%93"><span class="nav-number">1.2.2.</span> <span class="nav-text">传输</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B6%85%E6%96%87%E6%9C%AC"><span class="nav-number">1.2.3.</span> <span class="nav-text">超文本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-%E5%B8%B8%E8%A7%81%E7%9A%84%E7%8A%B6%E6%80%81%E7%A0%81"><span class="nav-number">1.3.</span> <span class="nav-text">HTTP 常见的状态码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-%E5%B8%B8%E8%A7%81%E7%9A%84%E5%AD%97%E6%AE%B5"><span class="nav-number">1.4.</span> <span class="nav-text">HTTP 常见的字段</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Host"><span class="nav-number">1.4.1.</span> <span class="nav-text">Host</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Content-Length"><span class="nav-number">1.4.2.</span> <span class="nav-text">Content-Length</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Connection"><span class="nav-number">1.4.3.</span> <span class="nav-text">Connection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Content-Type"><span class="nav-number">1.4.4.</span> <span class="nav-text">Content-Type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Content-Encoding"><span class="nav-number">1.4.5.</span> <span class="nav-text">Content-Encoding</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GET-%E5%92%8C-POST"><span class="nav-number">2.</span> <span class="nav-text">GET 和 POST</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GET-%E5%92%8C-POST-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">2.1.</span> <span class="nav-text">GET 和 POST 的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GET-%E5%92%8C-POST-%E9%83%BD%E6%98%AF%E5%AE%89%E5%85%A8%E5%92%8C%E5%B9%82%E7%AD%89%E7%9A%84%E5%90%97%EF%BC%9F"><span class="nav-number">2.2.</span> <span class="nav-text">GET 和 POST 都是安全和幂等的吗？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP-%E7%89%B9%E6%80%A7"><span class="nav-number">3.</span> <span class="nav-text">HTTP 特性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP-%E5%92%8C-HTTPS"><span class="nav-number">4.</span> <span class="nav-text">HTTP 和 HTTPS</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xuewei Zhang"
+      src="/images/touxiang.png">
+  <p class="site-author-name" itemprop="name">Xuewei Zhang</p>
+  <div class="site-description" itemprop="description">Please read carefully the books you can understand</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Nickzxw" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Nickzxw" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/13690112205@163.com" title="E-Mail → 13690112205@163.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+	
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xuewei Zhang</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/nipsilon.model.json"},"display":{"position":"right","width":250,"height":250},"mobile":{"show":false},"log":false});</script></body>
+</html>

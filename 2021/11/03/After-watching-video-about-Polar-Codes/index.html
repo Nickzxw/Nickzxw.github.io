@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/panda.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/panda.svg">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|ZCOOL XiaoWei:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="今天把昨天在b站上标题为”5G，华为，土耳其——我花了两个月，搞懂了5G背后的秘密”这个视频重新完整的看了一遍。看完之后，结合自己刚开始两个月的研究生生活，有一些感触，在此进行记录。 附上视频链接： (https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1fq4y1g7hq?spm_id_from&#x3D;333.1007.top_right_bar_window_history.conte">
+<meta property="og:type" content="article">
+<meta property="og:title" content="After Watching Video About Polar Codes">
+<meta property="og:url" content="http://example.com/2021/11/03/After-watching-video-about-Polar-Codes/index.html">
+<meta property="og:site_name" content="X.Zhang&#39;s Blog.">
+<meta property="og:description" content="今天把昨天在b站上标题为”5G，华为，土耳其——我花了两个月，搞懂了5G背后的秘密”这个视频重新完整的看了一遍。看完之后，结合自己刚开始两个月的研究生生活，有一些感触，在此进行记录。 附上视频链接： (https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1fq4y1g7hq?spm_id_from&#x3D;333.1007.top_right_bar_window_history.conte">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2021/11/03/After-watching-video-about-Polar-Codes/Arikanreply.png">
+<meta property="article:published_time" content="2021-11-03T15:51:35.000Z">
+<meta property="article:modified_time" content="2023-06-18T14:14:41.000Z">
+<meta property="article:author" content="Xuewei Zhang">
+<meta property="article:tag" content="Thoughts">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/11/03/After-watching-video-about-Polar-Codes/Arikanreply.png">
+
+<link rel="canonical" href="http://example.com/2021/11/03/After-watching-video-about-Polar-Codes/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>After Watching Video About Polar Codes | X.Zhang's Blog.</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?a1693fc5c0727c998ed003c4bf9d4926";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">X.Zhang's Blog.</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">I CAN DO ALL THING</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/aboutme/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/03/After-watching-video-about-Polar-Codes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="Xuewei Zhang">
+      <meta itemprop="description" content="Please read carefully the books you can understand">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="X.Zhang's Blog.">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          After Watching Video About Polar Codes
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-11-03 23:51:35" itemprop="dateCreated datePublished" datetime="2021-11-03T23:51:35+08:00">2021-11-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-06-18 22:14:41" itemprop="dateModified" datetime="2023-06-18T22:14:41+08:00">2023-06-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Thoughts/" itemprop="url" rel="index"><span itemprop="name">Thoughts</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>今天把昨天在b站上标题为”5G，华为，土耳其——我花了两个月，搞懂了5G背后的秘密”这个视频重新完整的看了一遍。看完之后，结合自己刚开始两个月的研究生生活，有一些感触，在此进行记录。</p>
+<p>附上视频链接：</p>
+<p>(<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1fq4y1g7hq?spm_id_from=333.1007.top_right_bar_window_history.content.click">https://www.bilibili.com/video/BV1fq4y1g7hq?spm_id_from=333.1007.top_right_bar_window_history.content.click</a>)</p>
+<span id="more"></span>
+<h3 id="颁奖典礼"><a href="#颁奖典礼" class="headerlink" title="颁奖典礼"></a>颁奖典礼</h3><hr>
+<p>视频开端讲述了华为总裁任正非为Arikan——the father of Polor Code颁发代表最高荣誉的特别奖奖牌。</p>
+<p>极化码——一种新的5G技术，是令华为成为5G时代的领跑者极其重要的部分。</p>
+<h3 id="如何度量信息"><a href="#如何度量信息" class="headerlink" title="如何度量信息"></a>如何度量信息</h3><hr>
+<p>香农在通信的数学理论中第一次量化了信息，他认为信息的本质是消除信息的不确定性，利用概率的不确定性度量信息，这个不确定度称为：信息熵。</p>
+<h3 id="什么是信道容量"><a href="#什么是信道容量" class="headerlink" title="什么是信道容量"></a>什么是信道容量</h3><hr>
+<p>信道容量（最大互信息）是Arikan想要达到的目标，信道容量是指单位时间内能传输的信息量，是通信在理论上存在的上限。</p>
+<h3 id="什么是编码"><a href="#什么是编码" class="headerlink" title="什么是编码"></a>什么是编码</h3><hr>
+<p>为了减弱噪声，对信道进行编码，让信息以更好的方式进行传输。</p>
+<h3 id="香农极限"><a href="#香农极限" class="headerlink" title="香农极限"></a>香农极限</h3><hr>
+<p>通过正确编码有可能让该信道以速率C传达信息，而错误频率或者疑义度可以小到让人满意，而这一表述对于任何大于C的速率都是不成立的。速率达于C将会是信息有更多的不确定性，因此引出了信息论的中心问题——有噪信道编码定理。</p>
+<h3 id="个人的思考"><a href="#个人的思考" class="headerlink" title="个人的思考"></a>个人的思考</h3><hr>
+<p>作为一个普通人，如何对展开对陌生知识的学习？</p>
+<ul>
+<li>寻找有价值的科普资料</li>
+<li>如果没有，从头开始——直接寻找该知识/理论的提出者，从他的相关文献内容中找到你所要学习知识的根源。</li>
+<li>当你开始读其文献，发现依然无法理解时，尝试从文献的引文入手，深挖其理论根基和来源。</li>
+</ul>
+<p><img src="Arikanreply.png" alt=""></p>
+<p>我们所称赞的，往往只是别人的平淡生活，但伟大往往诞生于平淡之中。</p>
+
+    </div>
+
+    
+    
+    
+
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------Ending of the article<i class="fa fa-paw"></i>Thanks For Your Reading-------------</div>
+    
+</div>
+  
+</div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Thoughts/" rel="tag"><i class="fa fa-tags"></i> Thoughts</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/02/Statical-Learning-with-R-Chapter2/" rel="prev" title="【笔记】统计学习方法-李航">
+      <i class="fa fa-chevron-left"></i> 【笔记】统计学习方法-李航
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/11/10/Location-Choice-of-Snatching-Offenders-in-Chennai-City/" rel="next" title="Location-Choice-of-Snatching-Offenders-in-Chennai-City">
+      Location-Choice-of-Snatching-Offenders-in-Chennai-City <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%81%E5%A5%96%E5%85%B8%E7%A4%BC"><span class="nav-number">1.</span> <span class="nav-text">颁奖典礼</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%BA%A6%E9%87%8F%E4%BF%A1%E6%81%AF"><span class="nav-number">2.</span> <span class="nav-text">如何度量信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E4%BF%A1%E9%81%93%E5%AE%B9%E9%87%8F"><span class="nav-number">3.</span> <span class="nav-text">什么是信道容量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%BC%96%E7%A0%81"><span class="nav-number">4.</span> <span class="nav-text">什么是编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A6%99%E5%86%9C%E6%9E%81%E9%99%90"><span class="nav-number">5.</span> <span class="nav-text">香农极限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E7%9A%84%E6%80%9D%E8%80%83"><span class="nav-number">6.</span> <span class="nav-text">个人的思考</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xuewei Zhang"
+      src="/images/touxiang.png">
+  <p class="site-author-name" itemprop="name">Xuewei Zhang</p>
+  <div class="site-description" itemprop="description">Please read carefully the books you can understand</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Nickzxw" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Nickzxw" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/13690112205@163.com" title="E-Mail → 13690112205@163.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+	
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xuewei Zhang</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/nipsilon.model.json"},"display":{"position":"right","width":250,"height":250},"mobile":{"show":false},"log":false});</script></body>
+</html>

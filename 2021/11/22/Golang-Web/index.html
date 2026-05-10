@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/panda.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/panda.svg">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|ZCOOL XiaoWei:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="七天用Go实现Web框架—复现">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Golang Web">
+<meta property="og:url" content="http://example.com/2021/11/22/Golang-Web/index.html">
+<meta property="og:site_name" content="X.Zhang&#39;s Blog.">
+<meta property="og:description" content="七天用Go实现Web框架—复现">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-22T11:28:00.000Z">
+<meta property="article:modified_time" content="2023-06-18T14:14:41.000Z">
+<meta property="article:author" content="Xuewei Zhang">
+<meta property="article:tag" content="Go">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2021/11/22/Golang-Web/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Golang Web | X.Zhang's Blog.</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?a1693fc5c0727c998ed003c4bf9d4926";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">X.Zhang's Blog.</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">I CAN DO ALL THING</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/aboutme/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/22/Golang-Web/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="Xuewei Zhang">
+      <meta itemprop="description" content="Please read carefully the books you can understand">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="X.Zhang's Blog.">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Golang Web
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-11-22 19:28:00" itemprop="dateCreated datePublished" datetime="2021-11-22T19:28:00+08:00">2021-11-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-06-18 22:14:41" itemprop="dateModified" datetime="2023-06-18T22:14:41+08:00">2023-06-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Go/" itemprop="url" rel="index"><span itemprop="name">Go</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>七天用Go实现Web框架—复现</p>
+<span id="more"></span>
+<h3 id="设计一个Web框架"><a href="#设计一个Web框架" class="headerlink" title="设计一个Web框架"></a>设计一个Web框架</h3><p>​    在实现Web应用的时候为什么要使用框架（Beego、Gin、Iris），为何不直接用标准库实现。</p>
+<p>​    先看看标准库<strong>net/http</strong>如何处理一个请求。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    http.HandleFunc(<span class="string">&quot;/&quot;</span>, handler)</span><br><span class="line">    http.HandleFunc(<span class="string">&quot;/count&quot;</span>, counter)</span><br><span class="line">    log.Fatal(http.ListenAndServe(<span class="string">&quot;localhost:8000&quot;</span>, <span class="literal">nil</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">handler</span><span class="params">(w http.ResponseWriter, r *http.Request)</span></span> &#123;</span><br><span class="line">    fmt.Fprintf(w, <span class="string">&quot;URL.Path = %q\n&quot;</span>, r.URL.Path)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>net/http</strong>提供了基础的Web功能，即监听端口、映射静态路由、解析HTTP报文等。</p>
+<p>然而Web开发中简单的需求并不支持，需要手工实现。</p>
+<ul>
+<li>动态路由：例如webPages/:name，webPages/*这类规则。</li>
+<li>鉴权：指验证用户是否拥有访问系统的权力。</li>
+<li>模板：统一简化的HTML机制</li>
+<li>…</li>
+</ul>
+<p>基于Python著名的Web框架bottle，通过这个框架提供的特性，有助于理解框架的核心能力。</p>
+<ul>
+<li>路由（Routing）：将请求映射到函数，支持动态路由。</li>
+<li>模板（Templates）：使用内置模板引擎提供模板渲染机制。</li>
+<li>工具集（Utilites）：提供对cookies，headers等的处理机制。</li>
+<li>插件（Plusgin）：</li>
+<li>…</li>
+</ul>
+<h3 id="Gee框架"><a href="#Gee框架" class="headerlink" title="Gee框架"></a>Gee框架</h3><p><strong>Gee</strong>框架来源于geektutu.com的前三个字母，作者第一次接触Go语言的Web框架是<strong>Gin</strong>，Gin的代码总共是14K，期中测试代码9K，实际代码量5K。Gin框架与Python中的<strong>Flask</strong>框架很相似。</p>
+<h3 id="Web框架Gee—第一天：HTTP基础"><a href="#Web框架Gee—第一天：HTTP基础" class="headerlink" title="Web框架Gee—第一天：HTTP基础"></a>Web框架Gee—第一天：HTTP基础</h3><ul>
+<li>简单学习<strong>net/http</strong>库以及http.Handler接口。</li>
+<li>搭建<strong>Gee</strong>框架的雏形，代码约50行。</li>
+</ul>
+<h4 id="标准库启动Web服务"><a href="#标准库启动Web服务" class="headerlink" title="标准库启动Web服务"></a>标准库启动Web服务</h4><p>通过Go语言内置的net/http库，封装了HTTP网络编程的基础接口，Gee-Web框架便是基于net/http。</p>
+<p><strong>day1-http-base/base1/main.go</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;log&quot;</span></span><br><span class="line">	<span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// header echoes r.URL.Path</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">indexHandler</span><span class="params">(w http.ResponseWriter, req *http.Request)</span></span>&#123;</span><br><span class="line">	fmt.Fprintf(w, <span class="string">&quot;URL.Path = %q\n&quot;</span>, req.URL.Path)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// headler echoes r.URL.Header</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">helloHandler</span><span class="params">(w http.ResponseWriter, req *http.Request)</span></span>  &#123;</span><br><span class="line">	<span class="keyword">for</span> key, value := <span class="keyword">range</span> req.Header&#123;</span><br><span class="line">		fmt.Fprintf(w, <span class="string">&quot;Header[%q] = %q\n&quot;</span>, key, value)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	http.HandleFunc(<span class="string">&quot;/&quot;</span>, indexHandler)</span><br><span class="line">	http.HandleFunc(<span class="string">&quot;/hello&quot;</span>, helloHandler)</span><br><span class="line">	log.Fatal(http.ListenAndServe(<span class="string">&quot;:9999&quot;</span>, <span class="literal">nil</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码设置了两个路由，/和/hello， 分别绑定<em>indexHandler</em>和<em>helloHandler</em>，根据不同的HTTP请求会调用不同的处理函数。访问/，响应式URL.Path = /，而/hello的响应则是请求头(header)中的键值对信息。</p>
+<p><strong>PS: 先编译运行main.go文件，再在控制台使用curl工具进行测试</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ curl http://localhost:9999/</span><br><span class="line">URL.Path = &quot;/&quot;</span><br><span class="line">$ curl http://localhost:9999/hello</span><br><span class="line">Header[&quot;Accept&quot;] = [&quot;*/*&quot;]</span><br><span class="line">Header[&quot;User-Agent&quot;] = [&quot;curl/7.54.0&quot;]</span><br></pre></td></tr></table></figure>
+<p><em>main</em>函数的最后一行，用来启动Web服务，第一个参数是地址，:9999表示在9999端口监听。第二个参数代表处理所有的HTTP请求的实例，nil代表使用标准库中的实例处理。</p>
+<h4 id="实现http-Handler接口"><a href="#实现http-Handler接口" class="headerlink" title="实现http.Handler接口"></a>实现http.Handler接口</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> http</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Handler <span class="keyword">interface</span> &#123;</span><br><span class="line">    ServeHTTP(w ResponseWriter, r *Request)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">ListenAndServe</span><span class="params">(address <span class="keyword">string</span>, h Handler)</span> <span class="title">error</span></span></span><br></pre></td></tr></table></figure>
+<p>通过net/http源码可以发现，Handler是一个接口，需要实现方法<em>ServeHTTP</em>,只要传入任何实现了ServeHTTP接口的实例，所有的HTTP请求都将交给该实例处理</p>
+<p><strong>day1-http-base/base2/main.go</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;fmt&quot;</span></span><br><span class="line">   <span class="string">&quot;log&quot;</span></span><br><span class="line">   <span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Engine <span class="keyword">struct</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(engine *Engine)</span> <span class="title">ServeHTTP</span><span class="params">(w http.ResponseWriter, req *http.Request)</span></span>&#123;</span><br><span class="line">   <span class="keyword">switch</span>  req.URL.Path &#123;</span><br><span class="line">   <span class="keyword">case</span> <span class="string">&quot;/&quot;</span>:</span><br><span class="line">      fmt.Fprintf(w, <span class="string">&quot;URL.Path = %q\n&quot;</span>, req.URL.Path)</span><br><span class="line">   <span class="keyword">case</span> <span class="string">&quot;/hello&quot;</span>:</span><br><span class="line">      <span class="keyword">for</span> key, value := <span class="keyword">range</span> req.Header&#123;</span><br><span class="line">         fmt.Fprintf(w, <span class="string">&quot;Header[%q] = %q\n&quot;</span>, key, value)</span><br><span class="line">      &#125;</span><br><span class="line">   <span class="keyword">default</span>:</span><br><span class="line">      fmt.Fprintf(w, <span class="string">&quot;404 NOT FOUND: %s\n&quot;</span>, req.URL)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">   engine := <span class="built_in">new</span>(Engine)</span><br><span class="line">   log.Fatal(http.ListenAndServe(<span class="string">&quot;:9999&quot;</span>, engine))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>这里定义了一个空的结构体Engine，实现了方法ServeHTTP。这个方法有两个参数，第二个参数是<strong><em>Request</em></strong>，该对象包含了该HTTP请求的所有信息，例如请求地址、Header和Body等信息；第一个参数是 <strong><em>ResponseWriter</em></strong> ，利用 <strong><em>ResponseWriter</em></strong> 可以构造针对该请求的响应。</li>
+<li>在<em>main</em>函数中，给<em>ListenAndServe</em>方法的第二个参数传入了刚才创建的engine实例。<strong>至此，实现了Web框架的第一步，将所有的HTTP请求转向了我们自己的处理逻辑。</strong>实现Engine之前，通过调用<strong><em>http.HandleFunc</em></strong>实现了路由和Handler的映射，也就是只能针对具体的路由来写处理逻辑。例如/hello。但是实现Engine之后，我们拦截了所有的HTTP请求，有了统一的控制入口。在这里可以自由定义路由映射的规则，也可以统一添加一些处理逻辑，例如日志、异常处理等等。</li>
+</ul>
+<h4 id="Gee框架的雏形"><a href="#Gee框架的雏形" class="headerlink" title="Gee框架的雏形"></a>Gee框架的雏形</h4><p>通过重新组织上面的代码，搭建出整个框架的雏形。</p>
+<p>代码目录结构为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gee/</span><br><span class="line">  |--gee.go</span><br><span class="line">  |--go.mod</span><br><span class="line">main.go</span><br><span class="line">go.mod</span><br></pre></td></tr></table></figure>
+<p><strong>go.mod</strong></p>
+<p><strong>day1-http-base/base3/go.mod</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">module base3</span><br><span class="line"></span><br><span class="line">go 1.17</span><br><span class="line"></span><br><span class="line">require gee v0.0.0</span><br><span class="line"></span><br><span class="line">replace gee =&gt; ./gee</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在go,mod中使用replace将gee指向./gee</li>
+</ul>
+<p><strong>main.go</strong></p>
+<p><strong>day1-http-base/base3/main.go</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;fmt&quot;</span></span><br><span class="line">   <span class="string">&quot;gee&quot;</span></span><br><span class="line">   <span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">   r := gee.New()</span><br><span class="line">   r.GET(<span class="string">&quot;/&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(w http.ResponseWriter, req *http.Request)</span></span> &#123;</span><br><span class="line">      fmt.Fprintf(w, <span class="string">&quot;URL.Path = %q\n&quot;</span>, req.URL.Path)</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">   r.GET(<span class="string">&quot;/hello&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(w http.ResponseWriter, req *http.Request)</span></span> &#123;</span><br><span class="line">      <span class="keyword">for</span> key, value := <span class="keyword">range</span> req.Header&#123;</span><br><span class="line">         fmt.Fprintf(w, <span class="string">&quot;Header[%q] = %q\n&quot;</span>, key, value)</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">   r.Run(<span class="string">&quot;:9999&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>Gee</code>框架的设计以及API均参考了<code>Gin</code>。使用<code>New()</code>创建 gee 的实例，使用 <code>GET()</code>方法添加路由，最后使用<code>Run()</code>启动Web服务。这里的路由，只是静态路由，不支持<code>/hello/:name</code>这样的动态路由。</p>
+<p><strong>gee.go</strong></p>
+<p><strong>day1-http-base/base3/gee/gee.go</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> gee</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;fmt&quot;</span></span><br><span class="line">   <span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// HandlerFunc defines the request handler used by gee</span></span><br><span class="line"><span class="keyword">type</span> HandlerFunc <span class="function"><span class="keyword">func</span><span class="params">(http.ResponseWriter, *http.Request)</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Engine implement the interface of ServerHTTP</span></span><br><span class="line"><span class="keyword">type</span> Engine <span class="keyword">struct</span> &#123;</span><br><span class="line">   <span class="comment">// 建立路由映射表</span></span><br><span class="line">   router <span class="keyword">map</span>[<span class="keyword">string</span>]HandlerFunc</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// New is the constructor of gee.Engine</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">New</span><span class="params">()</span> *<span class="title">Engine</span></span> &#123;</span><br><span class="line">   <span class="keyword">return</span> &amp;Engine&#123;router: <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">string</span>]HandlerFunc)&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(engine *Engine)</span> <span class="title">addRoute</span><span class="params">(method <span class="keyword">string</span>, pattern <span class="keyword">string</span>, handler HandlerFunc)</span></span> &#123;</span><br><span class="line">   key := method + <span class="string">&quot;-&quot;</span> + pattern</span><br><span class="line">   engine.router[key] = handler</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// GET defines the method to add GET request</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(engine *Engine)</span> <span class="title">GET</span><span class="params">(pattern <span class="keyword">string</span>, handler HandlerFunc)</span></span> &#123;</span><br><span class="line">   engine.addRoute(<span class="string">&quot;Get&quot;</span>, pattern, handler)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// POST defines the method to add POST request</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(engine *Engine)</span> <span class="title">POST</span><span class="params">(pattern <span class="keyword">string</span>, handler HandlerFunc)</span></span> &#123;</span><br><span class="line">   engine.addRoute(<span class="string">&quot;POST&quot;</span>, pattern, handler)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Run defines the method to start a http server</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(engine *Engine)</span> <span class="title">Run</span><span class="params">(addr <span class="keyword">string</span>)</span> <span class="params">(err error)</span></span> &#123;</span><br><span class="line">   <span class="keyword">return</span> http.ListenAndServe(addr, engine)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(engine *Engine)</span> <span class="title">ServeHTTP</span><span class="params">(w http.ResponseWriter, req *http.Request)</span></span>  &#123;</span><br><span class="line">   key := req.Method + <span class="string">&quot;-&quot;</span> + req.URL.Path</span><br><span class="line">   <span class="keyword">if</span> handler, ok := engine.router[key]; ok&#123;</span><br><span class="line">      handler(w, req)</span><br><span class="line">   &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      w.WriteHeader(http.StatusNotFound)</span><br><span class="line">      fmt.Fprintf(w, <span class="string">&quot;404 NOT FOUND: %s \n&quot;</span>, req.URL)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>gee.go的实现：</p>
+<ul>
+<li>首先定义了类型<code>HandlerFunc</code>，这是提供给框架用户的，用来定义路由映射的处理方法。我们在<code>Engine</code>中，添加了一张路由映射表<code>router</code>，key 由请求方法和静态路由地址构成，例如<code>GET-/</code>、<code>GET-/hello</code>、<code>POST-/hello</code>，这样针对相同的路由，如果请求方法不同,可以映射不同的处理方法(Handler)，value 是用户映射的处理方法。</li>
+<li>当用户调用<code>(*Engine).GET()</code>方法时，会将路由和处理方法注册到映射表 <em>router</em> 中，<code>(*Engine).Run()</code>方法，是 <em>ListenAndServe</em> 的包装。</li>
+<li><code>Engine</code>实现的 <em>ServeHTTP</em> 方法的作用就是，解析请求的路径，查找路由映射表，如果查到就执行注册的处理方法；如果查不到，就返回 <em>404 NOT FOUND</em> 。</li>
+</ul>
+<p>至此，整个<code>Gee</code>框架的原型已经出来了。实现了路由映射表，提供了用户注册静态路由的方法，包装了启动服务的函数。当然，到目前为止，我们还没有实现比<code>net/http</code>标准库更强大的能力，后面可以将动态路由、中间件等功能添加上去了。</p>
+<h3 id="Web框架Gee—第二天：上下文"><a href="#Web框架Gee—第二天：上下文" class="headerlink" title="Web框架Gee—第二天：上下文"></a>Web框架Gee—第二天：上下文</h3><p>任务实现：</p>
+<ul>
+<li>将<code>路由(router)</code>独立出来，方便之后进行功能扩充。</li>
+<li>设计<code>上下文（Context）</code>，封装Request和Response，提供对JSON、HTML等返回类型的支持。</li>
+<li>框架代码新增约90行</li>
+</ul>
+<h4 id="设计Context"><a href="#设计Context" class="headerlink" title="设计Context"></a>设计Context</h4><p><strong>必要性</strong></p>
+<ol>
+<li>Web服务，主要是根据请求<code>*http.Request</code>，构造响应<code>http.ResponseWriter</code>。但由于这两个对象提供的接口粒度太小，要想构造完整的响应，需要考虑信息头（Header）和消息体（Body），而Header又包含了状态码（StatusCode）和消息类型（ContentType）等几乎每次请求都需要设置的信息。</li>
+<li>针对使用场景，封装<code>*http.Request</code>和<code>http.ResponseWriter</code>的方法，简化相关接口的调用，只是设计Context的原因之一，框架需要支撑额外的功能。例如，将来解析动态路由<code>/webPage:name</code>，参数<code>:name</code>需要放在哪里，再比如框架需要支持中间件，中间件产生的信息存储在何处？Context随着每一个请求的出现而产生，请求的结束而销毁，当前请求强相关的信息都有Context承载。</li>
+</ol>
+<p><strong>具体实现</strong></p>
+<p><strong>day2-context/gee/context.go</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> gee</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;encoding/json&quot;</span></span><br><span class="line">   <span class="string">&quot;fmt&quot;</span></span><br><span class="line">   <span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> H <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">interface</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Context <span class="keyword">struct</span> &#123;</span><br><span class="line">   <span class="comment">// origin objects</span></span><br><span class="line">   Writer http.ResponseWriter</span><br><span class="line">   Req    *http.Request</span><br><span class="line">   <span class="comment">// request info</span></span><br><span class="line">   Path   <span class="keyword">string</span></span><br><span class="line">   Method <span class="keyword">string</span></span><br><span class="line">   <span class="comment">// response info</span></span><br><span class="line">   StatusCode <span class="keyword">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">newContext</span><span class="params">(w http.ResponseWriter, req *http.Request)</span> *<span class="title">Context</span></span> &#123;</span><br><span class="line">   <span class="keyword">return</span> &amp;Context&#123;</span><br><span class="line">      Writer: w,</span><br><span class="line">      Req:    req,</span><br><span class="line">      Path:   req.URL.Path,</span><br><span class="line">      Method: req.Method,</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *Context)</span> <span class="title">PostForm</span><span class="params">(key <span class="keyword">string</span>)</span> <span class="title">string</span></span> &#123;</span><br><span class="line">   <span class="keyword">return</span> c.Req.FormValue(key)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *Context)</span> <span class="title">Query</span><span class="params">(key <span class="keyword">string</span>)</span> <span class="title">string</span></span> &#123;</span><br><span class="line">   <span class="keyword">return</span> c.Req.URL.Query().Get(key)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *Context)</span> <span class="title">Status</span><span class="params">(code <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">   c.StatusCode = code</span><br><span class="line">   c.Writer.WriteHeader(code)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *Context)</span> <span class="title">SetHeader</span><span class="params">(key <span class="keyword">string</span>, value <span class="keyword">string</span>)</span></span> &#123;</span><br><span class="line">   c.Writer.Header().Set(key, value)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *Context)</span> <span class="title">String</span><span class="params">(code <span class="keyword">int</span>, format <span class="keyword">string</span>, values ...<span class="keyword">interface</span>&#123;&#125;)</span></span> &#123;</span><br><span class="line">   c.SetHeader(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;text/plain&quot;</span>)</span><br><span class="line">   c.Status(code)</span><br><span class="line">   c.Writer.Write([]<span class="keyword">byte</span>(fmt.Sprintf(format, values...)))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *Context)</span> <span class="title">JSON</span><span class="params">(code <span class="keyword">int</span>, obj <span class="keyword">interface</span>&#123;&#125;)</span></span> &#123;</span><br><span class="line">   c.SetHeader(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;application/json&quot;</span>)</span><br><span class="line">   c.Status(code)</span><br><span class="line">   encoder := json.NewEncoder(c.Writer)</span><br><span class="line">   <span class="keyword">if</span> err := encoder.Encode(obj); err != <span class="literal">nil</span> &#123;</span><br><span class="line">      http.Error(c.Writer, err.Error(), <span class="number">500</span>)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *Context)</span> <span class="title">Data</span><span class="params">(code <span class="keyword">int</span>, data []<span class="keyword">byte</span>)</span></span> &#123;</span><br><span class="line">   c.Status(code)</span><br><span class="line">   c.Writer.Write(data)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *Context)</span> <span class="title">HTML</span><span class="params">(code <span class="keyword">int</span>, html <span class="keyword">string</span>)</span></span> &#123;</span><br><span class="line">   c.SetHeader(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;text/html&quot;</span>)</span><br><span class="line">   c.Status(code)</span><br><span class="line">   c.Writer.Write([]<span class="keyword">byte</span>(html))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>代码开头给<code>map[string]interface&#123;&#125;</code>起了别名<code>gee.h</code>，构建JSON数据时，会更简洁。</li>
+</ul>
+<p><strong>JSON数据封装前：</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">obj = <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">interface</span>&#123;&#125;&#123;</span><br><span class="line">    <span class="string">&quot;name&quot;</span>: <span class="string">&quot;geektutu&quot;</span>,</span><br><span class="line">    <span class="string">&quot;password&quot;</span>: <span class="string">&quot;1234&quot;</span>,</span><br><span class="line">&#125;</span><br><span class="line">w.Header().Set(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;application/json&quot;</span>)</span><br><span class="line">w.WriteHeader(http.StatusOK)</span><br><span class="line">encoder := json.NewEncoder(w)</span><br><span class="line"><span class="keyword">if</span> err := encoder.Encode(obj); err != <span class="literal">nil</span> &#123;</span><br><span class="line">    http.Error(w, err.Error(), <span class="number">500</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>封装后：</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">c.JSON(http.StatusOK, gee.H&#123;</span><br><span class="line">   <span class="string">&quot;username&quot;</span>: c.PostForm(<span class="string">&quot;username&quot;</span>),</span><br><span class="line">   <span class="string">&quot;password&quot;</span>: c.PostForm(<span class="string">&quot;password&quot;</span>),</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Context</code>目前只包含了<code>http.ResponseWriter</code>和<code>*http.Request</code>，另外提供对Method和Path这两个常用属性的直接访问。</li>
+<li>提供了访问Query和PostForm参数的方法。</li>
+<li>提供了快速构造String/Data/JSON/HTML响应的方法。</li>
+</ul>
+<h4 id="路由-Router"><a href="#路由-Router" class="headerlink" title="路由(Router)"></a>路由(Router)</h4><p>将路由相关方法和结构提取出来，存储在新文件<code>router.go</code>，方便后续进行功能扩充，例如提供动态路由的支持。router的handle方法做了细微的调整，handle的参数变成了Context。</p>
+<p><strong>day2-context/gee/router.go</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> gee</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;log&quot;</span></span><br><span class="line">   <span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> router <span class="keyword">struct</span> &#123;</span><br><span class="line">   handlers <span class="keyword">map</span>[<span class="keyword">string</span>]HandlerFunc</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">newRouter</span><span class="params">()</span> *<span class="title">router</span></span> &#123;</span><br><span class="line">   <span class="keyword">return</span> &amp;router&#123;handlers: <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">string</span>]HandlerFunc)&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(r *router)</span> <span class="title">addRoute</span><span class="params">(method <span class="keyword">string</span>, pattern <span class="keyword">string</span>, handler HandlerFunc)</span></span> &#123;</span><br><span class="line">   log.Printf(<span class="string">&quot;Route %4s - %s&quot;</span>, method, pattern)</span><br><span class="line">   key := method + <span class="string">&quot;-&quot;</span> + pattern</span><br><span class="line">   r.handlers[key] = handler</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(r *router)</span> <span class="title">handle</span><span class="params">(c *Context)</span></span> &#123;</span><br><span class="line">   key := c.Method + <span class="string">&quot;-&quot;</span> + c.Path</span><br><span class="line">   <span class="keyword">if</span> handler, ok := r.handlers[key]; ok &#123;</span><br><span class="line">      handler(c)</span><br><span class="line">   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      c.String(http.StatusNotFound, <span class="string">&quot;404 NOT FOUND: %s\n&quot;</span>, c.Path)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="框架入口"><a href="#框架入口" class="headerlink" title="框架入口"></a>框架入口</h4><p><strong>day2-context/gee/gee.go</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> gee</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// HandlerFunc defines the request handler used by gee</span></span><br><span class="line"><span class="keyword">type</span> HandlerFunc <span class="function"><span class="keyword">func</span><span class="params">(*Context)</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Engine implement the interface of ServeHTTP</span></span><br><span class="line"><span class="keyword">type</span> Engine <span class="keyword">struct</span> &#123;</span><br><span class="line">   router *router</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// New is the constructor of gee.Engine</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">New</span><span class="params">()</span> *<span class="title">Engine</span></span> &#123;</span><br><span class="line">   <span class="keyword">return</span> &amp;Engine&#123;router: newRouter()&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(engine *Engine)</span> <span class="title">addRoute</span><span class="params">(method <span class="keyword">string</span>, pattern <span class="keyword">string</span>, handler HandlerFunc)</span></span> &#123;</span><br><span class="line">   engine.router.addRoute(method, pattern, handler)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// GET defines the method to add GET request</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(engine *Engine)</span> <span class="title">GET</span><span class="params">(pattern <span class="keyword">string</span>, handler HandlerFunc)</span></span> &#123;</span><br><span class="line">   engine.addRoute(<span class="string">&quot;GET&quot;</span>, pattern, handler)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// POST defines the method to add POST request</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(engine *Engine)</span> <span class="title">POST</span><span class="params">(pattern <span class="keyword">string</span>, handler HandlerFunc)</span></span> &#123;</span><br><span class="line">   engine.addRoute(<span class="string">&quot;POST&quot;</span>, pattern, handler)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Run defines the method to start a http server</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(engine *Engine)</span> <span class="title">Run</span><span class="params">(addr <span class="keyword">string</span>)</span> <span class="params">(err error)</span></span> &#123;</span><br><span class="line">   <span class="keyword">return</span> http.ListenAndServe(addr, engine)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(engine *Engine)</span> <span class="title">ServeHTTP</span><span class="params">(w http.ResponseWriter, req *http.Request)</span></span> &#123;</span><br><span class="line">   c := newContext(w, req)</span><br><span class="line">   engine.router.handle(c)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>将<code>router</code>相关代码独立后，<code>gee.go</code>简单了，并且通过实现ServerHTTP接口，接管了所有HTTP请求。调用router.handle之前构造了Context对象。</p>
+<p><strong>day2-context/main.go</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;gee&quot;</span></span><br><span class="line">   <span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   r := gee.New()</span><br><span class="line">   r.GET(<span class="string">&quot;/&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(c *gee.Context)</span></span> &#123;</span><br><span class="line">      c.HTML(http.StatusOK, <span class="string">&quot;&lt;h1&gt;Hello Gee&lt;/h1&gt;&quot;</span>)</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">   r.GET(<span class="string">&quot;/hello&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(c *gee.Context)</span></span> &#123;</span><br><span class="line">      c.String(http.StatusOK, <span class="string">&quot;hello %s, you&#x27;re at %s\n&quot;</span>, c.Query(<span class="string">&quot;name&quot;</span>), c.Path)</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">   r.POST(<span class="string">&quot;/login&quot;</span>, <span class="function"><span class="keyword">func</span><span class="params">(c *gee.Context)</span></span> &#123;</span><br><span class="line">      c.JSON(http.StatusOK, gee.H&#123;</span><br><span class="line">         <span class="string">&quot;username&quot;</span>: c.PostForm(<span class="string">&quot;username&quot;</span>),</span><br><span class="line">         <span class="string">&quot;password&quot;</span>: c.PostForm(<span class="string">&quot;password&quot;</span>),</span><br><span class="line">      &#125;)</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">   r.Run(<span class="string">&quot;:9999&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>借助curl，展示下今天的成果！</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> curl -i http://localhost:9999/</span></span><br><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Date: Date: Wed, 24 Nov 2021 09:33:46 GMT</span><br><span class="line">Content-Length: 18</span><br><span class="line">Content-Type: text/html; charset=utf-8</span><br><span class="line">&lt;h1&gt;Hello Nick&lt;/h1&gt;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> curl <span class="string">&quot;http://localhost:9999/hello?name=X.Zhang&quot;</span></span></span><br><span class="line">hello X.Zhang, you&#x27;re at /hello</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> curl -X POST <span class="string">&quot;http://localhost:9999/login&quot;</span> -d <span class="string">&quot;username=geektutu&amp;password=1234&quot;</span></span></span><br><span class="line">&#123;&quot;password&quot;:&quot;6666&quot;,&quot;username&quot;:&quot;zhangxuewei&quot;&#125;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> curl <span class="string">&quot;http://localhost:9999/xxx&quot;</span></span></span><br><span class="line">404 NOT FOUND: /xxx</span><br></pre></td></tr></table></figure>
+<p>PS: 在Goland内使用控制台运行会出错显示找不到X匹配的参数</p>
+<p>解决方案: 使用Windows自带cmd运行即可</p>
+
+    </div>
+
+    
+    
+    
+
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------Ending of the article<i class="fa fa-paw"></i>Thanks For Your Reading-------------</div>
+    
+</div>
+  
+</div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Go/" rel="tag"><i class="fa fa-tags"></i> Go</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/13/Go-language/" rel="prev" title="Go language">
+      <i class="fa fa-chevron-left"></i> Go language
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/12/30/%E6%88%91%E5%B9%B3%E5%87%A1%E4%B8%94%E5%8F%88%E4%B8%8D%E5%B9%B3%E5%87%A1%E7%9A%842021/" rel="next" title="我平凡且又不平凡的2021">
+      我平凡且又不平凡的2021 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AAWeb%E6%A1%86%E6%9E%B6"><span class="nav-number">1.</span> <span class="nav-text">设计一个Web框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gee%E6%A1%86%E6%9E%B6"><span class="nav-number">2.</span> <span class="nav-text">Gee框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Web%E6%A1%86%E6%9E%B6Gee%E2%80%94%E7%AC%AC%E4%B8%80%E5%A4%A9%EF%BC%9AHTTP%E5%9F%BA%E7%A1%80"><span class="nav-number">3.</span> <span class="nav-text">Web框架Gee—第一天：HTTP基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E5%BA%93%E5%90%AF%E5%8A%A8Web%E6%9C%8D%E5%8A%A1"><span class="nav-number">3.1.</span> <span class="nav-text">标准库启动Web服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0http-Handler%E6%8E%A5%E5%8F%A3"><span class="nav-number">3.2.</span> <span class="nav-text">实现http.Handler接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Gee%E6%A1%86%E6%9E%B6%E7%9A%84%E9%9B%8F%E5%BD%A2"><span class="nav-number">3.3.</span> <span class="nav-text">Gee框架的雏形</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Web%E6%A1%86%E6%9E%B6Gee%E2%80%94%E7%AC%AC%E4%BA%8C%E5%A4%A9%EF%BC%9A%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="nav-number">4.</span> <span class="nav-text">Web框架Gee—第二天：上下文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1Context"><span class="nav-number">4.1.</span> <span class="nav-text">设计Context</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B7%AF%E7%94%B1-Router"><span class="nav-number">4.2.</span> <span class="nav-text">路由(Router)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A1%86%E6%9E%B6%E5%85%A5%E5%8F%A3"><span class="nav-number">4.3.</span> <span class="nav-text">框架入口</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xuewei Zhang"
+      src="/images/touxiang.png">
+  <p class="site-author-name" itemprop="name">Xuewei Zhang</p>
+  <div class="site-description" itemprop="description">Please read carefully the books you can understand</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Nickzxw" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Nickzxw" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/13690112205@163.com" title="E-Mail → 13690112205@163.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+	
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xuewei Zhang</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/nipsilon.model.json"},"display":{"position":"right","width":250,"height":250},"mobile":{"show":false},"log":false});</script></body>
+</html>
