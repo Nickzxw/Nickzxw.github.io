@@ -1,0 +1,45 @@
+.back-to-top {
+  background: url("../../../images/scroll.png");
+  right: 120px;
+  width: 140px;  //图片素材宽度
+  height: 900px;  //图片素材高度
+  top: -900x;
+  bottom: unset;
+  box-sizing: border-box;
+  color: $b2t-color;
+  cursor: pointer;
+  left: $b2t-position-right;
+  opacity: $b2t-opacity;
+  padding: 0 6px;
+  position: fixed;
+  transition-property: bottom;
+  z-index: $zindex-3;
+
+  if (hexo-config('back2top.scrollpercent')) {
+    width: initial;
+  } else {
+    width: 70px;
+
+    span {
+      display: none;
+    }
+  }
+  
+  > i {
+    display: none;
+  }
+  
+  &.back-to-top-on {
+    bottom: unset;
+    top: 100vh < (900px + 200px) ? calc( 100vh - 900px - 200px ) : 0px;
+  }
+
+  &:hover {
+    color: $sidebar-highlight;
+  }
+
+  +tablet-mobile() {
+    left: $b2t-position-right-mobile;
+    opacity: $b2t-opacity-hover;
+  }
+}
