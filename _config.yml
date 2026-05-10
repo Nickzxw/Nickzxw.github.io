@@ -114,7 +114,7 @@ deploy:
   #https://gitee.com/nickzxw/nickzxw.git  Gitee
   #git@github.com:Nickzxw/Nickzxw.github.io.git  Github
   repo: git@github.com:Nickzxw/Nickzxw.github.io.git
-  branch: master
+  branch: main
   
 live2d:
   enable: true
