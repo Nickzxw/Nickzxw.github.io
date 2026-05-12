@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>GitBug总结</title><meta name="description" content="Git Bug 总结和解决方案"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_assets/about.COIu5jTr.css"><script type="module" src="/_assets/hoisted.B45GbvkB.js"></script></head> <body class="min-h-screen flex flex-col">  <div id="reading-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-primary to-secondary z-[100] w-0 transition-all duration-100"></div>  <header class="sticky top-0 z-50 bg-[var(--color-card)]/80 backdrop-blur-md border-b border-[#E5E5E5] dark:border-[#2a2a4a]"> <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between"> <a href="/" class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+X.Zhang's Blog.
+</a> <nav class="flex items-center gap-8"> <a href="/" class="text-[var(--color-text)] hover:text-primary transition-colors font-medium"> 首页 </a><a href="/about" class="text-[var(--color-text)] hover:text-primary transition-colors font-medium"> 关于 </a> </nav> </div> </header> <main class="flex-1 max-w-6xl mx-auto px-6 py-8"> <article class="flex gap-8"> <div class="flex-1"> <header class="mb-8"> <h1 class="text-4xl font-bold mb-4">GitBug总结</h1> <div class="flex items-center gap-4 text-sm text-[var(--color-text)]/60"> <time>2023-06-13 12:02:12</time> <span class="px-2 py-1 bg-primary/10 text-primary rounded-full">Note</span> </div> <p class="mt-4 text-lg text-[var(--color-text)]/70">Git Bug 总结和解决方案</p> </header> <div class="prose prose-lg max-w-none">
+Git Bug 总结和解决方案
+
+@[TOC](GitBug总结)
+
+# Git Bug
+
+```
+// git 提交报错
+fatal: unable to access 'https://github.com/Nickzxw/Nickzxw.github.io.git/': Failed to connect to github.com port 443 after 21047 ms: Timed out
+```
+
+问题：远程库和本地库不一致
+
+解决方案：将远程库 clone 到本地，然后再进行修改，然后再次 push
+
+```
+ERROR Cannot find module 'hexo' from
+```
+
+切换文件夹忘记重新安装 hexo 了</div> <nav class="flex justify-between items-center py-8 border-t border-[#E5E5E5] dark:border-[#2a2a4a] mt-8"><a href="/posts/疫情封控下的温暖" class="flex flex-col items-start p-4 rounded-lg hover:bg-[#f5f5f5] dark:hover:bg-[#16213E] transition-colors max-w-[45%]"><span class="text-xs text-[var(--color-text)]/40 mb-1">← 上一篇</span><span class="font-medium line-clamp-2 text-left">疫情封控下的温暖</span></a><a href="/posts/es6模块化" class="flex flex-col items-end p-4 rounded-lg hover:bg-[#f5f5f5] dark:hover:bg-[#16213E] transition-colors max-w-[45%]"><span class="text-xs text-[var(--color-text)]/40 mb-1">下一篇 →</span><span class="font-medium line-clamp-2 text-right">ES6模块化</span></a></nav> </div> <aside class="hidden lg:block w-64 flex-shrink-0"> <nav id="toc" class="sticky top-24 p-4 bg-[var(--color-card)] rounded-xl border border-[#E5E5E5] dark:border-[#2a2a4a]"><h4 class="font-semibold mb-3 text-sm">目录</h4><ul class="space-y-2 text-sm"><li style="padding-left: -12px"><a href="#git-bug" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">Git Bug</a></li></ul></nav> </aside> </article> </main> <footer class="mt-auto py-8 border-t border-[#E5E5E5] dark:border-[#2a2a4a]"> <div class="max-w-6xl mx-auto px-6 text-center text-sm text-[var(--color-text)]/60"> <p>&copy; 2026 Xuewei Zhang. Built with Astro.</p> </div> </footer> <button id="backToTop" class="fixed bottom-8 right-8 p-3 bg-primary text-white rounded-full shadow-lg opacity-0 translate-y-4 transition-all duration-300 hover:scale-110 z-50" aria-label="Back to top"> <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path> </svg> </button>   </body></html>
