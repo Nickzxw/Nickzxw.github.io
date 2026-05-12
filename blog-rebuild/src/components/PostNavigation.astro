@@ -1,0 +1,25 @@
+---
+interface Props {
+  prev?: { slug: string; title: string };
+  next?: { slug: string; title: string };
+}
+
+const { prev, next } = Astro.props;
+---
+
+{(prev || next) && (
+  <nav class="flex justify-between items-center py-8 border-t border-[#E5E5E5] dark:border-[#2a2a4a] mt-8">
+    {prev ? (
+      <a href={`/posts/${prev.slug}`} class="flex flex-col items-start p-4 rounded-lg hover:bg-[#f5f5f5] dark:hover:bg-[#16213E] transition-colors max-w-[45%]">
+        <span class="text-xs text-[var(--color-text)]/40 mb-1">← 上一篇</span>
+        <span class="font-medium line-clamp-2 text-left">{prev.title}</span>
+      </a>
+    ) : <div />}
+    {next ? (
+      <a href={`/posts/${next.slug}`} class="flex flex-col items-end p-4 rounded-lg hover:bg-[#f5f5f5] dark:hover:bg-[#16213E] transition-colors max-w-[45%]">
+        <span class="text-xs text-[var(--color-text)]/40 mb-1">下一篇 →</span>
+        <span class="font-medium line-clamp-2 text-right">{next.title}</span>
+      </a>
+    ) : <div />}
+  </nav>
+)}

@@ -1,0 +1,1 @@
+import"./hoisted.z7buSuHE.js";const o=document.getElementById("reading-progress");function t(){const n=window.scrollY,e=document.documentElement.scrollHeight-window.innerHeight,s=e>0?n/e*100:0;o&&(o.style.width=`${Math.min(s,100)}%`)}window.addEventListener("scroll",t);t();

@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="关于 - X.Zhang's Blog.">
+  <Header />
+  <main class="flex-1 max-w-3xl mx-auto px-6 py-16">
+    <h1 class="text-4xl font-bold mb-6">关于我</h1>
+    <div class="prose prose-lg">
+      <p>我是张雪薇（Xuewei Zhang），一名产品经理。</p>
+      <p>这个博客用于记录我在产品管理、技术学习和深度学习等领域的思考。</p>
+      <p>「I CAN DO ALL THING」</p>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

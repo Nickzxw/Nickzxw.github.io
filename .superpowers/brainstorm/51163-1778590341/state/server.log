@@ -1,0 +1,9 @@
+{"type":"server-started","port":52641,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:52641","screen_dir":"/Users/a1-6/Documents/MyProject/Nickzxw.github.io/.superpowers/brainstorm/51163-1778590341/content","state_dir":"/Users/a1-6/Documents/MyProject/Nickzxw.github.io/.superpowers/brainstorm/51163-1778590341/state"}
+{"type":"screen-added","file":"/Users/a1-6/Documents/MyProject/Nickzxw.github.io/.superpowers/brainstorm/51163-1778590341/content/design-style.html"}
+{"source":"user-event","type":"click","text":"Featured Article\n          \n          \n            \n            \n          \n        \n      \n    \n    \n      大图+精选\n      顶部大图 banner，精选文章突出展示，图文交错，内容层次分明","choice":"feature","id":null,"timestamp":1778590420370}
+{"source":"user-event","type":"click","text":"沉浸深色\n      深色主题，渐变色点缀，沉浸式阅读体验，适合技术/极客内容","choice":"immersive","id":null,"timestamp":1778590426134}
+{"source":"user-event","type":"click","text":"Featured Article\n          \n          \n            \n            \n          \n        \n      \n    \n    \n      大图+精选\n      顶部大图 banner，精选文章突出展示，图文交错，内容层次分明","choice":"feature","id":null,"timestamp":1778590426985}
+{"source":"user-event","type":"click","text":"简约卡片式\n      大量留白，卡片承载内容，微妙的悬浮动效，阅读体验优先","choice":"minimal","id":null,"timestamp":1778590427817}
+{"source":"user-event","type":"click","text":"Featured Article\n          \n          \n            \n            \n          \n        \n      \n    \n    \n      大图+精选\n      顶部大图 banner，精选文章突出展示，图文交错，内容层次分明","choice":"feature","id":null,"timestamp":1778590428567}
+{"type":"screen-added","file":"/Users/a1-6/Documents/MyProject/Nickzxw.github.io/.superpowers/brainstorm/51163-1778590341/content/homepage-layout.html"}
+{"type":"server-stopped","reason":"idle timeout"}

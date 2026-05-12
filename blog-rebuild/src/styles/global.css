@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #FAFAFA;
+  --color-card: #FFFFFF;
+  --color-text: #1A1A1A;
+  --color-primary: #667EEA;
+  --color-secondary: #764BA2;
+}
+
+.dark {
+  --color-bg: #1A1A2E;
+  --color-card: #16213E;
+  --color-text: #E5E5E5;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Inter', 'Noto Sans SC', system-ui, sans-serif;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-lg font-medium transition-transform hover:scale-105;
+  }
+  .card {
+    @apply bg-[var(--color-card)] rounded-xl border border-[#E5E5E5] dark:border-[#2a2a4a] transition-shadow hover:shadow-lg;
+  }
+}

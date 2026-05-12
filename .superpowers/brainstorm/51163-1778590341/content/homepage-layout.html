@@ -1,0 +1,82 @@
+<h2>首页布局</h2>
+<p class="subtitle">选择博客首页的结构方式</p>
+
+<div class="cards">
+  <div class="card" data-choice="hero-grid" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-body" style="padding:16px;font-family:system-ui">
+          <div style="height:180px;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:12px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:500">Hero 大图区域</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+            <div style="height:120px;background:#f5f5f5;border-radius:8px"></div>
+            <div style="height:120px;background:#f0f0f0;border-radius:8px"></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+            <div style="height:80px;background:#f8f8f8;border-radius:8px"></div>
+            <div style="height:80px;background:#f5f5f5;border-radius:8px"></div>
+            <div style="height:80px;background:#f0f0f0;border-radius:8px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Hero + 瀑布流</h3>
+      <p>顶部大图 Banner + 两栏精选 + 文章列表瀑布流</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="magazine" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-body" style="padding:16px;font-family:system-ui">
+          <div style="display:grid;grid-template-columns:2fr 1fr;gap:12px;margin-bottom:16px">
+            <div style="height:160px;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:12px"></div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="height:76px;background:#f5f5f5;border-radius:8px"></div>
+              <div style="height:76px;background:#f0f0f0;border-radius:8px"></div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+            <div style="height:80px;background:#f8f8f8;border-radius:8px"></div>
+            <div style="height:80px;background:#f5f5f5;border-radius:8px"></div>
+            <div style="height:80px;background:#f0f0f0;border-radius:8px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>杂志式双栏</h3>
+      <p>左侧大图配右侧摘要，下方图文交错排列</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="timeline" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-body" style="padding:16px;font-family:system-ui">
+          <div style="height:120px;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:12px;margin-bottom:20px"></div>
+          <div style="display:flex;flex-direction:column;gap:12px;margin-left:20px;border-left:2px solid #e5e5e5;padding-left:20px">
+            <div style="display:flex;align-items:center;gap:12px">
+              <div style="width:40px;height:40px;background:#667eea;border-radius:50%;flex-shrink:0"></div>
+              <div style="flex:1">
+                <div style="height:8px;background:#222;border-radius:3px;width:70%;margin-bottom:6px"></div>
+                <div style="height:6px;background:#ccc;border-radius:3px;width:40%"></div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <div style="width:40px;height:40px;background:#764ba2;border-radius:50%;flex-shrink:0"></div>
+              <div style="flex:1">
+                <div style="height:8px;background:#222;border-radius:3px;width:60%;margin-bottom:6px"></div>
+                <div style="height:6px;background:#ccc;border-radius:3px;width:35%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>时间线式</h3>
+      <p>顶部 Hero，下方按时间轴展示文章，带分类标签</p>
+    </div>
+  </div>
+</div>

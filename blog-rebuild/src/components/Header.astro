@@ -1,0 +1,21 @@
+---
+const navLinks = [
+  { href: '/', label: '首页' },
+  { href: '/about', label: '关于' }
+];
+---
+
+<header class="sticky top-0 z-50 bg-[var(--color-card)]/80 backdrop-blur-md border-b border-[#E5E5E5] dark:border-[#2a2a4a]">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="/" class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+      X.Zhang's Blog.
+    </a>
+    <nav class="flex items-center gap-8">
+      {navLinks.map(link => (
+        <a href={link.href} class="text-[var(--color-text)] hover:text-primary transition-colors font-medium">
+          {link.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
