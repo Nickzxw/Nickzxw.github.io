@@ -8,6 +8,12 @@ import FeaturedCards from '../components/FeaturedCards.astro';
 import PostList from '../components/PostList.astro';
 import BackToTop from '../components/BackToTop.astro';
 
+function extractFirstImage(body: string): string | undefined {
+  if (!body) return undefined;
+  const match = body.match(/!\[([^\]]*)\]\(\/images\/([^)]+)\)/);
+  return match ? `/images/${match[2]}` : undefined;
+}
+
 const allPosts = await getCollection('posts');
 const sortedPosts = allPosts.sort((a, b) =>
   new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
@@ -17,12 +23,21 @@ const heroPost = sortedPosts[0];
 const featuredPosts = sortedPosts.slice(1, 3);
 const remainingPosts = sortedPosts.slice(3);
 
+// Extract first image for each post
+const heroCover = extractFirstImage(heroPost.body);
+const featuredWithCover = featuredPosts.map(p => ({
+  slug: p.slug,
+  title: p.data.title,
+  description: p.data.description || '',
+  cover: extractFirstImage(p.body),
+  date: p.data.date
+}));
+
 // Pagination
 const POSTS_PER_PAGE = 9;
 const totalPosts = remainingPosts.length;
 const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
 
-// Get current page from URL, default to 1
 const url = new URL(Astro.request.url);
 const page = parseInt(url.searchParams.get('page') || '1', 10);
 const currentPage = Math.min(Math.max(page, 1), totalPages || 1);
@@ -30,6 +45,15 @@ const currentPage = Math.min(Math.max(page, 1), totalPages || 1);
 const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
 const endIndex = startIndex + POSTS_PER_PAGE;
 const paginatedPosts = remainingPosts.slice(startIndex, endIndex);
+
+const paginatedWithCover = paginatedPosts.map(p => ({
+  slug: p.slug,
+  title: p.data.title,
+  description: p.data.description || '',
+  cover: extractFirstImage(p.body),
+  date: p.data.date,
+  categories: p.data.categories
+}));
 ---
 
 <BaseLayout title="X.Zhang's Blog.">
@@ -38,26 +62,14 @@ const paginatedPosts = remainingPosts.slice(startIndex, endIndex);
     <HeroSection
       title={heroPost.data.title}
       description={heroPost.data.description || ''}
+      cover={heroCover}
       slug={heroPost.slug}
     />
-    <FeaturedCards posts={featuredPosts.map(p => ({
-      slug: p.slug,
-      title: p.data.title,
-      description: p.data.description || '',
-      cover: p.data.cover,
-      date: p.data.date
-    }))} />
+    <FeaturedCards posts={featuredWithCover} />
     <section>
       <h2 class="text-2xl font-bold mb-6">全部文章</h2>
       <PostList
-        posts={paginatedPosts.map(p => ({
-          slug: p.slug,
-          title: p.data.title,
-          description: p.data.description || '',
-          cover: p.data.cover,
-          date: p.data.date,
-          categories: p.data.categories
-        }))}
+        posts={paginatedWithCover}
         currentPage={currentPage}
         totalPages={totalPages}
       />
