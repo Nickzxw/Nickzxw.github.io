@@ -1,162 +1,146 @@
-<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ES6模块化</title><meta name="description" content="ES6 模块化相关知识"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_assets/about.COIu5jTr.css">
-<link rel="stylesheet" href="/_assets/_slug_.BmA7YLN2.css"><script type="module" src="/_assets/hoisted.B45GbvkB.js"></script></head> <body class="min-h-screen flex flex-col">  <div id="reading-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-primary to-secondary z-[100] w-0 transition-all duration-100"></div>  <header class="sticky top-0 z-50 bg-[var(--color-card)]/80 backdrop-blur-md border-b border-[#E5E5E5] dark:border-[#2a2a4a]"> <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between"> <a href="/" class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ES6模块化</title><meta name="description" content="ES6 模块化相关知识"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_assets/about.RdrImIzM.css">
+<link rel="stylesheet" href="/_assets/_slug_.C016gcAW.css"><script type="module" src="/_assets/hoisted.B45GbvkB.js"></script></head> <body class="min-h-screen flex flex-col">  <div id="reading-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-primary to-secondary z-[100] w-0 transition-all duration-100"></div>  <header class="sticky top-0 z-50 bg-[var(--color-card)]/80 backdrop-blur-md border-b border-[#E5E5E5] dark:border-[#2a2a4a]"> <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between"> <a href="/" class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
 X.Zhang's Blog.
-</a> <nav class="flex items-center gap-8"> <a href="/" class="text-[var(--color-text)] hover:text-primary transition-colors font-medium"> 首页 </a><a href="/about" class="text-[var(--color-text)] hover:text-primary transition-colors font-medium"> 关于 </a> </nav> </div> </header> <main class="flex-1 max-w-6xl mx-auto px-6 py-8"> <article class="flex gap-8"> <div class="flex-1"> <header class="mb-8"> <h1 class="text-4xl font-bold mb-4">ES6模块化</h1> <div class="flex items-center gap-4 text-sm text-[var(--color-text)]/60"> <time>2023-06-18 22:12:52</time> <span class="px-2 py-1 bg-primary/10 text-primary rounded-full">Note</span> </div> <p class="mt-4 text-lg text-[var(--color-text)]/70">ES6 模块化相关知识</p> </header> <div class="prose prose-lg max-w-none">
-ES6 模块化相关知识
-
-@[TOC](ES6模块化)
-
-# ES6 模块化
-
-- AMD 和 CMD 适用于浏览器端的 JS 模块化
-- CommonJS 适用于服务器端的 JS 模块化
-  - CommonJS （Node.js 的标准）
-- ES6 模块化规范
-  1. 每个 JS 文件都是一个独立的模块
-  2. 导入其他模块成员使用 import 关键字
-  3. 向外共享模块成员使用 export 关键字
-
-## 在 Node.js 中体验 ES5 模块化
-
-```plaintext
-// 新建包管理文件 package.json
-npm init -y
-// 在根节点中添加模块化
-"type": "module"
-```
-
-## 基本语法
-
-1. 默认导出和默认导入(注意事项： export default 只能使用一次)
-  1. 默认导出 export default 默认导出的成员对象（导出的是一个对象）
-  2. 默认导入 import 接收名称 from '模块.js'（接受上面导出的对象的名称）
-2. 按需导出和按需导入
-  1. 按需导出 export 成员名称
-  2. 按需导入 import {} from
-
-注意事项：
-
-1. 模块中可以多次按需导出
-2. 按需导入的成员名称必须和按需导出的名称保持一致
-3. 按需导入时，可以使用as关键字进行重命名
-4. 按需导入可以和默认导入一起使用（import info）
-
-3. 直接导入并执行模块中的代码 直接import模块
-
-# Promise
-
-## 回调地狱
-
-多层回调函数相互嵌套，形成了回调地狱。
-
-tips: 什么是回调函数（在某些事情结束之后执行的函数）
-
-缺点：代码耦合性太强，难以维护；大量冗余代码互相嵌套，代码的可读性变差。
-
-## Promise 的基本概念
-
-1. Promise 是一个构造函数 const p = new Promise()
-2. new 出来的 Promise 实例对象，代表一个异步操作
-3. 原型对象 Promise.prototype 上包含一个 .then() 方法
-4. .then 预先指定成功和失败的回调函数
-  1. p.then(result => {}, error => {}) 成功是必选的，失败是可选的
-
-如何按顺序输出？
-
-**.then 方法的特性**：
-
-- 如果上一个 .then()方法中返回了一个新的Promise实例对象，则可以通过下一个.then()继续进行处理。
-- 通过这样的链式调用，可以解决回调地狱的问题
-
-**通过 .catch 捕获错误**
-
-**Promise.all()** 会发起并行的 Promise 异步操作了，等所有的异步操作全部结束后才会执行下一步的.then操作
-
-**Promise.race()** 会发起并行的Promise异步操作，只要任何一个异步操作完成，就立即执行下一步的.then操作
-
-**Promise 异步操作的结果，可以用 resolve 或 reject 回调函数进行处理**
-
-```javascript
-if(err) return reject(err)
-resolve(dataStr)
-```
-
-## async / awit
-
-async / await 是 ES8 引入的新语法，用来简化 Promise 异步操作
-
-async / await出现之前，开发者只能通过.then()方法链式处理 Promise() 异步操作
-
-在 async 方法中，第一个 await 之前代码会同步执行，await 之后的代码会异步执行
-
-```javascript
-function delay(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-async function example() {
-  console.log('1');
-  await delay(2000);
-  console.log('2');
-  await delay(1000);
-  console.log('3');
-}
-
-console.log('Start');
-example();
-console.log('End');
-```
-
-```plaintext
-Start
-1
-End
-2 (经过2秒后)
-3 (再经过1秒后)
-```
-
-在上述示例中，首先输出 "Start"，然后调用 `example()` 函数。
-
-在 `example()` 函数内部，首先输出 "1"，然后遇到第一个 `await` 表达式，它等待 2 秒钟的延迟。在等待期间，代码的执行被暂停，事件循环继续执行其他任务。
-
-接着，经过 2 秒后，第一个 `await` 表达式解析完成，输出 "2"。然后，遇到第二个 `await` 表达式，它等待 1 秒钟的延迟。
-
-最终，经过 1 秒后，第二个 `await` 表达式解析完成，输出 "3"。然后函数执行完毕。
-
-总结起来，`async/await` 允许我们编写异步代码，但以更直观的同步
-
-## EventLoop
-
-JavaScript 是一门单线程运行的编程语言，也就是说，同一时间只能做一件事情
-
-缺点：当前一个任务非常耗时的时候。后续任务不得不一直等待，会导致**程序假死**的问题
-
-### 同步任务和异步任务
-
-同步任务
-
-- 非耗时任务，在主线程上排队执行的任务
-- 前一个任务结束才执行后续
-
-异步任务
-
-- 耗时任务，委托给宿主环境（浏览器 or Node.js）
-- 异步任务执行后，通知主线程执行异步任务回调函数
-
-### 异步任务
-
-1. 宏任务（macrotask）
-  - 异步Ajax请求
-  - setTimeout、setInterval
-  - 文件操作
-  - 其他宏任务
-2. 微任务（microtask）
-  - Promise.then、.catch和.finally
-  - process.nextTick
-  - 其他微任务
-
-**执行流程：**
-
-宏任务->执行结束->有微任务(没有的话直接执行下一个宏任务)->执行所有微任务->执行下一个宏任务
-
-![image]</div> <nav class="flex justify-between items-center py-8 border-t border-[#E5E5E5] dark:border-[#2a2a4a] mt-8"><a href="/posts/gitbug总结" class="flex flex-col items-start p-4 rounded-lg hover:bg-[#f5f5f5] dark:hover:bg-[#16213E] transition-colors max-w-[45%]"><span class="text-xs text-[var(--color-text)]/40 mb-1">← 上一篇</span><span class="font-medium line-clamp-2 text-left">GitBug总结</span></a><a href="/posts/ai时代每个人都要懂的概念" class="flex flex-col items-end p-4 rounded-lg hover:bg-[#f5f5f5] dark:hover:bg-[#16213E] transition-colors max-w-[45%]"><span class="text-xs text-[var(--color-text)]/40 mb-1">下一篇 →</span><span class="font-medium line-clamp-2 text-right">AI 时代每个人都要懂的几个概念</span></a></nav> </div> <aside class="hidden lg:block w-64 flex-shrink-0"> <nav id="toc" class="sticky top-24 p-4 bg-[var(--color-card)] rounded-xl border border-[#E5E5E5] dark:border-[#2a2a4a]"><h4 class="font-semibold mb-3 text-sm">目录</h4><ul class="space-y-2 text-sm"><li style="padding-left: -12px"><a href="#es6-模块化" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">ES6 模块化</a></li><li style="padding-left: 0px"><a href="#在-nodejs-中体验-es5-模块化" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">在 Node.js 中体验 ES5 模块化</a></li><li style="padding-left: 0px"><a href="#基本语法" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">基本语法</a></li><li style="padding-left: -12px"><a href="#promise" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">Promise</a></li><li style="padding-left: 0px"><a href="#回调地狱" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">回调地狱</a></li><li style="padding-left: 0px"><a href="#promise-的基本概念" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">Promise 的基本概念</a></li><li style="padding-left: 0px"><a href="#async--awit" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">async / awit</a></li><li style="padding-left: 0px"><a href="#eventloop" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">EventLoop</a></li><li style="padding-left: 12px"><a href="#同步任务和异步任务" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">同步任务和异步任务</a></li><li style="padding-left: 12px"><a href="#异步任务" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">异步任务</a></li></ul></nav> </aside> </article> </main> <footer class="mt-auto py-8 border-t border-[#E5E5E5] dark:border-[#2a2a4a]"> <div class="max-w-6xl mx-auto px-6 text-center text-sm text-[var(--color-text)]/60"> <p>&copy; 2026 Xuewei Zhang. Built with Astro.</p> </div> </footer> <button id="backToTop" class="fixed bottom-8 right-8 p-3 bg-primary text-white rounded-full shadow-lg opacity-0 translate-y-4 transition-all duration-300 hover:scale-110 z-50" aria-label="Back to top"> <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path> </svg> </button>   </body></html>
+</a> <nav class="flex items-center gap-8"> <a href="/" class="text-[var(--color-text)] hover:text-primary transition-colors font-medium"> 首页 </a><a href="/about" class="text-[var(--color-text)] hover:text-primary transition-colors font-medium"> 关于 </a> </nav> </div> </header> <main class="flex-1 max-w-6xl mx-auto px-6 py-8"> <article class="flex gap-8"> <div class="flex-1"> <header class="mb-8"> <h1 class="text-4xl font-bold mb-4">ES6模块化</h1> <div class="flex items-center gap-4 text-sm text-[var(--color-text)]/60"> <time>2023-06-18 22:12:52</time> <span class="px-2 py-1 bg-primary/10 text-primary rounded-full">Note</span> </div> <p class="mt-4 text-lg text-[var(--color-text)]/70">ES6 模块化相关知识</p> </header> <div class="prose prose-lg max-w-none dark:prose-invert"> <p>ES6 模块化相关知识</p>
+<p>@<a href="ES6%E6%A8%A1%E5%9D%97%E5%8C%96">TOC</a></p>
+<h1 id="es6-模块化">ES6 模块化</h1>
+<ul>
+<li>AMD 和 CMD 适用于浏览器端的 JS 模块化</li>
+<li>CommonJS 适用于服务器端的 JS 模块化
+<ul>
+<li>CommonJS （Node.js 的标准）</li>
+</ul>
+</li>
+<li>ES6 模块化规范
+<ol>
+<li>每个 JS 文件都是一个独立的模块</li>
+<li>导入其他模块成员使用 import 关键字</li>
+<li>向外共享模块成员使用 export 关键字</li>
+</ol>
+</li>
+</ul>
+<h2 id="在-nodejs-中体验-es5-模块化">在 Node.js 中体验 ES5 模块化</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// 新建包管理文件 package.json</span></span>
+<span class="line"><span>npm init -y</span></span>
+<span class="line"><span>// 在根节点中添加模块化</span></span>
+<span class="line"><span>"type": "module"</span></span>
+<span class="line"><span></span></span></code></pre>
+<h2 id="基本语法">基本语法</h2>
+<ol>
+<li>默认导出和默认导入(注意事项： export default 只能使用一次)</li>
+<li>默认导出 export default 默认导出的成员对象（导出的是一个对象）</li>
+<li>默认导入 import 接收名称 from ‘模块.js’（接受上面导出的对象的名称）</li>
+<li>按需导出和按需导入</li>
+<li>按需导出 export 成员名称</li>
+<li>按需导入 import {} from</li>
+</ol>
+<p>注意事项：</p>
+<ol>
+<li>
+<p>模块中可以多次按需导出</p>
+</li>
+<li>
+<p>按需导入的成员名称必须和按需导出的名称保持一致</p>
+</li>
+<li>
+<p>按需导入时，可以使用as关键字进行重命名</p>
+</li>
+<li>
+<p>按需导入可以和默认导入一起使用（import info）</p>
+</li>
+<li>
+<p>直接导入并执行模块中的代码 直接import模块</p>
+</li>
+</ol>
+<h1 id="promise">Promise</h1>
+<h2 id="回调地狱">回调地狱</h2>
+<p>多层回调函数相互嵌套，形成了回调地狱。</p>
+<p>tips: 什么是回调函数（在某些事情结束之后执行的函数）</p>
+<p>缺点：代码耦合性太强，难以维护；大量冗余代码互相嵌套，代码的可读性变差。</p>
+<h2 id="promise-的基本概念">Promise 的基本概念</h2>
+<ol>
+<li>Promise 是一个构造函数 const p = new Promise()</li>
+<li>new 出来的 Promise 实例对象，代表一个异步操作</li>
+<li>原型对象 Promise.prototype 上包含一个 .then() 方法</li>
+<li>.then 预先指定成功和失败的回调函数</li>
+<li>p.then(result => {}, error => {}) 成功是必选的，失败是可选的</li>
+</ol>
+<p>如何按顺序输出？</p>
+<p><strong>.then 方法的特性</strong>：</p>
+<ul>
+<li>如果上一个 .then()方法中返回了一个新的Promise实例对象，则可以通过下一个.then()继续进行处理。</li>
+<li>通过这样的链式调用，可以解决回调地狱的问题</li>
+</ul>
+<p><strong>通过 .catch 捕获错误</strong></p>
+<p><strong>Promise.all()</strong> 会发起并行的 Promise 异步操作了，等所有的异步操作全部结束后才会执行下一步的.then操作</p>
+<p><strong>Promise.race()</strong> 会发起并行的Promise异步操作，只要任何一个异步操作完成，就立即执行下一步的.then操作</p>
+<p><strong>Promise 异步操作的结果，可以用 resolve 或 reject 回调函数进行处理</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8">(err) </span><span style="color:#F97583">return</span><span style="color:#B392F0"> reject</span><span style="color:#E1E4E8">(err)</span></span>
+<span class="line"><span style="color:#B392F0">resolve</span><span style="color:#E1E4E8">(dataStr)</span></span>
+<span class="line"></span></code></pre>
+<h2 id="async--awit">async / awit</h2>
+<p>async / await 是 ES8 引入的新语法，用来简化 Promise 异步操作</p>
+<p>async / await出现之前，开发者只能通过.then()方法链式处理 Promise() 异步操作</p>
+<p>在 async 方法中，第一个 await 之前代码会同步执行，await 之后的代码会异步执行</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> delay</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">ms</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#F97583"> new</span><span style="color:#79B8FF"> Promise</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">resolve</span><span style="color:#F97583"> =></span><span style="color:#B392F0"> setTimeout</span><span style="color:#E1E4E8">(resolve, ms));</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> function</span><span style="color:#B392F0"> example</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'1'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  await</span><span style="color:#B392F0"> delay</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2000</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'2'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  await</span><span style="color:#B392F0"> delay</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1000</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'3'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Start'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">example</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'End'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Start</span></span>
+<span class="line"><span>1</span></span>
+<span class="line"><span>End</span></span>
+<span class="line"><span>2 (经过2秒后)</span></span>
+<span class="line"><span>3 (再经过1秒后)</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>在上述示例中，首先输出 “Start”，然后调用 <code>example()</code> 函数。</p>
+<p>在 <code>example()</code> 函数内部，首先输出 “1”，然后遇到第一个 <code>await</code> 表达式，它等待 2 秒钟的延迟。在等待期间，代码的执行被暂停，事件循环继续执行其他任务。</p>
+<p>接着，经过 2 秒后，第一个 <code>await</code> 表达式解析完成，输出 “2”。然后，遇到第二个 <code>await</code> 表达式，它等待 1 秒钟的延迟。</p>
+<p>最终，经过 1 秒后，第二个 <code>await</code> 表达式解析完成，输出 “3”。然后函数执行完毕。</p>
+<p>总结起来，<code>async/await</code> 允许我们编写异步代码，但以更直观的同步</p>
+<h2 id="eventloop">EventLoop</h2>
+<p>JavaScript 是一门单线程运行的编程语言，也就是说，同一时间只能做一件事情</p>
+<p>缺点：当前一个任务非常耗时的时候。后续任务不得不一直等待，会导致<strong>程序假死</strong>的问题</p>
+<h3 id="同步任务和异步任务">同步任务和异步任务</h3>
+<p>同步任务</p>
+<ul>
+<li>非耗时任务，在主线程上排队执行的任务</li>
+<li>前一个任务结束才执行后续</li>
+</ul>
+<p>异步任务</p>
+<ul>
+<li>耗时任务，委托给宿主环境（浏览器 or Node.js）</li>
+<li>异步任务执行后，通知主线程执行异步任务回调函数</li>
+</ul>
+<h3 id="异步任务">异步任务</h3>
+<ol>
+<li>宏任务（macrotask）</li>
+</ol>
+<ul>
+<li>异步Ajax请求</li>
+<li>setTimeout、setInterval</li>
+<li>文件操作</li>
+<li>其他宏任务</li>
+</ul>
+<ol start="2">
+<li>微任务（microtask）</li>
+</ol>
+<ul>
+<li>Promise.then、.catch和.finally</li>
+<li>process.nextTick</li>
+<li>其他微任务</li>
+</ul>
+<p><strong>执行流程：</strong></p>
+<p>宏任务->执行结束->有微任务(没有的话直接执行下一个宏任务)->执行所有微任务->执行下一个宏任务</p>
+<p>![image]</p> </div> <nav class="flex justify-between items-center py-8 border-t border-[#E5E5E5] dark:border-[#2a2a4a] mt-8"><a href="/posts/gitbug总结" class="flex flex-col items-start p-4 rounded-lg hover:bg-[#f5f5f5] dark:hover:bg-[#16213E] transition-colors max-w-[45%]"><span class="text-xs text-[var(--color-text)]/40 mb-1">← 上一篇</span><span class="font-medium line-clamp-2 text-left">GitBug总结</span></a><a href="/posts/ai时代每个人都要懂的概念" class="flex flex-col items-end p-4 rounded-lg hover:bg-[#f5f5f5] dark:hover:bg-[#16213E] transition-colors max-w-[45%]"><span class="text-xs text-[var(--color-text)]/40 mb-1">下一篇 →</span><span class="font-medium line-clamp-2 text-right">AI 时代每个人都要懂的几个概念</span></a></nav> </div> <aside class="hidden lg:block w-64 flex-shrink-0"> <nav id="toc" class="sticky top-24 p-4 bg-[var(--color-card)] rounded-xl border border-[#E5E5E5] dark:border-[#2a2a4a]"><h4 class="font-semibold mb-3 text-sm">目录</h4><ul class="space-y-2 text-sm"><li style="padding-left: -12px"><a href="#es6-模块化" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">ES6 模块化</a></li><li style="padding-left: 0px"><a href="#在-nodejs-中体验-es5-模块化" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">在 Node.js 中体验 ES5 模块化</a></li><li style="padding-left: 0px"><a href="#基本语法" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">基本语法</a></li><li style="padding-left: -12px"><a href="#promise" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">Promise</a></li><li style="padding-left: 0px"><a href="#回调地狱" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">回调地狱</a></li><li style="padding-left: 0px"><a href="#promise-的基本概念" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">Promise 的基本概念</a></li><li style="padding-left: 0px"><a href="#async--awit" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">async / awit</a></li><li style="padding-left: 0px"><a href="#eventloop" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">EventLoop</a></li><li style="padding-left: 12px"><a href="#同步任务和异步任务" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">同步任务和异步任务</a></li><li style="padding-left: 12px"><a href="#异步任务" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">异步任务</a></li></ul></nav> </aside> </article> </main> <footer class="mt-auto py-8 border-t border-[#E5E5E5] dark:border-[#2a2a4a]"> <div class="max-w-6xl mx-auto px-6 text-center text-sm text-[var(--color-text)]/60"> <p>&copy; 2026 Xuewei Zhang. Built with Astro.</p> </div> </footer> <button id="backToTop" class="fixed bottom-8 right-8 p-3 bg-primary text-white rounded-full shadow-lg opacity-0 translate-y-4 transition-all duration-300 hover:scale-110 z-50" aria-label="Back to top"> <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path> </svg> </button>   </body></html>

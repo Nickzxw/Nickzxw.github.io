@@ -1,132 +1,88 @@
-<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Hexo - How to hexo blog and submit it to github.</title><meta name="description" content="X.Zhang Blog - I CAN DO ALL THING"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_assets/about.COIu5jTr.css">
-<link rel="stylesheet" href="/_assets/_slug_.BmA7YLN2.css"><script type="module" src="/_assets/hoisted.B45GbvkB.js"></script></head> <body class="min-h-screen flex flex-col">  <div id="reading-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-primary to-secondary z-[100] w-0 transition-all duration-100"></div>  <header class="sticky top-0 z-50 bg-[var(--color-card)]/80 backdrop-blur-md border-b border-[#E5E5E5] dark:border-[#2a2a4a]"> <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between"> <a href="/" class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Hexo - How to hexo blog and submit it to github.</title><meta name="description" content="X.Zhang Blog - I CAN DO ALL THING"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_assets/about.RdrImIzM.css">
+<link rel="stylesheet" href="/_assets/_slug_.C016gcAW.css"><script type="module" src="/_assets/hoisted.B45GbvkB.js"></script></head> <body class="min-h-screen flex flex-col">  <div id="reading-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-primary to-secondary z-[100] w-0 transition-all duration-100"></div>  <header class="sticky top-0 z-50 bg-[var(--color-card)]/80 backdrop-blur-md border-b border-[#E5E5E5] dark:border-[#2a2a4a]"> <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between"> <a href="/" class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
 X.Zhang's Blog.
-</a> <nav class="flex items-center gap-8"> <a href="/" class="text-[var(--color-text)] hover:text-primary transition-colors font-medium"> 首页 </a><a href="/about" class="text-[var(--color-text)] hover:text-primary transition-colors font-medium"> 关于 </a> </nav> </div> </header> <main class="flex-1 max-w-6xl mx-auto px-6 py-8"> <article class="flex gap-8"> <div class="flex-1"> <header class="mb-8"> <h1 class="text-4xl font-bold mb-4">Hexo - How to hexo blog and submit it to github.</h1> <div class="flex items-center gap-4 text-sm text-[var(--color-text)]/60"> <time>Tue Oct 26 2021 04:51:15 GMT+0800 (中国标准时间)</time> <span class="px-2 py-1 bg-primary/10 text-primary rounded-full">Hexo</span><span class="px-2 py-1 bg-primary/10 text-primary rounded-full">Git</span> </div>  </header> <div class="prose prose-lg max-w-none">
-An article about how to use hexo to write a blog !
-
+</a> <nav class="flex items-center gap-8"> <a href="/" class="text-[var(--color-text)] hover:text-primary transition-colors font-medium"> 首页 </a><a href="/about" class="text-[var(--color-text)] hover:text-primary transition-colors font-medium"> 关于 </a> </nav> </div> </header> <main class="flex-1 max-w-6xl mx-auto px-6 py-8"> <article class="flex gap-8"> <div class="flex-1"> <header class="mb-8"> <h1 class="text-4xl font-bold mb-4">Hexo - How to hexo blog and submit it to github.</h1> <div class="flex items-center gap-4 text-sm text-[var(--color-text)]/60"> <time>Tue Oct 26 2021 04:51:15 GMT+0800 (中国标准时间)</time> <span class="px-2 py-1 bg-primary/10 text-primary rounded-full">Hexo</span><span class="px-2 py-1 bg-primary/10 text-primary rounded-full">Git</span> </div>  </header> <div class="prose prose-lg max-w-none dark:prose-invert"> <p>An article about how to use hexo to write a blog !</p>
 <!-- more -->
-
-## Make a new document
-
-If our file's name is "hello hexo", you can type the following command in **Git GUI** to create  a new file.
-
-```
-$ hexo new "hello hexo"
-```
-
-The result of the command is to create a new "hello-hexo.md" file under the **PATH:** ./hexo/sourse/_post.
-
-Then we can start our writing!
-
-## Document format
-
-We use the Text Editor to open the new file "hello-hexo.md".
-
-```
----
-title: hello hexo
-date: 2021-10-25 20:51:15
-tags:
-categories:
----
-```
-
-The text of **title** is the file name and the title of the article.
-
-And the value of the **date** is the local time when we created the file.
-
-Besides, the value of **tags** is the label of the file, you can assign the value to the file at will. Like:
-
-```
----
-title: hello hexo
-date: 2021-10-25 20:51:15
-tags:
-  - hello
-  - hexo
-  - markdown
-categories:
----
-```
-
-In the end, **categories** are used to categorize articles.
-
-## Resource reference
-
-Sometimes we will want to insert a picture to our blog.
-
-You will have two options:
-
-1. Use absolute paths to reference resources.
-2. Use relative paths to reference resources
-
-### Article resource folder
-
-If you use the relative paths to reference resources, you can use the article resource folder provided from Hexo.
-
-Use the text editor to open the **"_config.yml"** file in the root directory, and set the **"post_asset_folder"**  values to true
-
-```
-post_asset_folder: true
-```
-
-Then when you type `hexo new filename`, Hexo will create a new directory to allow us to save our resources.
-
-### Tag plugin
-
-We can reference pictures and other resources by using the tag plugin provided by Hexo.
-
-```
----
-{% asset_path slug %}
-{% asset_img slug [ title ] %}
-{% asset_link slug [ title ] %}
----
-```
-
-The correct way to cite pictures:
-
-```
----
-{% asset_img example.jpg This is an example image %}
----
-```
-
-## Article Summary
-
-In order to set the article summary, we only need to add `<!-- more -->` after the content that we want to display as a summary. Like:
-
-```
----
-title: hello hexo
-date: 2021-10-25 20:51:15
-tags:
-  - hello
-  - hexo
-  - markdown
-categories:
----
-
-Article summary
-
-<!-- more -->
-
-Text content
-```
-
-## Submit It To Gihub
-
-Master branch:
-
-```
-$ hexo clean
-$ hexo g -d
-```
-
-Hexo branch:
-
-```
-git add.
-git commit -m "your description"
-git push origin hexo
-```</div> <nav class="flex justify-between items-center py-8 border-t border-[#E5E5E5] dark:border-[#2a2a4a] mt-8"><a href="/posts/my-first-bolg" class="flex flex-col items-start p-4 rounded-lg hover:bg-[#f5f5f5] dark:hover:bg-[#16213E] transition-colors max-w-[45%]"><span class="text-xs text-[var(--color-text)]/40 mb-1">← 上一篇</span><span class="font-medium line-clamp-2 text-left">My first bolg</span></a><a href="/posts/深度学习与神经网络" class="flex flex-col items-end p-4 rounded-lg hover:bg-[#f5f5f5] dark:hover:bg-[#16213E] transition-colors max-w-[45%]"><span class="text-xs text-[var(--color-text)]/40 mb-1">下一篇 →</span><span class="font-medium line-clamp-2 text-right">【笔记】深度学习与神经网络</span></a></nav> </div> <aside class="hidden lg:block w-64 flex-shrink-0"> <nav id="toc" class="sticky top-24 p-4 bg-[var(--color-card)] rounded-xl border border-[#E5E5E5] dark:border-[#2a2a4a]"><h4 class="font-semibold mb-3 text-sm">目录</h4><ul class="space-y-2 text-sm"><li style="padding-left: 0px"><a href="#make-a-new-document" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">Make a new document</a></li><li style="padding-left: 0px"><a href="#document-format" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">Document format</a></li><li style="padding-left: 0px"><a href="#resource-reference" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">Resource reference</a></li><li style="padding-left: 12px"><a href="#article-resource-folder" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">Article resource folder</a></li><li style="padding-left: 12px"><a href="#tag-plugin" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">Tag plugin</a></li><li style="padding-left: 0px"><a href="#article-summary" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">Article Summary</a></li><li style="padding-left: 0px"><a href="#submit-it-to-gihub" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">Submit It To Gihub</a></li></ul></nav> </aside> </article> </main> <footer class="mt-auto py-8 border-t border-[#E5E5E5] dark:border-[#2a2a4a]"> <div class="max-w-6xl mx-auto px-6 text-center text-sm text-[var(--color-text)]/60"> <p>&copy; 2026 Xuewei Zhang. Built with Astro.</p> </div> </footer> <button id="backToTop" class="fixed bottom-8 right-8 p-3 bg-primary text-white rounded-full shadow-lg opacity-0 translate-y-4 transition-all duration-300 hover:scale-110 z-50" aria-label="Back to top"> <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path> </svg> </button>   </body></html>
+<h2 id="make-a-new-document">Make a new document</h2>
+<p>If our file’s name is “hello hexo”, you can type the following command in <strong>Git GUI</strong> to create  a new file.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>$ hexo new "hello hexo"</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>The result of the command is to create a new “hello-hexo.md” file under the <strong>PATH:</strong> ./hexo/sourse/_post.</p>
+<p>Then we can start our writing!</p>
+<h2 id="document-format">Document format</h2>
+<p>We use the Text Editor to open the new file “hello-hexo.md”.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>---</span></span>
+<span class="line"><span>title: hello hexo</span></span>
+<span class="line"><span>date: 2021-10-25 20:51:15</span></span>
+<span class="line"><span>tags:</span></span>
+<span class="line"><span>categories:</span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>The text of <strong>title</strong> is the file name and the title of the article.</p>
+<p>And the value of the <strong>date</strong> is the local time when we created the file.</p>
+<p>Besides, the value of <strong>tags</strong> is the label of the file, you can assign the value to the file at will. Like:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>---</span></span>
+<span class="line"><span>title: hello hexo</span></span>
+<span class="line"><span>date: 2021-10-25 20:51:15</span></span>
+<span class="line"><span>tags:</span></span>
+<span class="line"><span>  - hello</span></span>
+<span class="line"><span>  - hexo</span></span>
+<span class="line"><span>  - markdown</span></span>
+<span class="line"><span>categories:</span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>In the end, <strong>categories</strong> are used to categorize articles.</p>
+<h2 id="resource-reference">Resource reference</h2>
+<p>Sometimes we will want to insert a picture to our blog.</p>
+<p>You will have two options:</p>
+<ol>
+<li>Use absolute paths to reference resources.</li>
+<li>Use relative paths to reference resources</li>
+</ol>
+<h3 id="article-resource-folder">Article resource folder</h3>
+<p>If you use the relative paths to reference resources, you can use the article resource folder provided from Hexo.</p>
+<p>Use the text editor to open the <strong>“_config.yml”</strong> file in the root directory, and set the <strong>“post_asset_folder”</strong>  values to true</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>post_asset_folder: true</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>Then when you type <code>hexo new filename</code>, Hexo will create a new directory to allow us to save our resources.</p>
+<h3 id="tag-plugin">Tag plugin</h3>
+<p>We can reference pictures and other resources by using the tag plugin provided by Hexo.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>---</span></span>
+<span class="line"><span>{% asset_path slug %}</span></span>
+<span class="line"><span>{% asset_img slug [ title ] %}</span></span>
+<span class="line"><span>{% asset_link slug [ title ] %}</span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>The correct way to cite pictures:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>---</span></span>
+<span class="line"><span>{% asset_img example.jpg This is an example image %}</span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span></span></span></code></pre>
+<h2 id="article-summary">Article Summary</h2>
+<p>In order to set the article summary, we only need to add <code>&#x3C;!-- more --></code> after the content that we want to display as a summary. Like:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>---</span></span>
+<span class="line"><span>title: hello hexo</span></span>
+<span class="line"><span>date: 2021-10-25 20:51:15</span></span>
+<span class="line"><span>tags:</span></span>
+<span class="line"><span>  - hello</span></span>
+<span class="line"><span>  - hexo</span></span>
+<span class="line"><span>  - markdown</span></span>
+<span class="line"><span>categories:</span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Article summary</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;!-- more --></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Text content</span></span>
+<span class="line"><span></span></span></code></pre>
+<h2 id="submit-it-to-gihub">Submit It To Gihub</h2>
+<p>Master branch:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>$ hexo clean</span></span>
+<span class="line"><span>$ hexo g -d</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>Hexo branch:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>git add.</span></span>
+<span class="line"><span>git commit -m "your description"</span></span>
+<span class="line"><span>git push origin hexo</span></span>
+<span class="line"><span></span></span></code></pre> </div> <nav class="flex justify-between items-center py-8 border-t border-[#E5E5E5] dark:border-[#2a2a4a] mt-8"><a href="/posts/my-first-bolg" class="flex flex-col items-start p-4 rounded-lg hover:bg-[#f5f5f5] dark:hover:bg-[#16213E] transition-colors max-w-[45%]"><span class="text-xs text-[var(--color-text)]/40 mb-1">← 上一篇</span><span class="font-medium line-clamp-2 text-left">My first bolg</span></a><a href="/posts/深度学习与神经网络" class="flex flex-col items-end p-4 rounded-lg hover:bg-[#f5f5f5] dark:hover:bg-[#16213E] transition-colors max-w-[45%]"><span class="text-xs text-[var(--color-text)]/40 mb-1">下一篇 →</span><span class="font-medium line-clamp-2 text-right">【笔记】深度学习与神经网络</span></a></nav> </div> <aside class="hidden lg:block w-64 flex-shrink-0"> <nav id="toc" class="sticky top-24 p-4 bg-[var(--color-card)] rounded-xl border border-[#E5E5E5] dark:border-[#2a2a4a]"><h4 class="font-semibold mb-3 text-sm">目录</h4><ul class="space-y-2 text-sm"><li style="padding-left: 0px"><a href="#make-a-new-document" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">Make a new document</a></li><li style="padding-left: 0px"><a href="#document-format" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">Document format</a></li><li style="padding-left: 0px"><a href="#resource-reference" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">Resource reference</a></li><li style="padding-left: 12px"><a href="#article-resource-folder" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">Article resource folder</a></li><li style="padding-left: 12px"><a href="#tag-plugin" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">Tag plugin</a></li><li style="padding-left: 0px"><a href="#article-summary" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">Article Summary</a></li><li style="padding-left: 0px"><a href="#submit-it-to-gihub" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">Submit It To Gihub</a></li></ul></nav> </aside> </article> </main> <footer class="mt-auto py-8 border-t border-[#E5E5E5] dark:border-[#2a2a4a]"> <div class="max-w-6xl mx-auto px-6 text-center text-sm text-[var(--color-text)]/60"> <p>&copy; 2026 Xuewei Zhang. Built with Astro.</p> </div> </footer> <button id="backToTop" class="fixed bottom-8 right-8 p-3 bg-primary text-white rounded-full shadow-lg opacity-0 translate-y-4 transition-all duration-300 hover:scale-110 z-50" aria-label="Back to top"> <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path> </svg> </button>   </body></html>

@@ -1,161 +1,134 @@
-<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>css-样式书写规范</title><meta name="description" content="2022-2-13 css样式书写规范"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_assets/about.COIu5jTr.css">
-<link rel="stylesheet" href="/_assets/_slug_.BmA7YLN2.css"><script type="module" src="/_assets/hoisted.B45GbvkB.js"></script></head> <body class="min-h-screen flex flex-col">  <div id="reading-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-primary to-secondary z-[100] w-0 transition-all duration-100"></div>  <header class="sticky top-0 z-50 bg-[var(--color-card)]/80 backdrop-blur-md border-b border-[#E5E5E5] dark:border-[#2a2a4a]"> <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between"> <a href="/" class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>css-样式书写规范</title><meta name="description" content="2022-2-13 css样式书写规范"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_assets/about.RdrImIzM.css">
+<link rel="stylesheet" href="/_assets/_slug_.C016gcAW.css"><script type="module" src="/_assets/hoisted.B45GbvkB.js"></script></head> <body class="min-h-screen flex flex-col">  <div id="reading-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-primary to-secondary z-[100] w-0 transition-all duration-100"></div>  <header class="sticky top-0 z-50 bg-[var(--color-card)]/80 backdrop-blur-md border-b border-[#E5E5E5] dark:border-[#2a2a4a]"> <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between"> <a href="/" class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
 X.Zhang's Blog.
-</a> <nav class="flex items-center gap-8"> <a href="/" class="text-[var(--color-text)] hover:text-primary transition-colors font-medium"> 首页 </a><a href="/about" class="text-[var(--color-text)] hover:text-primary transition-colors font-medium"> 关于 </a> </nav> </div> </header> <main class="flex-1 max-w-6xl mx-auto px-6 py-8"> <article class="flex gap-8"> <div class="flex-1"> <header class="mb-8"> <h1 class="text-4xl font-bold mb-4">css-样式书写规范</h1> <div class="flex items-center gap-4 text-sm text-[var(--color-text)]/60"> <time>2022-02-13 20:30:23</time> <span class="px-2 py-1 bg-primary/10 text-primary rounded-full">Note</span> </div> <p class="mt-4 text-lg text-[var(--color-text)]/70">2022-2-13 css样式书写规范</p> </header> <div class="prose prose-lg max-w-none">
-2022-2-13 css样式书写规范
-
-# css-样式书写规范
-
-## 样式规范
-
-### 1、命名规范
-
-- 类名使用小写字母
-- 类名之间使用中划线 `-` 分隔
-- 类名应该具有语义化
-
-### 2、样式书写顺序
-
-1. 定位（position、top、right、bottom、left、z-index）
-2. 盒子模型（display、width、height、margin、padding、border）
-3. 文本（font、color、text-align、line-height）
-4. 背景（background、background-color）
-5. 其他（border-radius、box-shadow、opacity）
-
-### 3、样式缩写
-
-- margin、padding 的值可以缩写
-- border 的值可以缩写
-- font 的值可以缩写
-
-### 4、避免使用 filter
-
-filter 属性会影响页面的渲染性能，尽量避免使用。
-
-### 5、避免使用 expression
-
-expression 属性会影响页面的性能，尽量避免使用。
-
-### 6、避免使用 IE 的 hack
-
-IE 的 hack 会影响代码的可维护性，尽量避免使用。
-
-## 选择器规范
-
-### 1、选择器命名
-
-- 选择器命名应该具有语义化
-- 选择器命名应该使用小写字母
-- 选择器命名之间使用中划线 `-` 分隔
-
-### 2、选择器嵌套
-
-- 选择器嵌套的层级不应该超过 3 层
-- 选择器嵌套应该保持简洁
-
-### 3、选择器缩写
-
-- 选择器的属性可以缩写
-
-## 代码规范
-
-### 1、缩进
-
-- 使用 2 个空格缩进
-
-### 2、注释
-
-- 注释应该清晰明了
-- 注释应该与代码保持一致
-
-### 3、空行
-
-- 代码块之间应该保持一行空行
-
-### 4、换行
-
-- 每行代码不应该超过 120 个字符
-- 换行应该保持缩进
-
-## CSS 预处理器
-
-### 1、变量
-
-- 使用变量存储常用的值
-- 变量命名应该具有语义化
-
-### 2、混合器
-
-- 使用混合器封装重复的样式
-- 混合器命名应该具有语义化
-
-### 3、嵌套
-
-- 嵌套层级不应该超过 3 层
-
-## 最佳实践
-
-### 1、避免使用 !important
-
-!important 会影响样式的优先级，尽量避免使用。
-
-### 2、避免使用通配符
-
-通配符会影响页面的性能，尽量避免使用。
-
-### 3、避免使用标签选择器
-
-标签选择器的优先级较低，尽量使用类选择器。
-
-### 4、使用 CSS 变量
-
-CSS 变量可以方便地管理样式值，提高代码的可维护性。
-
-### 5、使用 Flexbox 布局
-
-Flexbox 布局可以方便地实现各种布局效果。
-
-### 6、使用 Grid 布局
-
-Grid 布局可以方便地实现复杂的布局效果。
-
-## 响应式设计
-
-### 1、媒体查询
-
-- 媒体查询应该放在样式文件的底部
-- 媒体查询应该按照屏幕尺寸的大小顺序排列
-
-### 2、rem 单位
-
-- 使用 rem 单位代替 px 单位
-- rem 单位可以方便地实现响应式设计
-
-### 3、弹性布局
-
-- 使用弹性布局代替固定布局
-- 弹性布局可以方便地适应不同的屏幕尺寸
-
-## 性能优化
-
-### 1、合并样式文件
-
-- 将多个样式文件合并成一个
-- 减少 HTTP 请求次数
-
-### 2、压缩样式文件
-
-- 压缩样式文件的大小
-- 减少网络传输量
-
-### 3、使用 CDN
-
-- 使用 CDN 加速样式文件的加载
-
-### 4、避免使用 @import
-
-- @import 会阻塞页面的加载
-
-### 5、使用硬件加速
-
-- 使用 transform、opacity 等属性可以利用硬件加速</div> <nav class="flex justify-between items-center py-8 border-t border-[#E5E5E5] dark:border-[#2a2a4a] mt-8"><a href="/posts/认知负荷" class="flex flex-col items-start p-4 rounded-lg hover:bg-[#f5f5f5] dark:hover:bg-[#16213E] transition-colors max-w-[45%]"><span class="text-xs text-[var(--color-text)]/40 mb-1">← 上一篇</span><span class="font-medium line-clamp-2 text-left">认知负荷</span></a><a href="/posts/读人人都是产品经理有感" class="flex flex-col items-end p-4 rounded-lg hover:bg-[#f5f5f5] dark:hover:bg-[#16213E] transition-colors max-w-[45%]"><span class="text-xs text-[var(--color-text)]/40 mb-1">下一篇 →</span><span class="font-medium line-clamp-2 text-right">读《人人都是产品经理》有感</span></a></nav> </div> <aside class="hidden lg:block w-64 flex-shrink-0"> <nav id="toc" class="sticky top-24 p-4 bg-[var(--color-card)] rounded-xl border border-[#E5E5E5] dark:border-[#2a2a4a]"><h4 class="font-semibold mb-3 text-sm">目录</h4><ul class="space-y-2 text-sm"><li style="padding-left: -12px"><a href="#css-样式书写规范" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">css-样式书写规范</a></li><li style="padding-left: 0px"><a href="#样式规范" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">样式规范</a></li><li style="padding-left: 12px"><a href="#1命名规范" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">1、命名规范</a></li><li style="padding-left: 12px"><a href="#2样式书写顺序" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">2、样式书写顺序</a></li><li style="padding-left: 12px"><a href="#3样式缩写" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">3、样式缩写</a></li><li style="padding-left: 12px"><a href="#4避免使用-filter" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">4、避免使用 filter</a></li><li style="padding-left: 12px"><a href="#5避免使用-expression" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">5、避免使用 expression</a></li><li style="padding-left: 12px"><a href="#6避免使用-ie-的-hack" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">6、避免使用 IE 的 hack</a></li><li style="padding-left: 0px"><a href="#选择器规范" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">选择器规范</a></li><li style="padding-left: 12px"><a href="#1选择器命名" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">1、选择器命名</a></li><li style="padding-left: 12px"><a href="#2选择器嵌套" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">2、选择器嵌套</a></li><li style="padding-left: 12px"><a href="#3选择器缩写" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">3、选择器缩写</a></li><li style="padding-left: 0px"><a href="#代码规范" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">代码规范</a></li><li style="padding-left: 12px"><a href="#1缩进" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">1、缩进</a></li><li style="padding-left: 12px"><a href="#2注释" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">2、注释</a></li><li style="padding-left: 12px"><a href="#3空行" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">3、空行</a></li><li style="padding-left: 12px"><a href="#4换行" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">4、换行</a></li><li style="padding-left: 0px"><a href="#css-预处理器" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">CSS 预处理器</a></li><li style="padding-left: 12px"><a href="#1变量" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">1、变量</a></li><li style="padding-left: 12px"><a href="#2混合器" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">2、混合器</a></li><li style="padding-left: 12px"><a href="#3嵌套" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">3、嵌套</a></li><li style="padding-left: 0px"><a href="#最佳实践" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">最佳实践</a></li><li style="padding-left: 12px"><a href="#1避免使用-important" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">1、避免使用 !important</a></li><li style="padding-left: 12px"><a href="#2避免使用通配符" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">2、避免使用通配符</a></li><li style="padding-left: 12px"><a href="#3避免使用标签选择器" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">3、避免使用标签选择器</a></li><li style="padding-left: 12px"><a href="#4使用-css-变量" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">4、使用 CSS 变量</a></li><li style="padding-left: 12px"><a href="#5使用-flexbox-布局" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">5、使用 Flexbox 布局</a></li><li style="padding-left: 12px"><a href="#6使用-grid-布局" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">6、使用 Grid 布局</a></li><li style="padding-left: 0px"><a href="#响应式设计" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">响应式设计</a></li><li style="padding-left: 12px"><a href="#1媒体查询" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">1、媒体查询</a></li><li style="padding-left: 12px"><a href="#2rem-单位" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">2、rem 单位</a></li><li style="padding-left: 12px"><a href="#3弹性布局" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">3、弹性布局</a></li><li style="padding-left: 0px"><a href="#性能优化" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">性能优化</a></li><li style="padding-left: 12px"><a href="#1合并样式文件" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">1、合并样式文件</a></li><li style="padding-left: 12px"><a href="#2压缩样式文件" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">2、压缩样式文件</a></li><li style="padding-left: 12px"><a href="#3使用-cdn" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">3、使用 CDN</a></li><li style="padding-left: 12px"><a href="#4避免使用-import" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">4、避免使用 @import</a></li><li style="padding-left: 12px"><a href="#5使用硬件加速" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">5、使用硬件加速</a></li></ul></nav> </aside> </article> </main> <footer class="mt-auto py-8 border-t border-[#E5E5E5] dark:border-[#2a2a4a]"> <div class="max-w-6xl mx-auto px-6 text-center text-sm text-[var(--color-text)]/60"> <p>&copy; 2026 Xuewei Zhang. Built with Astro.</p> </div> </footer> <button id="backToTop" class="fixed bottom-8 right-8 p-3 bg-primary text-white rounded-full shadow-lg opacity-0 translate-y-4 transition-all duration-300 hover:scale-110 z-50" aria-label="Back to top"> <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path> </svg> </button>   </body></html>
+</a> <nav class="flex items-center gap-8"> <a href="/" class="text-[var(--color-text)] hover:text-primary transition-colors font-medium"> 首页 </a><a href="/about" class="text-[var(--color-text)] hover:text-primary transition-colors font-medium"> 关于 </a> </nav> </div> </header> <main class="flex-1 max-w-6xl mx-auto px-6 py-8"> <article class="flex gap-8"> <div class="flex-1"> <header class="mb-8"> <h1 class="text-4xl font-bold mb-4">css-样式书写规范</h1> <div class="flex items-center gap-4 text-sm text-[var(--color-text)]/60"> <time>2022-02-13 20:30:23</time> <span class="px-2 py-1 bg-primary/10 text-primary rounded-full">Note</span> </div> <p class="mt-4 text-lg text-[var(--color-text)]/70">2022-2-13 css样式书写规范</p> </header> <div class="prose prose-lg max-w-none dark:prose-invert"> <p>2022-2-13 css样式书写规范</p>
+<h1 id="css-样式书写规范">css-样式书写规范</h1>
+<h2 id="样式规范">样式规范</h2>
+<h3 id="1命名规范">1、命名规范</h3>
+<ul>
+<li>类名使用小写字母</li>
+<li>类名之间使用中划线 <code>-</code> 分隔</li>
+<li>类名应该具有语义化</li>
+</ul>
+<h3 id="2样式书写顺序">2、样式书写顺序</h3>
+<ol>
+<li>定位（position、top、right、bottom、left、z-index）</li>
+<li>盒子模型（display、width、height、margin、padding、border）</li>
+<li>文本（font、color、text-align、line-height）</li>
+<li>背景（background、background-color）</li>
+<li>其他（border-radius、box-shadow、opacity）</li>
+</ol>
+<h3 id="3样式缩写">3、样式缩写</h3>
+<ul>
+<li>margin、padding 的值可以缩写</li>
+<li>border 的值可以缩写</li>
+<li>font 的值可以缩写</li>
+</ul>
+<h3 id="4避免使用-filter">4、避免使用 filter</h3>
+<p>filter 属性会影响页面的渲染性能，尽量避免使用。</p>
+<h3 id="5避免使用-expression">5、避免使用 expression</h3>
+<p>expression 属性会影响页面的性能，尽量避免使用。</p>
+<h3 id="6避免使用-ie-的-hack">6、避免使用 IE 的 hack</h3>
+<p>IE 的 hack 会影响代码的可维护性，尽量避免使用。</p>
+<h2 id="选择器规范">选择器规范</h2>
+<h3 id="1选择器命名">1、选择器命名</h3>
+<ul>
+<li>选择器命名应该具有语义化</li>
+<li>选择器命名应该使用小写字母</li>
+<li>选择器命名之间使用中划线 <code>-</code> 分隔</li>
+</ul>
+<h3 id="2选择器嵌套">2、选择器嵌套</h3>
+<ul>
+<li>选择器嵌套的层级不应该超过 3 层</li>
+<li>选择器嵌套应该保持简洁</li>
+</ul>
+<h3 id="3选择器缩写">3、选择器缩写</h3>
+<ul>
+<li>选择器的属性可以缩写</li>
+</ul>
+<h2 id="代码规范">代码规范</h2>
+<h3 id="1缩进">1、缩进</h3>
+<ul>
+<li>使用 2 个空格缩进</li>
+</ul>
+<h3 id="2注释">2、注释</h3>
+<ul>
+<li>注释应该清晰明了</li>
+<li>注释应该与代码保持一致</li>
+</ul>
+<h3 id="3空行">3、空行</h3>
+<ul>
+<li>代码块之间应该保持一行空行</li>
+</ul>
+<h3 id="4换行">4、换行</h3>
+<ul>
+<li>每行代码不应该超过 120 个字符</li>
+<li>换行应该保持缩进</li>
+</ul>
+<h2 id="css-预处理器">CSS 预处理器</h2>
+<h3 id="1变量">1、变量</h3>
+<ul>
+<li>使用变量存储常用的值</li>
+<li>变量命名应该具有语义化</li>
+</ul>
+<h3 id="2混合器">2、混合器</h3>
+<ul>
+<li>使用混合器封装重复的样式</li>
+<li>混合器命名应该具有语义化</li>
+</ul>
+<h3 id="3嵌套">3、嵌套</h3>
+<ul>
+<li>嵌套层级不应该超过 3 层</li>
+</ul>
+<h2 id="最佳实践">最佳实践</h2>
+<h3 id="1避免使用-important">1、避免使用 !important</h3>
+<p>!important 会影响样式的优先级，尽量避免使用。</p>
+<h3 id="2避免使用通配符">2、避免使用通配符</h3>
+<p>通配符会影响页面的性能，尽量避免使用。</p>
+<h3 id="3避免使用标签选择器">3、避免使用标签选择器</h3>
+<p>标签选择器的优先级较低，尽量使用类选择器。</p>
+<h3 id="4使用-css-变量">4、使用 CSS 变量</h3>
+<p>CSS 变量可以方便地管理样式值，提高代码的可维护性。</p>
+<h3 id="5使用-flexbox-布局">5、使用 Flexbox 布局</h3>
+<p>Flexbox 布局可以方便地实现各种布局效果。</p>
+<h3 id="6使用-grid-布局">6、使用 Grid 布局</h3>
+<p>Grid 布局可以方便地实现复杂的布局效果。</p>
+<h2 id="响应式设计">响应式设计</h2>
+<h3 id="1媒体查询">1、媒体查询</h3>
+<ul>
+<li>媒体查询应该放在样式文件的底部</li>
+<li>媒体查询应该按照屏幕尺寸的大小顺序排列</li>
+</ul>
+<h3 id="2rem-单位">2、rem 单位</h3>
+<ul>
+<li>使用 rem 单位代替 px 单位</li>
+<li>rem 单位可以方便地实现响应式设计</li>
+</ul>
+<h3 id="3弹性布局">3、弹性布局</h3>
+<ul>
+<li>使用弹性布局代替固定布局</li>
+<li>弹性布局可以方便地适应不同的屏幕尺寸</li>
+</ul>
+<h2 id="性能优化">性能优化</h2>
+<h3 id="1合并样式文件">1、合并样式文件</h3>
+<ul>
+<li>将多个样式文件合并成一个</li>
+<li>减少 HTTP 请求次数</li>
+</ul>
+<h3 id="2压缩样式文件">2、压缩样式文件</h3>
+<ul>
+<li>压缩样式文件的大小</li>
+<li>减少网络传输量</li>
+</ul>
+<h3 id="3使用-cdn">3、使用 CDN</h3>
+<ul>
+<li>使用 CDN 加速样式文件的加载</li>
+</ul>
+<h3 id="4避免使用-import">4、避免使用 @import</h3>
+<ul>
+<li>@import 会阻塞页面的加载</li>
+</ul>
+<h3 id="5使用硬件加速">5、使用硬件加速</h3>
+<ul>
+<li>使用 transform、opacity 等属性可以利用硬件加速</li>
+</ul> </div> <nav class="flex justify-between items-center py-8 border-t border-[#E5E5E5] dark:border-[#2a2a4a] mt-8"><a href="/posts/认知负荷" class="flex flex-col items-start p-4 rounded-lg hover:bg-[#f5f5f5] dark:hover:bg-[#16213E] transition-colors max-w-[45%]"><span class="text-xs text-[var(--color-text)]/40 mb-1">← 上一篇</span><span class="font-medium line-clamp-2 text-left">认知负荷</span></a><a href="/posts/读人人都是产品经理有感" class="flex flex-col items-end p-4 rounded-lg hover:bg-[#f5f5f5] dark:hover:bg-[#16213E] transition-colors max-w-[45%]"><span class="text-xs text-[var(--color-text)]/40 mb-1">下一篇 →</span><span class="font-medium line-clamp-2 text-right">读《人人都是产品经理》有感</span></a></nav> </div> <aside class="hidden lg:block w-64 flex-shrink-0"> <nav id="toc" class="sticky top-24 p-4 bg-[var(--color-card)] rounded-xl border border-[#E5E5E5] dark:border-[#2a2a4a]"><h4 class="font-semibold mb-3 text-sm">目录</h4><ul class="space-y-2 text-sm"><li style="padding-left: -12px"><a href="#css-样式书写规范" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">css-样式书写规范</a></li><li style="padding-left: 0px"><a href="#样式规范" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">样式规范</a></li><li style="padding-left: 12px"><a href="#1命名规范" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">1、命名规范</a></li><li style="padding-left: 12px"><a href="#2样式书写顺序" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">2、样式书写顺序</a></li><li style="padding-left: 12px"><a href="#3样式缩写" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">3、样式缩写</a></li><li style="padding-left: 12px"><a href="#4避免使用-filter" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">4、避免使用 filter</a></li><li style="padding-left: 12px"><a href="#5避免使用-expression" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">5、避免使用 expression</a></li><li style="padding-left: 12px"><a href="#6避免使用-ie-的-hack" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">6、避免使用 IE 的 hack</a></li><li style="padding-left: 0px"><a href="#选择器规范" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">选择器规范</a></li><li style="padding-left: 12px"><a href="#1选择器命名" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">1、选择器命名</a></li><li style="padding-left: 12px"><a href="#2选择器嵌套" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">2、选择器嵌套</a></li><li style="padding-left: 12px"><a href="#3选择器缩写" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">3、选择器缩写</a></li><li style="padding-left: 0px"><a href="#代码规范" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">代码规范</a></li><li style="padding-left: 12px"><a href="#1缩进" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">1、缩进</a></li><li style="padding-left: 12px"><a href="#2注释" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">2、注释</a></li><li style="padding-left: 12px"><a href="#3空行" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">3、空行</a></li><li style="padding-left: 12px"><a href="#4换行" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">4、换行</a></li><li style="padding-left: 0px"><a href="#css-预处理器" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">CSS 预处理器</a></li><li style="padding-left: 12px"><a href="#1变量" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">1、变量</a></li><li style="padding-left: 12px"><a href="#2混合器" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">2、混合器</a></li><li style="padding-left: 12px"><a href="#3嵌套" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">3、嵌套</a></li><li style="padding-left: 0px"><a href="#最佳实践" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">最佳实践</a></li><li style="padding-left: 12px"><a href="#1避免使用-important" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">1、避免使用 !important</a></li><li style="padding-left: 12px"><a href="#2避免使用通配符" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">2、避免使用通配符</a></li><li style="padding-left: 12px"><a href="#3避免使用标签选择器" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">3、避免使用标签选择器</a></li><li style="padding-left: 12px"><a href="#4使用-css-变量" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">4、使用 CSS 变量</a></li><li style="padding-left: 12px"><a href="#5使用-flexbox-布局" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">5、使用 Flexbox 布局</a></li><li style="padding-left: 12px"><a href="#6使用-grid-布局" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">6、使用 Grid 布局</a></li><li style="padding-left: 0px"><a href="#响应式设计" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">响应式设计</a></li><li style="padding-left: 12px"><a href="#1媒体查询" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">1、媒体查询</a></li><li style="padding-left: 12px"><a href="#2rem-单位" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">2、rem 单位</a></li><li style="padding-left: 12px"><a href="#3弹性布局" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">3、弹性布局</a></li><li style="padding-left: 0px"><a href="#性能优化" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">性能优化</a></li><li style="padding-left: 12px"><a href="#1合并样式文件" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">1、合并样式文件</a></li><li style="padding-left: 12px"><a href="#2压缩样式文件" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">2、压缩样式文件</a></li><li style="padding-left: 12px"><a href="#3使用-cdn" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">3、使用 CDN</a></li><li style="padding-left: 12px"><a href="#4避免使用-import" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">4、避免使用 @import</a></li><li style="padding-left: 12px"><a href="#5使用硬件加速" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">5、使用硬件加速</a></li></ul></nav> </aside> </article> </main> <footer class="mt-auto py-8 border-t border-[#E5E5E5] dark:border-[#2a2a4a]"> <div class="max-w-6xl mx-auto px-6 text-center text-sm text-[var(--color-text)]/60"> <p>&copy; 2026 Xuewei Zhang. Built with Astro.</p> </div> </footer> <button id="backToTop" class="fixed bottom-8 right-8 p-3 bg-primary text-white rounded-full shadow-lg opacity-0 translate-y-4 transition-all duration-300 hover:scale-110 z-50" aria-label="Back to top"> <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path> </svg> </button>   </body></html>

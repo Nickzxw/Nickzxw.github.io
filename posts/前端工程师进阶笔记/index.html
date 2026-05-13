@@ -1,360 +1,307 @@
-<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>前端工程师进阶笔记</title><meta name="description" content="最好的JS代码就是没有JS代码  前端工程师进阶笔记"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_assets/about.COIu5jTr.css">
-<link rel="stylesheet" href="/_assets/_slug_.BmA7YLN2.css"><script type="module" src="/_assets/hoisted.B45GbvkB.js"></script></head> <body class="min-h-screen flex flex-col">  <div id="reading-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-primary to-secondary z-[100] w-0 transition-all duration-100"></div>  <header class="sticky top-0 z-50 bg-[var(--color-card)]/80 backdrop-blur-md border-b border-[#E5E5E5] dark:border-[#2a2a4a]"> <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between"> <a href="/" class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>前端工程师进阶笔记</title><meta name="description" content="最好的JS代码就是没有JS代码  前端工程师进阶笔记"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_assets/about.RdrImIzM.css">
+<link rel="stylesheet" href="/_assets/_slug_.C016gcAW.css"><script type="module" src="/_assets/hoisted.B45GbvkB.js"></script></head> <body class="min-h-screen flex flex-col">  <div id="reading-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-primary to-secondary z-[100] w-0 transition-all duration-100"></div>  <header class="sticky top-0 z-50 bg-[var(--color-card)]/80 backdrop-blur-md border-b border-[#E5E5E5] dark:border-[#2a2a4a]"> <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between"> <a href="/" class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
 X.Zhang's Blog.
-</a> <nav class="flex items-center gap-8"> <a href="/" class="text-[var(--color-text)] hover:text-primary transition-colors font-medium"> 首页 </a><a href="/about" class="text-[var(--color-text)] hover:text-primary transition-colors font-medium"> 关于 </a> </nav> </div> </header> <main class="flex-1 max-w-6xl mx-auto px-6 py-8"> <article class="flex gap-8"> <div class="flex-1"> <header class="mb-8"> <h1 class="text-4xl font-bold mb-4">前端工程师进阶笔记</h1> <div class="flex items-center gap-4 text-sm text-[var(--color-text)]/60"> <time>2022-04-14 19:37:53</time> <span class="px-2 py-1 bg-primary/10 text-primary rounded-full">Note</span> </div> <p class="mt-4 text-lg text-[var(--color-text)]/70">最好的JS代码就是没有JS代码  前端工程师进阶笔记</p> </header> <div class="prose prose-lg max-w-none">
-> 最好的JS代码就是没有JS代码
-
-前端工程师进阶笔记
-
-@[TOC](前端工程师进阶笔记)
-
-# Day One
-
-WEB 开发中
-
-- HTML 负责网页结构
-- CSS 负责网页元素的样式
-- JS 负责网页与用户的交互
-
-要成为优秀的前端工程师，需要遵守这三者各司其职的原则，让代码易于维护和拓展。
-
-## 切换状态
-
-现在我们有一个任务，它的具体需求是这样的：给一个网页实现一个深色系和浅色系主题的切换，以使得在夜晚访问这个网页的读者能够使用"夜间模式"。
-
-这个网页的HTML大概是这样的：
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTTP 和 HTTPS</title>
-    <style>
-        body,
-        html {
-            width: 100%;
-            height: 100%;
-            padding: 0;
-            margin: 0;
-            overflow: hidden;
-        }
-
-        body {
-            padding: 10px;
-            box-sizing: border-box;
-        }
-
-        div.pic img {
-            width: 100%;
-        }
-
-        #modeBtn {
-            font-size: 2rem;
-            float: right;
-        }
-    </style>
-</head>
-
-<body>
-    <div>
-        <header>
-            <button id="modeBtn">🌞</button>
-            <h1>HTTP 和 HTTPS</h1>
-        </header>
-        <main>
-            <div class="description">
-                <p>
-                    http: 是一个客户端和服务器端请求和应答的标准（TCP），用于从 WWW 服务器传输超文本到本地浏览器的超文本传输协议。 https:是以安全为目标的 HTTP 通道，即 HTTP 下 加入 SSL 层进行加密。其作用是：建立一个信息安全通道，来确保数据的传输，确保网站的真实性
-                </p>
-            </div>
-        </main>
-    </div>
-</body>
-
-</html>
-```
-
-一般而言，我们直观的想法是通过点击事件来替换HTML的背景颜色和按钮图标。
-
-```javascript
-const btn = document.getElementById('modeBtn');
-btn.addEventListener('click', (e) => {
-  const body = document.body;
-  if(e.target.innerHTML === '🌞') {
-    body.style.backgroundColor = 'black';
-    body.style.color = 'white';
-    e.target.innerHTML = '🌜';
-  } else {
-    body.style.backgroundColor = 'white';
-    body.style.color = 'black';
-    e.target.innerHTML = '🌞';
-  }
-});
-```
-
-这段代码给按钮注册了click事件，当用户点击按钮时，如果当前按钮文字为🌞，说明是要从日间模式换成夜间模式，将body背景颜色换为深色，文字样式换为浅色。
-
-但上述代码有几个问题：
-
-1. 其他不了解需求的人，阅读这段代码能否直接理解这个按钮按下的含义？
-2. 产品需求发生更改，如要求用其他颜色背景显示夜间模式，JS 代码是否可以避免修改？
-3. 如果要给切换过程增加动画效果，是否方便添加？
-
-## 用 class 表示元素的业务状态
-
-故事一中通过 JS 代码来操作元素，缺点显而易见：其他阅读代码的人很难通过代码理解样式代表的业务需求或者状态。
-
-出现这种情况的主要原因是，我们将**本该由 CSS 完成的任务交给了 JS 来做** ，原本应该由 CSS 设置元素的样式， 却让 JS 替代了。因此，需要对代码进行重构，体现其业务的需求。
-
-1. 将夜间模式下的元素样式交还给 CSS；
-2. 重构 JS 代码。
-
-CSS:
-
-```css
-body.night {
-            background-color: black;
-            color: white;
-        }
-```
-
-JS:
-
-```javascript
-const btn = document.getElementById('modeBtn');
-btn.addEventListener('click', (e) => {
-  const body = document.body;
-  if(body.className !== 'night') {
-    body.className = 'night';
-    e.target.innerHTML = '🌜';
-  } else {
-    body.className = '';
-    e.target.innerHTML = '🌞';
-  }
-});
-```
-
-上述代码通过点击事件切换元素状态来实现白天模式和夜间模式的切换，虽然代码改动非常小，只是把之前的两行代码替换为一行：
-
-```javascript
-body.style.backgroundColor = 'black';
-body.style.color = 'white';
-
-=>
-
-body.className = 'night';
-```
-
-但是它却解决了我们前面提到的三点问题：
-
-1. 首先 classname 设为 night，这个操作本身可以透露一些需求信息，便于维护者快速理解业务需求。
-2. 其次，若产品需求更改，需要替换切换的颜色，则不需要改动 JS 代码，只需要修改 `body.night` 的样式即可！
-3. 最后，要给切换过程增加动画效果，可以使用 CSS3 支持的过渡动画，如：
-
-```css
-body {
-  padding: 10px;
-  box-sizing: border-box;
-  transition: all 1s;
-}
-body.night {
-  background-color: black;
-  color: white;
-  transition: all 1s;
-}
-```
-
-最后还可以通过添加为元素将`e.target.innerHTML = '🌜';` 这样的切换给放到 CSS 中：
-
-```css
-#modeBtn::after {
-  content: '🌞';
-}
-body.night #modeBtn::after {
-  content: '🌜';
-}
-```
-
-去掉 HTML 中 `<button id='modeBtn'></button>` 中间的文本内容，将 JS 代码简化成：
-
-```javascript
-const btn = document.getElementById('modeBtn');
-btn.addEventListener('click', (e) => {
-  const body = document.body;
-  if(body.className !== 'night') {
-    body.className = 'night';
-  } else {
-    body.className = '';
-  }
-});
-```
-
-元素的 class 属性不仅为了给 CSS 提供元素选择器，至此，我们实现了 JS 只负责切换元素状态，而将元素样式的改变重新交还给 CSS ，保证了各司其职的原则，是我们代码即能体现业务的需求也有利于将来的维护和拓展。
-
-## 最好的 JS 代码是没有 JS 代码
-
-那么是否存在一种方式，我们只使用 CSS 实现"夜间模式"效果，对于切换夜间模式的需求而言，其核心问题是使用 **CSS 代替 JS 来切换并记住与用户交互的状态** 。
-
-HTML 中，能完成状态切换的元素第一时间可以想到的是表单中的 **选择框（checkbox）** ，对 HTML 进行修改：
-
-```html
-<input id="modeCheckBtn" type="checkbox">
-    <div class="content">
-        <header>
-            <label id="modeBtn" for="modeCheckBtn"></label>
-            <h1>HTTP 和 HTTPS</h1>
-        </header>
-        <main>
-            <div class="description">
-                <p>
-                    http: 是一个客户端和服务器端请求和应答的标准（TCP），用于从 WWW 服务器传输超文本到本地浏览器的超文本传输协议。 https:是以安全为目标的 HTTP 通道，即 HTTP 下 加入 SSL 层进行加密。其作用是：建立一个信息安全通道，来确保数据的传输，确保网站的真实性
-                </p>
-            </div>
-        </main>
-    </div>
-</input>
-```
-
-我们在上述代码中添加了一个 `type = "checkbox"` 的 input 元素，通过伪类选择器可以标记元素的被选中状态。
-
-由于 `<input>` 元素是 body 的第一个子元素，它后面的子元素可以通过 CSS 的兄弟节点选择器来选中。
-
-调整上一版本的样式，将 body 的样式移动到 `.content` 容器中，将 `body.night` 的样式一移动到 `#modeCheckBtn:checked + .content` 规则中。
-
-```css
-body {
-    box-sizing: border-box;
-}
-
-.content {
-    padding: 10px;
-    transition: all 1s;
-}
-
-#modeBtn {
-    font-size: 2rem;
-    float: right;
-}
-
-#modeCheckBtn:checked+.content {
-    background-color: black;
-    color: white;
-}
-
-#modeBtn::after {
-    content: '🌞';
-}
-
-#modeCheckBtn:checked+.content #modeBtn::after {
-    content: '🌜';
-}
-
-#modeCheckBtn {
-    display: none;
-}
-```
-
-这样便可以实现点击 checkbox 进行 "夜间模式" 的切换，但不可能让用户通过点击选择框来进行切换，因此我们可以使用 label 元素替代 checkbox 触发用户的点击行为。
-
-通过 label 元素的 for 属性制定的 id, 能够将 label 元素与对应的表单元素进行绑定。
-
-```html
-<header>
-    <label id="modeBtn" for="modeCheckBtn"></label>
-    <h1>HTTP 和 HTTPS</h1>
-</header>
-```
-
-然后将 选择框 checkbox 隐藏起来：
-
-```css
-#modeCheckBtn {
-    display: none;
-}
-```
-
-完整代码如下：
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTTP 和 HTTPS</title>
-    <style>
-        body,
-        html {
-            width: 100%;
-            height: 100%;
-            padding: 0;
-            margin: 0;
-            overflow: hidden;
-        }
-
-        body {
-            box-sizing: border-box;
-        }
-
-        body.night {
-            background-color: black;
-            color: white;
-            transition: all 1s;
-        }
-
-        .content {
-            padding: 10px;
-            transition: all 1s;
-        }
-
-        #modeBtn {
-            font-size: 2rem;
-            float: right;
-        }
-
-        #modeCheckBtn:checked+.content {
-            background-color: black;
-            color: white;
-        }
-
-        #modeBtn::after {
-            content: '🌞';
-        }
-
-        #modeCheckBtn:checked+.content #modeBtn::after {
-            content: '🌜';
-        }
-
-        #modeCheckBtn {
-            display: none;
-        }
-    </style>
-</head>
-
-<body>
-    <input id="modeCheckBtn" type="checkbox">
-    <div class="content">
-        <header>
-            <label id="modeBtn" for="modeCheckBtn"></label>
-            <h1>HTTP 和 HTTPS</h1>
-        </header>
-        <main>
-            <div class="description">
-                <p>
-                    http: 是一个客户端和服务器端请求和应答的标准（TCP），用于从 WWW 服务器传输超文本到本地浏览器的超文本传输协议。 https:是以安全为目标的 HTTP 通道，即 HTTP 下 加入 SSL 层进行加密。其作用是：建立一个信息安全通道，来确保数据的传输，确保网站的真实性
-                </p>
-            </div>
-        </main>
-    </div>
-</body>
-
-</html>
-```
-
-再简单的代码，都有可能出 bug，唯一能够避免 bug 的办法便是不要代码，因此，**最好的 JS 代码就是没有 JS 代码**。</div> <nav class="flex justify-between items-center py-8 border-t border-[#E5E5E5] dark:border-[#2a2a4a] mt-8"><a href="/posts/mbti-爆火背后的需求" class="flex flex-col items-start p-4 rounded-lg hover:bg-[#f5f5f5] dark:hover:bg-[#16213E] transition-colors max-w-[45%]"><span class="text-xs text-[var(--color-text)]/40 mb-1">← 上一篇</span><span class="font-medium line-clamp-2 text-left">MBTI 爆火背后的需求</span></a><a href="/posts/前端跨域知识总结" class="flex flex-col items-end p-4 rounded-lg hover:bg-[#f5f5f5] dark:hover:bg-[#16213E] transition-colors max-w-[45%]"><span class="text-xs text-[var(--color-text)]/40 mb-1">下一篇 →</span><span class="font-medium line-clamp-2 text-right">前端跨域知识总结</span></a></nav> </div> <aside class="hidden lg:block w-64 flex-shrink-0"> <nav id="toc" class="sticky top-24 p-4 bg-[var(--color-card)] rounded-xl border border-[#E5E5E5] dark:border-[#2a2a4a]"><h4 class="font-semibold mb-3 text-sm">目录</h4><ul class="space-y-2 text-sm"><li style="padding-left: -12px"><a href="#day-one" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">Day One</a></li><li style="padding-left: 0px"><a href="#切换状态" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">切换状态</a></li><li style="padding-left: 0px"><a href="#用-class-表示元素的业务状态" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">用 class 表示元素的业务状态</a></li><li style="padding-left: 0px"><a href="#最好的-js-代码是没有-js-代码" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">最好的 JS 代码是没有 JS 代码</a></li></ul></nav> </aside> </article> </main> <footer class="mt-auto py-8 border-t border-[#E5E5E5] dark:border-[#2a2a4a]"> <div class="max-w-6xl mx-auto px-6 text-center text-sm text-[var(--color-text)]/60"> <p>&copy; 2026 Xuewei Zhang. Built with Astro.</p> </div> </footer> <button id="backToTop" class="fixed bottom-8 right-8 p-3 bg-primary text-white rounded-full shadow-lg opacity-0 translate-y-4 transition-all duration-300 hover:scale-110 z-50" aria-label="Back to top"> <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path> </svg> </button>   </body></html>
+</a> <nav class="flex items-center gap-8"> <a href="/" class="text-[var(--color-text)] hover:text-primary transition-colors font-medium"> 首页 </a><a href="/about" class="text-[var(--color-text)] hover:text-primary transition-colors font-medium"> 关于 </a> </nav> </div> </header> <main class="flex-1 max-w-6xl mx-auto px-6 py-8"> <article class="flex gap-8"> <div class="flex-1"> <header class="mb-8"> <h1 class="text-4xl font-bold mb-4">前端工程师进阶笔记</h1> <div class="flex items-center gap-4 text-sm text-[var(--color-text)]/60"> <time>2022-04-14 19:37:53</time> <span class="px-2 py-1 bg-primary/10 text-primary rounded-full">Note</span> </div> <p class="mt-4 text-lg text-[var(--color-text)]/70">最好的JS代码就是没有JS代码  前端工程师进阶笔记</p> </header> <div class="prose prose-lg max-w-none dark:prose-invert"> <blockquote>
+<p>最好的JS代码就是没有JS代码</p>
+</blockquote>
+<p>前端工程师进阶笔记</p>
+<p>@<a href="%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88%E8%BF%9B%E9%98%B6%E7%AC%94%E8%AE%B0">TOC</a></p>
+<h1 id="day-one">Day One</h1>
+<p>WEB 开发中</p>
+<ul>
+<li>HTML 负责网页结构</li>
+<li>CSS 负责网页元素的样式</li>
+<li>JS 负责网页与用户的交互</li>
+</ul>
+<p>要成为优秀的前端工程师，需要遵守这三者各司其职的原则，让代码易于维护和拓展。</p>
+<h2 id="切换状态">切换状态</h2>
+<p>现在我们有一个任务，它的具体需求是这样的：给一个网页实现一个深色系和浅色系主题的切换，以使得在夜晚访问这个网页的读者能够使用”夜间模式”。</p>
+<p>这个网页的HTML大概是这样的：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;!</span><span style="color:#85E89D">DOCTYPE</span><span style="color:#B392F0"> html</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">html</span><span style="color:#B392F0"> lang</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"en"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">head</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">meta</span><span style="color:#B392F0"> charset</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"UTF-8"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">meta</span><span style="color:#B392F0"> name</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"viewport"</span><span style="color:#B392F0"> content</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"width=device-width, initial-scale=1.0"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">meta</span><span style="color:#B392F0"> http-equiv</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"X-UA-Compatible"</span><span style="color:#B392F0"> content</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"ie=edge"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">title</span><span style="color:#E1E4E8">>HTTP 和 HTTPS&#x3C;/</span><span style="color:#85E89D">title</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">style</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#85E89D">        body</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#85E89D">        html</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">            width</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">100</span><span style="color:#F97583">%</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">            height</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">100</span><span style="color:#F97583">%</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">            padding</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">            margin</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">            overflow</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">hidden</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">        body</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">            padding</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">10</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">            box-sizing</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">border-box</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">        div</span><span style="color:#B392F0">.pic</span><span style="color:#85E89D"> img</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">            width</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">100</span><span style="color:#F97583">%</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">        #modeBtn</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">            font-size</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">2</span><span style="color:#F97583">rem</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">            float</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">right</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">style</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">head</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">body</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">header</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"modeBtn"</span><span style="color:#E1E4E8">>🌞&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">>HTTP 和 HTTPS&#x3C;/</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">header</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">main</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"description"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    http: 是一个客户端和服务器端请求和应答的标准（TCP），用于从 WWW 服务器传输超文本到本地浏览器的超文本传输协议。 https:是以安全为目标的 HTTP 通道，即 HTTP 下 加入 SSL 层进行加密。其作用是：建立一个信息安全通道，来确保数据的传输，确保网站的真实性</span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">main</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">body</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">html</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span></code></pre>
+<p>一般而言，我们直观的想法是通过点击事件来替换HTML的背景颜色和按钮图标。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> btn</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> document.</span><span style="color:#B392F0">getElementById</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'modeBtn'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">btn.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'click'</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> body</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> document.body;</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8">(e.target.innerHTML </span><span style="color:#F97583">===</span><span style="color:#9ECBFF"> '🌞'</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    body.style.backgroundColor </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> 'black'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    body.style.color </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> 'white'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    e.target.innerHTML </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> '🌜'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  } </span><span style="color:#F97583">else</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    body.style.backgroundColor </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> 'white'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    body.style.color </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> 'black'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    e.target.innerHTML </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> '🌞'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span></code></pre>
+<p>这段代码给按钮注册了click事件，当用户点击按钮时，如果当前按钮文字为🌞，说明是要从日间模式换成夜间模式，将body背景颜色换为深色，文字样式换为浅色。</p>
+<p>但上述代码有几个问题：</p>
+<ol>
+<li>其他不了解需求的人，阅读这段代码能否直接理解这个按钮按下的含义？</li>
+<li>产品需求发生更改，如要求用其他颜色背景显示夜间模式，JS 代码是否可以避免修改？</li>
+<li>如果要给切换过程增加动画效果，是否方便添加？</li>
+</ol>
+<h2 id="用-class-表示元素的业务状态">用 class 表示元素的业务状态</h2>
+<p>故事一中通过 JS 代码来操作元素，缺点显而易见：其他阅读代码的人很难通过代码理解样式代表的业务需求或者状态。</p>
+<p>出现这种情况的主要原因是，我们将<strong>本该由 CSS 完成的任务交给了 JS 来做</strong> ，原本应该由 CSS 设置元素的样式， 却让 JS 替代了。因此，需要对代码进行重构，体现其业务的需求。</p>
+<ol>
+<li>将夜间模式下的元素样式交还给 CSS；</li>
+<li>重构 JS 代码。</li>
+</ol>
+<p>CSS:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#85E89D">body</span><span style="color:#B392F0">.night</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">            background-color</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">black</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">            color</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">white</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"></span></code></pre>
+<p>JS:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> btn</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> document.</span><span style="color:#B392F0">getElementById</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'modeBtn'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">btn.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'click'</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> body</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> document.body;</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8">(body.className </span><span style="color:#F97583">!==</span><span style="color:#9ECBFF"> 'night'</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    body.className </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> 'night'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    e.target.innerHTML </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> '🌜'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  } </span><span style="color:#F97583">else</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    body.className </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> ''</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    e.target.innerHTML </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> '🌞'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span></code></pre>
+<p>上述代码通过点击事件切换元素状态来实现白天模式和夜间模式的切换，虽然代码改动非常小，只是把之前的两行代码替换为一行：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">body.style.backgroundColor </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> 'black'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">body.style.color </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> 'white'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">=></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">body.className </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> 'night'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span></code></pre>
+<p>但是它却解决了我们前面提到的三点问题：</p>
+<ol>
+<li>首先 classname 设为 night，这个操作本身可以透露一些需求信息，便于维护者快速理解业务需求。</li>
+<li>其次，若产品需求更改，需要替换切换的颜色，则不需要改动 JS 代码，只需要修改 <code>body.night</code> 的样式即可！</li>
+<li>最后，要给切换过程增加动画效果，可以使用 CSS3 支持的过渡动画，如：</li>
+</ol>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#85E89D">body</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">  padding</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">10</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">  box-sizing</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">border-box</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">  transition</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">all</span><span style="color:#79B8FF"> 1</span><span style="color:#F97583">s</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#85E89D">body</span><span style="color:#B392F0">.night</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">  background-color</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">black</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">  color</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">white</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">  transition</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">all</span><span style="color:#79B8FF"> 1</span><span style="color:#F97583">s</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<p>最后还可以通过添加为元素将<code>e.target.innerHTML = '🌜';</code> 这样的切换给放到 CSS 中：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#B392F0">#modeBtn::after</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">  content</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'🌞'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#85E89D">body</span><span style="color:#B392F0">.night</span><span style="color:#B392F0"> #modeBtn::after</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">  content</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'🌜'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<p>去掉 HTML 中 <code>&#x3C;button id='modeBtn'>&#x3C;/button></code> 中间的文本内容，将 JS 代码简化成：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> btn</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> document.</span><span style="color:#B392F0">getElementById</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'modeBtn'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">btn.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'click'</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> body</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> document.body;</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8">(body.className </span><span style="color:#F97583">!==</span><span style="color:#9ECBFF"> 'night'</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    body.className </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> 'night'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  } </span><span style="color:#F97583">else</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    body.className </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> ''</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span></code></pre>
+<p>元素的 class 属性不仅为了给 CSS 提供元素选择器，至此，我们实现了 JS 只负责切换元素状态，而将元素样式的改变重新交还给 CSS ，保证了各司其职的原则，是我们代码即能体现业务的需求也有利于将来的维护和拓展。</p>
+<h2 id="最好的-js-代码是没有-js-代码">最好的 JS 代码是没有 JS 代码</h2>
+<p>那么是否存在一种方式，我们只使用 CSS 实现”夜间模式”效果，对于切换夜间模式的需求而言，其核心问题是使用 <strong>CSS 代替 JS 来切换并记住与用户交互的状态</strong> 。</p>
+<p>HTML 中，能完成状态切换的元素第一时间可以想到的是表单中的 <strong>选择框（checkbox）</strong> ，对 HTML 进行修改：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">input</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"modeCheckBtn"</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"checkbox"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"content"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">header</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"modeBtn"</span><span style="color:#B392F0"> for</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"modeCheckBtn"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">>HTTP 和 HTTPS&#x3C;/</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">header</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">main</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"description"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    http: 是一个客户端和服务器端请求和应答的标准（TCP），用于从 WWW 服务器传输超文本到本地浏览器的超文本传输协议。 https:是以安全为目标的 HTTP 通道，即 HTTP 下 加入 SSL 层进行加密。其作用是：建立一个信息安全通道，来确保数据的传输，确保网站的真实性</span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">main</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#FDAEB7;font-style:italic">input</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span></code></pre>
+<p>我们在上述代码中添加了一个 <code>type = "checkbox"</code> 的 input 元素，通过伪类选择器可以标记元素的被选中状态。</p>
+<p>由于 <code>&#x3C;input></code> 元素是 body 的第一个子元素，它后面的子元素可以通过 CSS 的兄弟节点选择器来选中。</p>
+<p>调整上一版本的样式，将 body 的样式移动到 <code>.content</code> 容器中，将 <code>body.night</code> 的样式一移动到 <code>#modeCheckBtn:checked + .content</code> 规则中。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#85E89D">body</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">    box-sizing</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">border-box</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">.content</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">    padding</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">10</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    transition</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">all</span><span style="color:#79B8FF"> 1</span><span style="color:#F97583">s</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">#modeBtn</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">    font-size</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">2</span><span style="color:#F97583">rem</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    float</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">right</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">#modeCheckBtn:checked</span><span style="color:#F97583">+</span><span style="color:#B392F0">.content</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">    background-color</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">black</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    color</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">white</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">#modeBtn::after</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">    content</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'🌞'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">#modeCheckBtn:checked</span><span style="color:#F97583">+</span><span style="color:#B392F0">.content</span><span style="color:#B392F0"> #modeBtn::after</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">    content</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'🌜'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">#modeCheckBtn</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">    display</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">none</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<p>这样便可以实现点击 checkbox 进行 “夜间模式” 的切换，但不可能让用户通过点击选择框来进行切换，因此我们可以使用 label 元素替代 checkbox 触发用户的点击行为。</p>
+<p>通过 label 元素的 for 属性制定的 id, 能够将 label 元素与对应的表单元素进行绑定。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">header</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"modeBtn"</span><span style="color:#B392F0"> for</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"modeCheckBtn"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">>HTTP 和 HTTPS&#x3C;/</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">header</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span></code></pre>
+<p>然后将 选择框 checkbox 隐藏起来：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#B392F0">#modeCheckBtn</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">    display</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">none</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<p>完整代码如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;!</span><span style="color:#85E89D">DOCTYPE</span><span style="color:#B392F0"> html</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">html</span><span style="color:#B392F0"> lang</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"en"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">head</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">meta</span><span style="color:#B392F0"> charset</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"UTF-8"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">meta</span><span style="color:#B392F0"> name</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"viewport"</span><span style="color:#B392F0"> content</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"width=device-width, initial-scale=1.0"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">meta</span><span style="color:#B392F0"> http-equiv</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"X-UA-Compatible"</span><span style="color:#B392F0"> content</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"ie=edge"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">title</span><span style="color:#E1E4E8">>HTTP 和 HTTPS&#x3C;/</span><span style="color:#85E89D">title</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">style</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#85E89D">        body</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#85E89D">        html</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">            width</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">100</span><span style="color:#F97583">%</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">            height</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">100</span><span style="color:#F97583">%</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">            padding</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">            margin</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">            overflow</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">hidden</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">        body</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">            box-sizing</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">border-box</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">        body</span><span style="color:#B392F0">.night</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">            background-color</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">black</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">            color</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">white</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">            transition</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">all</span><span style="color:#79B8FF"> 1</span><span style="color:#F97583">s</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">        .content</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">            padding</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">10</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">            transition</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">all</span><span style="color:#79B8FF"> 1</span><span style="color:#F97583">s</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">        #modeBtn</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">            font-size</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">2</span><span style="color:#F97583">rem</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">            float</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">right</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">        #modeCheckBtn:checked</span><span style="color:#F97583">+</span><span style="color:#B392F0">.content</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">            background-color</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">black</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">            color</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">white</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">        #modeBtn::after</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">            content</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'🌞'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">        #modeCheckBtn:checked</span><span style="color:#F97583">+</span><span style="color:#B392F0">.content</span><span style="color:#B392F0"> #modeBtn::after</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">            content</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'🌜'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">        #modeCheckBtn</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">            display</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">none</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">style</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">head</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">body</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">input</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"modeCheckBtn"</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"checkbox"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"content"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">header</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"modeBtn"</span><span style="color:#B392F0"> for</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"modeCheckBtn"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">>HTTP 和 HTTPS&#x3C;/</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">header</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">main</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"description"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    http: 是一个客户端和服务器端请求和应答的标准（TCP），用于从 WWW 服务器传输超文本到本地浏览器的超文本传输协议。 https:是以安全为目标的 HTTP 通道，即 HTTP 下 加入 SSL 层进行加密。其作用是：建立一个信息安全通道，来确保数据的传输，确保网站的真实性</span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">main</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">body</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">html</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span></code></pre>
+<p>再简单的代码，都有可能出 bug，唯一能够避免 bug 的办法便是不要代码，因此，<strong>最好的 JS 代码就是没有 JS 代码</strong>。</p> </div> <nav class="flex justify-between items-center py-8 border-t border-[#E5E5E5] dark:border-[#2a2a4a] mt-8"><a href="/posts/mbti-爆火背后的需求" class="flex flex-col items-start p-4 rounded-lg hover:bg-[#f5f5f5] dark:hover:bg-[#16213E] transition-colors max-w-[45%]"><span class="text-xs text-[var(--color-text)]/40 mb-1">← 上一篇</span><span class="font-medium line-clamp-2 text-left">MBTI 爆火背后的需求</span></a><a href="/posts/前端跨域知识总结" class="flex flex-col items-end p-4 rounded-lg hover:bg-[#f5f5f5] dark:hover:bg-[#16213E] transition-colors max-w-[45%]"><span class="text-xs text-[var(--color-text)]/40 mb-1">下一篇 →</span><span class="font-medium line-clamp-2 text-right">前端跨域知识总结</span></a></nav> </div> <aside class="hidden lg:block w-64 flex-shrink-0"> <nav id="toc" class="sticky top-24 p-4 bg-[var(--color-card)] rounded-xl border border-[#E5E5E5] dark:border-[#2a2a4a]"><h4 class="font-semibold mb-3 text-sm">目录</h4><ul class="space-y-2 text-sm"><li style="padding-left: -12px"><a href="#day-one" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">Day One</a></li><li style="padding-left: 0px"><a href="#切换状态" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">切换状态</a></li><li style="padding-left: 0px"><a href="#用-class-表示元素的业务状态" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">用 class 表示元素的业务状态</a></li><li style="padding-left: 0px"><a href="#最好的-js-代码是没有-js-代码" class="text-[var(--color-text)]/60 hover:text-primary transition-colors line-clamp-2">最好的 JS 代码是没有 JS 代码</a></li></ul></nav> </aside> </article> </main> <footer class="mt-auto py-8 border-t border-[#E5E5E5] dark:border-[#2a2a4a]"> <div class="max-w-6xl mx-auto px-6 text-center text-sm text-[var(--color-text)]/60"> <p>&copy; 2026 Xuewei Zhang. Built with Astro.</p> </div> </footer> <button id="backToTop" class="fixed bottom-8 right-8 p-3 bg-primary text-white rounded-full shadow-lg opacity-0 translate-y-4 transition-all duration-300 hover:scale-110 z-50" aria-label="Back to top"> <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path> </svg> </button>   </body></html>
