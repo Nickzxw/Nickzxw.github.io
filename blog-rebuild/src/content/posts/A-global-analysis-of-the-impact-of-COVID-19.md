@@ -8,7 +8,7 @@ tags:
 - "COVID-19"
 - "Stay-at-home restrictions"
 - "Crime"
-description: "A Global Analysis of the Impact of COVID-19 Stay-At-Home Restrictions on Crime"
+description: "A Global Analysis of the Impact of COVID-19 Stay-At-Home Restrictions on Crime  From Natural Human Behaviour Amy E. Nivette  1,2 ✉, Renee Zahnow  3, Raul Aguilar  4, Andri Ahven5, Shai Amram6, Barak A"
 ---
 
 **A Global Analysis of the Impact of COVID-19 Stay-At-Home Restrictions on Crime**
@@ -82,7 +82,7 @@ variable(虚拟变量), whereby 1 represents the period in which restrictions we
 
 ​    Finally, we examined whether variation in the stringency of the lockdown was predictive of the amount of change in crime. Results show  that  more  stringent  limitations  regarding  requirements/recommendations to stay at home were associated with stronger declines in crime levels.The additional analyses suggest that it is mostly the stay-at-home requirements that were associated with larger declines, in that other containment policies were generally not significantly associated with declines, and the use of the overall stringency index generally did not substantially improve the models (Supplementary Table 21). We found few systematic differences in the 'elasticity' of different crime categories, that is, in the extent to which variation in the stringency of COVID-19-related restrictions was associated with change in crime levels. This suggests, surprisingly perhaps, that all crime categories included in this analysis responded  similarly  to  variation  in  the  extent  of  constraints  on  daily movement.
 
-![image]
+![](/images/Scatterplot.jpg)
 
 ​    Our analyses suggest that stay-at-home policies played a crucial role. However, more fine-tuned analyses would be needed to understand the extent to which other measures **(for example, closing bars, limiting public transport and closing schools** ) and variation in their enforcement were associated with variation in crime trends across places within a city.
 

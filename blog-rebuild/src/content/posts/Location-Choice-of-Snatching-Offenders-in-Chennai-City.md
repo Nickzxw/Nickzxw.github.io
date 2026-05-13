@@ -55,21 +55,21 @@ Accepted: 21 April 2021
 
 ​    Table 1 presents descriptive information about the 1573 analyzed snatching offenses, including the age and gender of the offender, and whether it was committed in the offender's own ward of residence.
 
-![image]
+![](/images/OffenderAttribute.jpg)
 
 ​    For every detected snatching incident, the distance was calculated between the home of the offender and the centroids of each of the 201 wards. Based on these distances, Fig. 1 shows the distribution of the home-crime distance, which reveals the typical positively skewed distance decay pattern.
 
-![image]
+![](/images/Distance.jpg)
 
 #### Crime Generators and Attractors
 
 ​    *textile stores* (including clothing and fabric shops)(纺织品商店)、*jewelry shops* (珠宝商店)、mosques(清真寺)、*temples*(寺庙)
 
-![image]
+![](/images/Generators.jpg)
 
 ​    Figure 3 presents a graphical overview of the Spearman correlation coefficients between the facility frequencies in wards. All correlations are positive, indicating that different types of facilities tend to agglomerate and lead to facility concentrations. Most correlations are medium-level, between 0.20 and 0.60. High correlations of ~ 0.85 exists between **textile stores, personal care and other retail businesses**.
 
-![image]
+![](/images/Correlation.jpg)
 
 #### *Methods*
 
@@ -96,7 +96,7 @@ $$P_{ni}=\frac {e^{V_{ni}}∑^J_{j=1}} {e^{V_{nj}}}$$
 
 ​    Table 3 presents the results of two conditional logit models.
 
-![image]
+![](/images/ModelResults.jpg)
 
 - ***Distance Hypothesis:*** The estimated odds ratio of the log-distance effect is 0.36 in Model 1 and 0.35 in Model 2. It indicates that if a ward is further away from the offender's home, the odds of the offender selecting the ward for snatching decrease.
 - ***Repeat Offending Hypothesis***: The odds ratios of 12.72 in Model 1 and 10.72 in Model 2 are quite similar, and indicate a large and statistically significant effect: the odds of selecting a ward are ~ 12 times larger if the offender has previously committed a snatching offense in the ward than if the offender had not committed a previous snatching offense in the ward.
